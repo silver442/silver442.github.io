@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Silver</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" href="Img/Logo.png">
+    <link rel="icon" href="Img/Logo.ico">
 </head>
 <body>
     <!-- Inicio de la cabecera -->
@@ -16,10 +16,10 @@
                 <img src="Img/Logo.png" alt="Logo">
             </div>
             <ul>
-                <li><a href="#">Quien soy</a></li>
-                <li><a href="#">Habilidades</a></li>
-                <li><a href="#">Proyectos</a></li>
-                <li><a href="#">Sobre mi</a></li>
+                <li><a href="#contactMe">Contacto</a></li>
+                <li><a href="#project">Proyectos</a></li>
+                <li><a href="#habilities">Habilidades</a></li>
+                <li><a href="#me">Sobre mi</a></li>
             </ul>
         </nav>
         <div id="titulo">
@@ -30,22 +30,85 @@
     <!-- Fin de la cabecera -->
    
     <!-- Inicio de las secciones -->
-    <section>
+    <section id="me">
         <h2>Quien soy <hr></h2>
+        <div id="description">
+            <p id="description-1">Soy estudiante de la carrea Ingeniero en Tecnología de software, proactivo, organizado y responsable, 
+                con la mejor disposición para la realización de mis labores.
+                 Busco un puesto como desarrollador web Front-end donde pueda continuar aprendiendo.</p>
+        </div>
+
+        <div id="photo">
+            <img src="Img/Yo.jpg" alt="Foto" width="280px" height="280px">
+        </div>
+
     </section>
-    <section>
+
+
+    <section id="habilities">
+        <h2>Habilidades<hr></h2>
+        <div class="habilidad">
+            <img src="Img/html-5.png" alt="html">
+        </div>
+        <div class="habilidad">
+            <img src="Img/css.png" alt="CSS">
+        </div>
+        <div class="habilidad">
+            <img src="Img/git.png" alt="Git">
+        </div>
+        <div class="habilidad">
+            <img src="Img/js.png" alt="JAvaScript">
+        </div>
+    </section>
+
+    <section id="project">
         <h2>Proyectos<hr></h2>
+        <div class="proyecto"></div>
+        <div class="proyecto"></div>
+        <div class="proyecto"></div>
+        <div class="proyecto"></div>
     </section>
-    <section>
-        <h3>Redes sociales <hr></h3>
-        <p>Facebook</p>
+
+    <section id="contactMe">
+        <h2>Contacto</h2>
+        <div id="contact">
+            <Form>
+                <label for="">Nombre</label>
+                <input type="text"><br>
+
+                <label for="">Correo electronico</label>
+                <input type="email">
+                <label for=""></label><br>
+
+                <input type="textarea">
+                <br>
+                <input type="submit">
+            </Form>
+        </div>
     </section>
 
     <!-- Fin de las secciones-->
 
     <!-- Inicio del pie de pagina-->
     <footer>
+        <h3 class="social">Redes sociales <hr></h3>
+
+        <div id="socialnet">
+            <div class="sociales">
+                <img src="Img/correo-electronico.png" alt="Correo electronico">
+            </div>
+            <div class="sociales">
+                <img src="Img/whatsapp.png" alt="Whatsapp">
+            </div>
+            <div class="sociales">
+                <img src="Img/linkedin.png" alt="Linkedin">
+            </div>
+            <div class="sociales">
+                <img src="Img/github.png" alt="Github">
+            </div>
+        </div>
         
+        <p> &copy;Silvestre Hernendez Hernandez</p>
     </footer>
     <!-- Fin del pie de pagina-->
 </body>
