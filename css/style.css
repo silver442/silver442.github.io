@@ -24,17 +24,20 @@ h1, h2, p{
 
 h1{
     font-size: 100px;
+    text-shadow: 2px 2px 2px #aeb4c4;
 }
 
 .h2{
     font-size: 50px;
     background-color: #133c5a;
     width: 100%;
+    text-shadow: 1px 1px 2px #e4e4e4;
 }
 
 #titulo{
     margin-top: 255px;
     background-color: rgba(50,50,50,0.5);
+    text-shadow: 1px 1px 0px #b7b5b5;
 }
 
 
@@ -58,7 +61,7 @@ header{
 
 #nav #Logo img{
     display: block;
-    width: 50px;
+    width: 70px;
     margin: 0px left;
     padding-left: 20px;
     text-align: left;
@@ -99,27 +102,29 @@ li a:hover{
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
-    height: 750px;
-    align-items: 100vh;
+    align-items: center;
 }
 
 #photo{
     order: 1;
-    width: 300px;
-    margin-top: 100px; 
-}
-
-#photo > img{
-    width: 250px;
+    flex-grow: 1;
+    margin-left: 10px;
+    padding-left: 80px; 
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 #description{
+    flex-basis: 55%;
     order: 2;
-    width: 500px;
-    margin-top: 100px;  
+    flex-grow: 5;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 24px;
     color: aliceblue;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding-right: 20px;
+    padding-left: 20px;
 }
 
 /*--------Habilidades-------------*/
@@ -136,7 +141,8 @@ li a:hover{
 }
 
 .habilidad img{
-    width: 150px;    
+    width: 200px;
+    margin: 28px;    
 }
 
 /*Seccion de proyecto*/
@@ -164,7 +170,7 @@ li a:hover{
 }
 
 #contact{
-    margin: 15px;
+    margin: 50px;
     padding: 10px;
     background-color: aliceblue;
     border-radius: 5px;
@@ -187,23 +193,37 @@ input[type="submit"]{
 #footer{
     display: flex;
     flex-wrap: wrap;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-around;
     background-color: #020938d7;
 }
 
 .social{
-    margin: 15px;
+    display: block;
     text-align: center;
     width: 100%;
     color: white;
 }
+
 
 #socialnet{
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-around;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.sociales{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.nameSocial{
+    flex-basis: 10%;
 }
 
 .copy{
