@@ -155,13 +155,35 @@ li a:hover{
 }
 
 .proyecto{
-    width: 200px;
-    height: 250px;
+    width: 400px;
+    height: 500px;
     background-color: aliceblue;
     border: 2px solid black;
     margin: 120px 30px;
 }
 
+.image1, .image2{
+    width: 400px;
+    height: 180px;
+    padding: 50px;
+    border-bottom: 2px solid #172967;
+}
+
+.image1{
+    padding-left: 120px;
+}
+
+h3{
+    margin-top: 15px;
+    text-align: center;
+    margin-bottom: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.p-project{
+    margin: 10px;
+    color: #133c5a;
+    font-family: Arial, Helvetica, sans-serif;
+}
 /*Seccion del formulario de contacto*/
 #contactMe{
     display: flex;
@@ -174,12 +196,18 @@ li a:hover{
     padding: 10px;
     background-color: aliceblue;
     border-radius: 5px;
-    width: 250px;
-    height: 250px;
+    width: 300px;
+    height: 310px;
+}
+
+label{
+    font-size: 18px;
 }
 
 input{
+    margin-bottom: 10px;
     width: 100%;
+    font-size: 18px;
 }
 input[type="textarea"]{
     height: 80px;
