@@ -1,3 +1,14 @@
+/*------------ VARIABLES ------------------------*/
+:root {
+    --primary-color: #161b32;
+    --secundary-color: #172967;
+    --color-background: #c8e5f4;
+    --color-gray: #b7b7b7;
+    --color-white: rgb(236, 239, 242);
+    --header-size: 4rem;
+    --font: 1.8rem;
+}
+
 /*---------estilos generales------------*/
 
 *{
@@ -12,47 +23,12 @@ html{
 
 body{
     font-size: 1.6rem;
-    background-color: #2C5C7F;
-}
-
-
-/* Cabecera */
-h1, h2, p{
-    text-align: center;
-    color:aliceblue;
-}
-
-h1{
-    font-size: 10rem;
-    text-shadow: 2px 2px 2px #aeb4c4;
-}
-
-.h2{
-    font-size: 5rem;
-    background-color: #133c5a;
-    width: 100%;
-    text-shadow: 1px 1px 2px #e4e4e4;
-}
-
-#titulo{
-    margin-top: 255px;
-    background-color: rgba(50,50,50,0.5);
-    text-shadow: 1px 1px 0px #b7b5b5;
-}
-
-
-header{
-    height: 800px;
-    background-color: #2C5C7F;
-    background-image: url("../Img/Logo.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 700px;
+    background-color: var(--primary-color);
 }
 
 /*---------------------Barra de navegacion--------------------*/
 #nav {
-    background: #172967;
+    background: var(--secundary-color);
     width: 100%;
     height: 50px;
     background-size: 50px;
@@ -80,7 +56,7 @@ header{
 
 .main-nav__item a{
     display: block;
-    color: white;
+    color: var(--color-white);
     font-size: 1.8rem; /* 18px*/
     font-family: helvetica, arial, sans-serif;
     padding: 10px 15px 5px;
@@ -91,12 +67,47 @@ header{
 
 .main-nav__item a:hover{
     font-size: 2rem;
-    background-color: gray;
-    border-bottom: 2px solid white;
+    background-color: var(--color-gray);
+    border-bottom: 2px solid var(--color-white);
 }
 
+/* Cabecera */
+h1, h2, p{
+    text-align: center;   
+}
+
+h1{
+    font-size: 10rem;
+    text-shadow: 2px 2px 2px var(--color-gray);
+}
+
+.h2{
+    font-size: 5rem;
+    background-color: var(--secundary-color);
+    width: 100%;
+    text-shadow: 1px 1px 2px var(--color-gray);
+}
+
+#titulo{
+    margin-top: 255px;
+    color: var(--color-white);
+    background-color: rgba(50,50,50,0.5);
+    text-shadow: 1px 1px 0px #817f7f;
+}
+
+header{
+    height: 800px;
+    background-color: var(--primary-color);
+    background-image: url("../Img/Logo.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 700px;
+}
 
 /*Secciones*/
+#content-main{
+    background-color: var(--color-background);
+}
 /*--------------Sobre mi-----------------------*/
 #me{
     display: flex;
@@ -121,7 +132,6 @@ header{
     flex-grow: 5;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 2.4rem;
-    color: aliceblue;
     margin-top: 50px;
     margin-bottom: 50px;
     padding-right: 20px;
@@ -158,7 +168,7 @@ header{
 .proyecto{
     width: 400px;
     height: 500px;
-    background-color: aliceblue;
+    background-color: var(--color-gray);
     border: 2px solid black;
     margin: 120px 30px;
 }
@@ -167,7 +177,7 @@ header{
     width: 400px;
     height: 180px;
     padding: 50px;
-    border-bottom: 2px solid #172967;
+    border-bottom: 2px solid var(--secundary-color);
 }
 
 .image1{
@@ -182,7 +192,7 @@ h3{
 }
 .p-project{
     margin: 10px;
-    color: #133c5a;
+    color: var(--color-white);
     font-family: Arial, Helvetica, sans-serif;
 }
 /*Seccion del formulario de contacto*/
@@ -195,7 +205,7 @@ h3{
 #contact{
     margin: 50px;
     padding: 10px;
-    background-color: aliceblue;
+    background-color: var(--color-white);
     border-radius: 5px;
     width: 300px;
     height: 310px;
@@ -224,14 +234,14 @@ input[type="submit"]{
     flex-wrap: wrap;
     flex-direction: column;
     justify-content: space-around;
-    background-color: #020938d7;
+    background-color: var(--secundary-color);
 }
 
 .social{
     display: block;
     text-align: center;
     width: 100%;
-    color: white;
+    color: var(--color-white);
 }
 
 
@@ -253,6 +263,7 @@ input[type="submit"]{
 
 .nameSocial{
     flex-basis: 10%;
+    color: var(--color-white);
 }
 
 .copy{
