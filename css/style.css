@@ -1,4 +1,4 @@
-/*estilos generales*/
+/*---------estilos generales------------*/
 
 *{
     box-sizing: border-box;
@@ -7,7 +7,7 @@
 }
 
 html{
-    font-size: 62.5%;
+    font-size: 62.5%; /* para que un rem sea 10px */
 }
 
 body{
@@ -23,12 +23,12 @@ h1, h2, p{
 }
 
 h1{
-    font-size: 100px;
+    font-size: 10rem;
     text-shadow: 2px 2px 2px #aeb4c4;
 }
 
 .h2{
-    font-size: 50px;
+    font-size: 5rem;
     background-color: #133c5a;
     width: 100%;
     text-shadow: 1px 1px 2px #e4e4e4;
@@ -50,7 +50,7 @@ header{
     background-size: 700px;
 }
 
-/*Barra de navegacion*/
+/*---------------------Barra de navegacion--------------------*/
 #nav {
     background: #172967;
     width: 100%;
@@ -81,7 +81,7 @@ header{
 .main-nav__item a{
     display: block;
     color: white;
-    font-size: 18px;
+    font-size: 1.8rem; /* 18px*/
     font-family: helvetica, arial, sans-serif;
     padding: 10px 15px 5px;
     text-align: center;
@@ -90,14 +90,14 @@ header{
 }
 
 .main-nav__item a:hover{
-    font-size: 20px;
+    font-size: 2rem;
     background-color: gray;
     border-bottom: 2px solid white;
 }
 
 
 /*Secciones*/
-
+/*--------------Sobre mi-----------------------*/
 #me{
     display: flex;
     flex-direction: row;
@@ -120,7 +120,7 @@ header{
     order: 2;
     flex-grow: 5;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 24px;
+    font-size: 2.4rem;
     color: aliceblue;
     margin-top: 50px;
     margin-bottom: 50px;
