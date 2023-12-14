@@ -11,17 +11,18 @@
     <link rel="icon" href="Img/Logo.ico">
 </head>
 <body>
-    <!-- Inicio de la cabecera -->
-    <header id="header">
+    <!------------- Inicio de la cabecera ------------------>
+    <header id="header-container">
         <nav id="nav">
             <div id="Logo">
-                <img src="Img/Logo.png" alt="Logo">
+                <a href="#"><img src="Img/Logo.png" alt="Logo"></a>
+                
             </div>
             <ul class="main-nav">
-                <li class="main-nav__item"><a href="#contactMe">Contacto</a></li>
-                <li class="main-nav__item"><a href="#project">Proyectos</a></li>
-                <li class="main-nav__item"><a href="#habilities">Habilidades</a></li>
-                <li class="main-nav__item"><a href="#me">Sobre mi</a></li>
+                <li class="main-nav__item"><a href="#section-contact">Contacto</a></li>
+                <li class="main-nav__item"><a href="#section-projects">Proyectos</a></li>
+                <li class="main-nav__item"><a href="#section-skills">Habilidades</a></li>
+                <li class="main-nav__item"><a href="#section-about-me">Sobre mi</a></li>
             </ul>
         </nav>
         <div id="titulo">
@@ -29,129 +30,133 @@
             <h2>Silvestre Hernandez Hernandez</h2>
         </div>
     </header>
-    <!-- Fin de la cabecera -->
+    <!----------------- Fin de la cabecera --------------------->
    
     <main id="content-main">
-        <!-- Inicio de las secciones -->
-        <section id="me">
+        <!----------------------- Inicio de las secciones --------------------->
+        <section class="secciones" id="section-about-me">
             <h2 class="h2">Quien soy <hr></h2>
-            <div id="description">
-                <p id="description-1">Soy estudiante de la carrera en Tecnologia de software en la Facultad de Ingenieria mecanica y electrica (FIME) de la UANL, 
+
+            <div id="about-me">
+
+                <div class="photo">
+                    <img src="Img/Yo.jpg" alt="Foto" width="280px" height="280px">
+                </div>
+
+                <p class="description">Soy estudiante de la carrera en Tecnologia de software en la Facultad de Ingenieria mecanica y electrica (FIME) de la UANL, 
                     también soy estudiante activo de Platzi ya por 3 años, y me encuentro asistiendo a un curso de Inglés. En mis ratos 
                     libres suelo practicar desarrollando esta página web y un proyecto de cursos en finanzas personales. Mis pasatiempos favoritos son leer libros de desarrollo
                      personal, tecnologia y finanzas, y entrenar artes marciales. Todo esto me ha ayudado a ser mas proactivo, organizado y responsable. 
-                    Si deseas contactarme mis redes sociales se encuentran abajo, te puedo y me puedes aportar algo y quien sabe, puede que desarrollemos algo grande...</p>
-            </div>
-    
-            <div id="photo">
-                <img src="Img/Yo.jpg" alt="Foto" width="280px" height="280px">
+                    Si deseas contactarme mis redes sociales se encuentran abajo, te puedo y me puedes aportar algo y quien sabe, puede que desarrollemos algo grande...
+                </p>
+            
+                
             </div>
     
         </section>
     
-        <section id="habilities">
+        <section  class="secciones" id="section-skills">
             <h2 class="h2">Habilidades<hr></h2>
-            <div class="habilidad">
-                <img src="Img/html-5.png" alt="html">
-            </div>
-            <div class="habilidad">
-                <img src="Img/css.png" alt="CSS">
-            </div>
-            <div class="habilidad">
-                <img src="Img/git.png" alt="Git">
-            </div>
-            <div class="habilidad">
-                <img src="Img/js.png" alt="JAvaScript">
+            <div id="container-skills">
+                <div class="habilidad">
+                    <img src="Img/html-5.png" alt="html">
+                </div>
+                <div class="habilidad">
+                    <img src="Img/css.png" alt="CSS">
+                </div>
+                <div class="habilidad">
+                    <img src="Img/git.png" alt="Git">
+                </div>
+                <div class="habilidad">
+                    <img src="Img/js.png" alt="JAvaScript">
+                </div>
             </div>
         </section>
     
-        <section id="project">
+        <section class="secciones" id="section-projects">
             <h2 class="h2">Proyectos<hr></h2>
-            <div class="proyecto">
-                <div class="image1">
-                    <img src="Img/Financialproject.png" alt="Proyecto de financial">
+            <div id="container-projects">
+                <div class="proyecto">
+                    <div class="image1">
+                        <img src="Img/Financialproject.png" alt="Proyecto de financial">
+                    </div>
+                    <h3>Financial  proyect</h3>
+                    <p class="p-project">
+                        Financial proyect es un proyecto personal que llevo 
+                        desarrollandolo ya desde hace 2 años y consiste en isentivar a las personas 
+                        a que se animen a invertir, ya que en la actualidad lo podemos hacer desde una cantidad
+                        minima de $100 pesos mexicanos y con conocimientos basicos en matematematicas, para ello
+                        busco la forma de llegar a mas personas, ya se por redes sociales y proximamente desarrollando una 
+                        pagina y aplicacion en android en donde la gente tenga los conocimientos que se requieren de finanzas
+                        para tener una buena base y asi le pierdan el miedo a invertir, para hacerlo posible, voy practicando con los conocimientos
+                        que voy adquiriendo a lo largo de mi carrera como desarrollador de software...
+                    </p>
+               </div>
+                <div class="proyecto">
+                    <div class="image2">
+                        <img src="Img/heb.png" alt="Logo de heb">
+                    </div>
+                    <h3>HEB-POS</h3>
+                    <p class="p-project">
+                        Este es un proyecto que desarrolle en la Universidad, en la
+                        materia de interaccion Humano-computadora, para crear un sistema
+                        de cobro mas actualizado del supermercado HEB, ya que en la actualidad
+                        cuentan con un sistema de punto de venta desactualizado y con oportunidad
+                        de mejora, Mi participacion en este proyecto fue más dirigido al diseño de 
+                        la aplicacion, poniendo en practica conocimientos de UX y XD.
+                    </p>
                 </div>
-                <h3>Financial  proyect</h3>
-                <p class="p-project">
-                    Financial proyect es un proyecto personal que llevo 
-                    desarrollandolo ya desde hace 2 años y consiste en isentivar a las personas 
-                    a que se animen a invertir, ya que en la actualidad lo podemos hacer desde una cantidad
-                    minima de $100 pesos mexicanos y con conocimientos basicos en matematematicas, para ello
-                    busco la forma de llegar a mas personas, ya se por redes sociales y proximamente desarrollando una 
-                    pagina y aplicacion en android en donde la gente tenga los conocimientos que se requieren de finanzas
-                    para tener una buena base y asi le pierdan el miedo a invertir, para hacerlo posible, voy practicando con los conocimientos
-                    que voy adquiriendo a lo largo de mi carrera como desarrollador de software...
-                </p>
-           </div>
-            <div class="proyecto">
-                <div class="image2">
-                    <img src="Img/heb.png" alt="Logo de heb">
-                </div>
-                <h3>HEB-POS</h3>
-                <p class="p-project">
-                    Este es un proyecto que desarrolle en la Universidad, en la
-                    materia de interaccion Humano-computadora, para crear un sistema
-                    de cobro mas actualizado del supermercado HEB, ya que en la actualidad
-                    cuentan con un sistema de punto de venta desactualizado y con oportunidad
-                    de mejora, Mi participacion en este proyecto fue más dirigido al diseño de 
-                    la aplicacion, poniendo en practica conocimientos de UX y XD.
-                </p>
             </div>
-            <!--<div class="proyecto">
-    
-            </div>
-            <div class="proyecto">
-    
-            </div>-->
+
         </section>
     
-        <section id="contactMe">
+        <section class="secciones" id="section-contact">
             <h2 class="h2">Contacto</h2>
-            <div id="contact">
-                <Form>
+            <div>
+                <Form id="contact">
                     <label for="name">
-                        <span>Nombre:</span>
+                        <span>Nombre:</span><br>
                         <input type="text" id="name" name="name" autocomplete="name">
-                    </label><br>
+                    </label>
     
                     <label for="Email">
-                        <span>correo electronico:</span>
+                        <span>correo electronico:</span><br>
                         <input type="email" name="Email" id="Email" autocomplete="email">
-                    </label><br><br>
+                    </label>
     
                     <label for="Commet">
-                        <span>Comentario:</span>
+                        <span>Comentario:</span><br>
                         <input type="textarea" id="Commet" name="Commet">
-                    </label><br><br>
+                    </label>
                     
                     <input type="submit">
                 </Form>
             </div>
         </section>
     
-        <!-- Fin de las secciones-->
+        <!------- Fin de las secciones---------------------->
     </main>
 
-    <!-- Inicio del pie de pagina-->
+    <!-------------- Inicio del pie de pagina--------------------------------->
     <footer id="footer">
         <h3 class="social">Redes sociales <hr></h3>
 
         <div id="socialnet">
             <div class="sociales">
                 <img src="Img/correo-electronico.png" alt="Correo electronico" width="50px">
-                <p class="nameSocial">silvestre.hdz.h@gmail.com</p>
+                
             </div>
             <div class="sociales">
                 <img src="Img/whatsapp.png" alt="Whatsapp" width="50px">
-                <p class="nameSocial">+52 8136090691</p>
+                
             </div>
             <div class="sociales">
                 <img src="Img/linkedin.png" alt="Linkedin" width="50px">
-                <p class="nameSocial">Silvestre</p>
+                
             </div>
             <div class="sociales">
                 <img src="Img/github.png" alt="Github" width="50px">
-                <p class="nameSocial">Silverhdz04</p>
+                
             </div>
         </div>
         
