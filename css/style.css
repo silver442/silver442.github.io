@@ -217,36 +217,22 @@ h3{
     margin: 28px;    
 }
 
-/*------------------------------------Seccion del formulario de contacto--------------------*/
-#contact{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    background-color: var(--color-white);
-    border-radius: 5px;
-    margin-top: 20px;
+/*------------------------------------Seccion de Certificados--------------------*/
+
+#container-certificate{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: repeat(2, 1fr);
+}
+.certificado{
+    margin: 10px;
+}
+.certificado img{
     width: 400px;
-    height: 400px;
+    height: 300px;
+    margin: 20px;
 }
 
-label{
-    font-size: 2rem;
-    width: 80%;
-}
-
-label input{
-    margin-bottom: 10px;
-    font-size: 2rem;
-    width: 100%;
-}
-label input[type="textarea"]{
-    height: 80px;
-}
-#contact input[type="submit"]{
-    font-size: 1.8rem;
-    width: 100px;
-}
 
 /*---------------------Pie de pagina----------------------------------*/
 
