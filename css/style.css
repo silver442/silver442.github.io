@@ -148,28 +148,12 @@ body{
     order: 2;
     flex-grow: 5;
     font-family: Arial, Helvetica, sans-serif;
+    text-align: justify;
     font-size: 2.4rem;
     margin-top: 50px;
     margin-bottom: 50px;
-    padding-right: 20px;
+    padding-right: 70px;
     padding-left: 20px;
-}
-
-/*------------------------------Habilidades--------------------------*/
-
-#container-skills{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(2, 1fr);
-}
-
-.habilidad{
-    margin: 15px;
-}
-
-.habilidad img{
-    width: 200px;
-    margin: 28px;    
 }
 
 /*----------------------------Seccion de proyecto-----------------------*/
@@ -213,6 +197,24 @@ h3{
     font-size: 2.2rem;
     font-family: Arial, Helvetica, sans-serif;
     overflow: auto;
+}
+
+
+/*------------------------------Habilidades--------------------------*/
+
+#container-skills{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: repeat(2, 1fr);
+}
+
+.habilidad{
+    margin: 15px;
+}
+
+.habilidad img{
+    width: 200px;
+    margin: 28px;    
 }
 
 /*------------------------------------Seccion del formulario de contacto--------------------*/
