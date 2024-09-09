@@ -166,23 +166,18 @@ body{
 }
 
 .proyecto{
-    width: 400px;
-    height: 500px;
+    
     background-color: var(--color-gray);
     border: 2px solid black;
     overflow: auto;
 }
 
 .image1, .image2{
-    width: 400px;
-    height: 180px;
-    padding: 50px;
+    width: 420px;
+    height: 250px;
+    padding: 10px;
     border-bottom: 2px solid var(--secundary-color);
     
-}
-
-.image1{
-    padding-left: 120px;
 }
 
 h3{
@@ -206,22 +201,23 @@ h3{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: repeat(2, 1fr);
+    grid-gap: 10px;
 }
 
 .habilidad{
-    margin: 15px;
+    margin-top: 70px;
 }
 
 .habilidad img{
     width: 200px;
-    margin: 28px;    
+    margin: 2px;    
 }
 
 /*------------------------------------Seccion de Certificados--------------------*/
 
 #container-certificate{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: repeat(2, 1fr);
 }
 .certificado{
@@ -242,6 +238,7 @@ h3{
     flex-direction: column;
     justify-content: space-around;
     background-color: var(--secundary-color);
+    gap: 10px;
 }
 
 .social{
@@ -249,13 +246,15 @@ h3{
     text-align: center;
     width: 100%;
     color: var(--color-white);
+    font-size: 38px;
+    
 }
 
 
 #socialnet{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-evenly;
     margin-top: 20px;
     margin-bottom: 20px;
 }
@@ -270,4 +269,5 @@ h3{
     text-align: center;
     width: 100%;
     color: #b7b7b7;
+    margin-bottom: 10px;
 }
