@@ -265,7 +265,8 @@ h3{
 #socialnet{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: center;
+    gap: 100px;
     margin-top: 20px;
     margin-bottom: 20px;
 }
