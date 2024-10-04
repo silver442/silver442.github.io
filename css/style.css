@@ -249,7 +249,6 @@ h3{
     flex-direction: column;
     justify-content: space-around;
     background-color: var(--secundary-color);
-    gap: 10px;
 }
 
 .social{
@@ -274,7 +273,6 @@ h3{
 .sociales{
     display: flex;
     flex-flow: column wrap; 
-    gap:10px
 }
 
 .copy{
