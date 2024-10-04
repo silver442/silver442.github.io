@@ -47,7 +47,20 @@ h2{
     background-position: left;
     background-repeat: no-repeat;
     position: fixed;
+
+    animation: enhance-header linear both;
+    animation-timeline: scroll(root);
+    animation-range: 0 200px;
+
+    z-index: 1;
     
+}
+
+@keyframes enhance-header {
+    to{
+        background-color: #162e40d0;
+        backdrop-filter: blur(5px);
+    }
 }
 
 #nav #Logo img{
@@ -107,6 +120,7 @@ h2{
     flex-direction: column;
     
     justify-content: center;
+
 }
 
 #titulo h1{
@@ -177,7 +191,6 @@ h2{
 }
 
 .proyecto{
-    
     background-color: var(--color-gray);
     border: 2px solid black;
     overflow: auto;
@@ -189,6 +202,16 @@ h2{
     padding: 10px;
     border-bottom: 2px solid var(--secundary-color);
     
+}
+
+.container-footer-prject{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.container-footer-prject img{
+    align-items: center;
 }
 
 h3{
@@ -230,9 +253,14 @@ h3{
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: repeat(3, 1fr);
+    
 }
 .certificado{
     margin: 10px;
+
+    animation: reveal linear both;
+    animation-timeline: view();
+    animation-range: entry 20% cover 30%;
 }
 .certificado img{
     width: 400px;
@@ -240,6 +268,14 @@ h3{
     margin: 20px;
 }
 
+@keyframes reveal {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
 
 /*---------------------Pie de pagina----------------------------------*/
 
