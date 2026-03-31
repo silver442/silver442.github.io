@@ -373,6 +373,7 @@ h2{
 .timeline-tasks {
     margin: 0;
     padding-left: 20px; /* Sangría para los puntos */
+    padding-right: 10px;
     color: #444;
     line-height: 1.6;
     text-align: left; /* Asegura que el texto se lea bien de izquierda a derecha */
@@ -384,49 +385,69 @@ h2{
 
 /*----------------------------Seccion de proyecto-----------------------*/
 
-#container-projects{
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-gap: 50px;
-    margin: 50px;
+/* 1. Ajustamos el padding de las secciones para que no robe tanto espacio en pantallas medianas */
+.secciones{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Cambiamos el padding horizontal de 100px a 5% para que sea fluido */
+    padding: 50px 5%; 
+    font-size: 2.8rem;
+    width: 100%; /* Aseguramos que tome todo el ancho disponible */
 }
 
+/* 2. El grid de proyectos */
+#container-projects{
+    display: grid;
+    /* Reducimos un poco el minmax para que puedan caber 2 tarjetas más fácilmente */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 40px; /* Reducimos ligeramente el espacio entre tarjetas */
+    margin: 50px auto; /* Centramos el grid */
+    width: 100%; 
+    max-width: 1000px; /* Limitamos el ancho máximo para que no se estiren demasiado en pantallas gigantes */
+    justify-items: center;
+}
+
+/* 3. La tarjeta de proyecto: la hacemos flexible */
 .proyecto{
     background-color: var(--color-gray);
     border: 2px solid black;
-    overflow: auto;
+    overflow: hidden; /* Cambiamos a hidden para que no salga barra de scroll dentro de la tarjeta */
+    width: 100%; /* Que ocupe todo el espacio de su columna grid */
+    max-width: 420px; /* Pero que no crezca más de esto */
+    border-radius: 8px; /* Opcional: un ligero borde redondeado para que se vea más moderno */
+    display: flex;
+    flex-direction: column; /* Asegura que la imagen vaya arriba y el footer abajo */
 }
 
+/* 4. Las imágenes: quitamos el ancho fijo */
 .image1, .image2{
-    width: 420px;
+    width: 100%; /* Ahora la imagen toma el ancho de la tarjeta */
     height: 250px;
     padding: 10px;
     border-bottom: 2px solid var(--secundary-color);
-    
+    background-color: #fff; /* Fondo blanco por si la imagen tiene transparencias */
 }
 
+.image1 img, .image2 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Asegura que la imagen llene el espacio sin deformarse (puedes usar 'contain' si prefieres que se vea completa aunque queden bordes) */
+    display: block;
+}
+
+/* 5. El footer del proyecto */
 .container-footer-prject{
     display: flex;
     justify-content: space-around;
     align-items: center;
+    padding: 15px 10px; /* Le damos espacio interno para que no quede pegado al borde */
+    background-color: var(--color-gray);
 }
 
-.container-footer-prject img{
-    align-items: center;
-}
-
-h3{
-    margin-top: 15px;
-    text-align: center;
-    margin-bottom: 15px;
-    font-family: Arial, Helvetica, sans-serif;
-}
-.p-project{
-    margin: 10px;
-    color: var(--color-white);
-    font-size: 2.2rem;
-    font-family: Arial, Helvetica, sans-serif;
-    overflow: auto;
+.container-footer-prject h3{
+    margin: 0; /* Quitamos márgenes extraños del h3 para alinearlo bien con los iconos */
+    font-size: 2rem;
 }
 
 
