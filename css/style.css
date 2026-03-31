@@ -211,6 +211,177 @@ h2{
     padding-left: 20px;
 }
 
+/* --- SECCIÓN DE EXPERIENCIA LABORAL --- */
+#section-experience {
+    padding: 40px 20px;
+    background-color: #1f2645; /* Puedes cambiarlo si usas otro color de fondo en tus secciones */
+}
+
+.timeline {
+    position: relative;
+    max-width: 1100px;
+    margin: 40px auto 0 auto;
+    padding: 20px 0;
+}
+
+/* La línea vertical (Diseño Móvil por defecto) */
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background-color: #333; /* Color de la línea, cámbialo al de tu paleta */
+    top: 0;
+    bottom: 0;
+    left: 20px; 
+    margin-left: -2px;
+    border-radius: 2px;
+}
+
+.timeline-item {
+    position: relative;
+    width: 100%;
+    padding-left: 60px; /* Espacio para que el texto no pise la línea */
+    padding-bottom: 40px;
+    box-sizing: border-box;
+}
+
+/* El punto indicador en la línea */
+.timeline-dot {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    border: 4px solid #333; /* El borde del punto */
+    border-radius: 50%;
+    left: 20px;
+    top: 0;
+    margin-left: -10px;
+    z-index: 1;
+    transition: all 0.3s ease;
+}
+
+/* La tarjeta con la información */
+.timeline-content {
+    background-color: #f9f9f9;
+    padding: 20px 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+}
+
+.timeline-content h3 {
+    margin: 0 0 5px 0;
+    color: #222;
+    font-size: 1.3rem;
+}
+
+.timeline-content h4 {
+    margin: 0 0 15px 0;
+    color: #555;
+    font-weight: 500;
+}
+
+.timeline-date {
+    display: inline-block;
+    background-color: #333; /* Fondo de la etiqueta de fecha */
+    color: white;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    margin-bottom: 15px;
+}
+
+.timeline-content p {
+    margin: 0;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* --- LÍNEA DE TIEMPO EN DESKTOP --- */
+.timeline::after {
+    left: 50%; /* Centra la línea */
+}
+
+.timeline-item {
+    width: 50%;
+    padding-bottom: 50px;
+}
+
+/* Los elementos impares (como BAINUB) van a la izquierda */
+.timeline-item:nth-child(odd) {
+    left: 0;
+    padding-left: 0;
+    padding-right: 40px;
+    text-align: right;
+}
+
+/* Los elementos pares (como E-Software) van a la derecha */
+.timeline-item:nth-child(even) {
+    left: 50%;
+    padding-left: 40px;
+}
+
+/* Ajusta los puntos indicadores al centro exacto de la pantalla */
+.timeline-item:nth-child(odd) .timeline-dot {
+    left: 100%;
+    margin-left: -10px;
+}
+
+.timeline-item:nth-child(even) .timeline-dot {
+    left: 0;
+    margin-left: -10px;
+}
+
+/* --- ALINEACIÓN DE LOGO Y TÍTULOS --- */
+.timeline-header {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Espacio entre el logo y los textos */
+    margin-bottom: 12px;
+}
+
+.timeline-logo {
+    width: 45px; /* Tamaño del logo, similar al de LinkedIn */
+    height: 45px;
+    object-fit: contain; /* Evita que la imagen se deforme */
+    border-radius: 4px; /* Bordes ligeramente redondeados */
+    background-color: #fff; /* Fondo blanco por si el logo es PNG transparente */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 3px;
+}
+
+/* Ajustes de margen porque ahora están dentro de .timeline-header */
+.timeline-titles h3 {
+    margin: 0 0 2px 0;
+    color: #222;
+    font-size: 1.25rem;
+}
+
+.timeline-titles h4 {
+    margin: 0;
+    color: #555;
+    font-weight: 500;
+}
+
+/* --- ESTILO PARA LAS TAREAS (VIÑETAS) --- */
+.timeline-tasks {
+    margin: 0;
+    padding-left: 20px; /* Sangría para los puntos */
+    color: #444;
+    line-height: 1.6;
+    text-align: left; /* Asegura que el texto se lea bien de izquierda a derecha */
+}
+
+.timeline-tasks li {
+    margin-bottom: 8px; /* Espacio entre cada punto de tu experiencia */
+}
+
 /*----------------------------Seccion de proyecto-----------------------*/
 
 #container-projects{
