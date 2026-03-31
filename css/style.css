@@ -277,35 +277,87 @@ h3{
     margin: 2px;    
 }
 
-/*------------------------------------Seccion de Certificados--------------------*/
+/*------------------------------------Seccion de Certificados (Carrusel)--------------------*/
 
-#container-certificate{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(3, 1fr);
-    
-}
-.certificado{
-    margin: 10px;
-
-    animation: reveal linear both;
-    animation-timeline: view();
-    animation-range: entry 20% cover 30%;
-}
-.certificado img{
-    width: 400px;
-    height: 300px;
-    margin: 20px;
+/* Estilos generales de la sección */
+#section-certificate {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #072b68; /* Color de fondo opcional */
 }
 
-@keyframes reveal {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+/* El contenedor principal oculta lo que se desborda */
+.carousel-wrapper {
+    position: relative;
+    max-width: 900px; /* Espacio exacto para 3 certificados de 300px (ancho + márgenes) */
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 40px 0; /* Da espacio vertical para que el scale(1.1) no corte la imagen */
 }
+
+/* La pista que se mueve */
+#container-certificate {
+    display: flex;
+    align-items: center;
+    width: max-content; 
+}
+
+/* Estado normal de los certificados (Laterales: Pequeños y desvanecidos) */
+.certificado {
+    width: 260px; 
+    margin: 0 20px; /* 260px + 20px(izq) + 20px(der) = 300px totales por elemento */
+    flex-shrink: 0;
+    transition: all 0.5s ease-in-out;
+    opacity: 0.4; 
+    transform: scale(0.85); 
+    display: flex;
+    justify-content: center;
+}
+
+.certificado img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    object-fit: contain;
+}
+
+/* Estado ACTIVO del certificado (Centro: Tamaño real y 100% opacidad) */
+.certificado.activo {
+    opacity: 1;
+    transform: scale(1.1); 
+    z-index: 10;
+}
+
+.certificado.activo img {
+    box-shadow: 0 12px 25px rgba(0,0,0,0.3); /* Sombra más fuerte para resaltar */
+}
+
+/* Botones flotantes */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+    z-index: 100; 
+    border-radius: 50%;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+.carousel-btn:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.prev-btn { left: 10px; }
+.next-btn { right: 10px; }
 
 /*---------------------Pie de pagina----------------------------------*/
 
