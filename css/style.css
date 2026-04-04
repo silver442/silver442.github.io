@@ -1,15 +1,33 @@
-/*---------------------- VARIABLES ------------------------*/
+/*---------------------- VARIABLES (SISTEMA DE DISEÑO) ------------------------*/
 :root {
-    --primary-color: #161b32;
-    --secundary-color: #162E40; /* Barra de navegación*/
-    --color-background: #1A2742;
-    --color-gray: #b7b7b7;
-    --color-white: rgb(236, 239, 242);
-    --header-size: 4rem;
-    --font: 1.8rem;
+    /* --- COLORES (Paleta Slate / Modern Dark) --- */
+    --bg-main: #0f172a;        /* Fondo principal (Oscuro profundo) */
+    --bg-surface: #1e293b;     /* Fondo secundario para tarjetas, barra de nav, pie de página */
+    --primary-color: #38bdf8;  /* Azul cielo vibrante para botones, enlaces y acentos */
+    --primary-hover: #0284c7;  /* Azul más oscuro para el hover */
+    
+    --text-main: #f8fafc;      /* Blanco suave para títulos y texto principal */
+    --text-muted: #94a3b8;     /* Gris azulado para descripciones y subtítulos */
+    --border-color: #334155;   /* Color para líneas sutiles o bordes de tarjetas */
+
+    /* --- TIPOGRAFÍAS --- */
+    --font-heading: 'Poppins', sans-serif; /* Títulos (Llamativa y redonda) */
+    --font-body: 'Inter', sans-serif;      /* Párrafos (Limpia y técnica) */
+
+    /* --- TAMAÑOS DE FUENTE --- */
+    --text-sm: 1.4rem;  
+    --text-md: 1.6rem;  
+    --text-lg: 1.8rem;  
+    --text-xl: 2.4rem;  
+    --text-2xl: 3.2rem; 
+    --text-3xl: 4.8rem; 
+
+    /* --- OTROS --- */
+    --radius-md: 8px;   /* Redondeo estándar */
+    --transition: all 0.3s ease;
 }
 
-/*------------------- estilos generales --------------------*/
+/*------------------- ESTILOS GENERALES Y RESET --------------------*/
 
 *{
     box-sizing: border-box;
@@ -18,119 +36,122 @@
 }
 
 html{
-    font-size: 62.5%; /* para que un rem sea 10px */
+    font-size: 62.5%; /* para que 1rem sea 10px */
+    scroll-behavior: smooth;
 }
 
 body{
-    font-size: 1.6rem;
-    background-color: var(--primary-color);
+    font-size: var(--text-md);
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    font-family: var(--font-body);
+    line-height: 1.6;
 }
 
-h2{
-    color: var(--color-white)
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    color: var(--text-main);
+}
+
+h2.h2 {
+    font-size: var(--text-2xl);
+    margin-bottom: 20px;
+    text-align: center;
 }
 
 /*--------------------------- HEADER -----------------------------------*/
 
-/*-----------------Barra de navegacion--------------------*/
 #header-container {
     display: flex;
     flex-direction: column;
-
 }
 
 #nav {
-    background: var(--secundary-color);
+    background-color: var(--bg-surface);
     width: 100%;
     height: 7vh;
-    background-size: 50px;
-    background-position: left;
-    background-repeat: no-repeat;
+    min-height: 60px;
     position: fixed;
+    z-index: 1000;
+    border-bottom: 1px solid var(--border-color);
 
     animation: enhance-header linear both;
     animation-timeline: scroll(root);
     animation-range: 0 200px;
-
-    z-index: 1;
-    
 }
 
 @keyframes enhance-header {
     to{
-        background-color: #162e40d0;
-        backdrop-filter: blur(5px);
+        background-color: rgba(30, 41, 59, 0.85); /* --bg-surface con transparencia */
+        backdrop-filter: blur(10px);
     }
 }
 
 #nav #Logo img{
     display: block;
-    width: 70px;
-    margin: 0px left;
+    width: 60px;
     padding-left: 20px;
-    text-align: left;
     position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .main-nav{
     list-style-type: none;
-    overflow: hidden;
+    height: 100%;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
-    
-}
-
-.main-nav__item{
-    
-    
-    /*float: right;*/
+    align-items: center;
+    padding-right: 20px;
 }
 
 .main-nav__item a{
     display: inline-block;
-    color: var(--color-white);
-    font-size: 1.8rem; /* 18px*/
-    font-family: helvetica, arial, sans-serif;
-    padding: 10px 15px 5px;
-    text-align: center;
+    color: var(--text-main);
+    font-size: var(--text-lg);
+    font-family: var(--font-heading);
+    font-weight: 500;
+    padding: 5px 15px;
     text-decoration: none;
-    transition: all 300ms;
+    transition: var(--transition);
+    border-bottom: 2px solid transparent;
 }
 
 .main-nav__item a:hover{
-    font-size: 2rem;
-    background-color: var(--color-gray);
-    border-bottom: 2px solid var(--color-white);
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
 }
 
-/*--------------- Logo de la página ------------------------ */
+/*--------------- Título Principal (Hero) ------------------------ */
 
 #titulo{
-    height: 70vh;
-    margin-top: 5vh;
-    padding: 0 15%; /* espacio a los lados */
-    color: var(--color-white);
-    background-color: var(--primary-color);
+    min-height: 100vh;
+    padding: 0 10%; 
     display: flex;
-    flex-direction: row; /* fila de 2 columnas */
+    flex-direction: row; 
     align-items: center; 
     justify-content: space-between; 
+    margin-top: 5vh;
 }
 
 .hero-texto {
-    flex: 1; /* Toma la mitad del espacio */
+    flex: 1; 
     display: flex;
     flex-direction: column;
     align-items: flex-start; 
-    gap: 30px; /* Espacio entre los elementos de texto */
+    gap: 20px; 
 }
 
-.hero-texto h1, .hero-texto h2 {
-    text-align: left; 
-    background-color: transparent;
-    text-shadow: none;
-    width: auto;
+.hero-texto h1 {
+    font-size: var(--text-3xl);
+    line-height: 1.2;
+}
+
+.hero-texto h2 {
+    font-size: var(--text-xl);
+    color: var(--primary-color);
+    font-weight: 400;
 }
 
 .hero-imagen {
@@ -140,96 +161,70 @@ h2{
 }
 
 .hero-imagen img {
-    max-width: 350px; /* tamaño de logo */
+    max-width: 350px; 
     width: 80%;
     border-radius: 50%;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
 }
 
 .btn-principal {
     display: inline-block;
-    padding: 15px 30px;
-    background-color: #145c8b; 
-    color: white;
+    padding: 12px 28px;
+    background-color: var(--primary-color); 
+    color: var(--bg-main);
     text-decoration: none;
-    font-size: 2rem;
-    border-radius: 5px;
-    transition: background-color 0.3s;
+    font-size: var(--text-lg);
+    font-family: var(--font-heading);
+    font-weight: 600;
+    border-radius: var(--radius-md);
+    transition: var(--transition);
+    margin-top: 15px;
 }
 
 .btn-principal:hover {
-    background-color: #2980b9;
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
 }
 
-#titulo h2{
-    font-size: 3rem;
-    background-color: var(--secundary-color);
-    text-shadow: 1px 1px 2px var(--color-gray);
-    text-align: left;
-    background-color: rgba(255, 255, 255,.1);
-    width: 100%;
-    margin: 0;
-}
-
-/*----------------------------------Secciones---------------*/
+/*---------------------------------- SECCIONES GENERALES ---------------*/
 #content-main{
     display: flex;
     flex-direction: column;
-    background-color: var(--color-background);
+    background-color: var(--bg-main);
 }
 
 .secciones{
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 50px 100px;
-    font-size: 2.8rem;
-}
-/*--------------------------------------Sobre mi----------------------------------------*/
-
-#about-me{
-    display: flex;
+    padding: 80px 5%; 
+    width: 100%;
 }
 
-.photo{
-    flex-grow: 1;
-    margin-left: 10px;
-    padding-left: 80px; 
-    margin-top: 50px;
-    margin-bottom: 50px;
+.secciones hr {
+    width: 60px;
+    height: 4px;
+    background-color: var(--primary-color);
+    border: none;
+    margin: 10px auto 30px auto;
+    border-radius: 2px;
 }
 
-.description{
-    flex-basis: 55%;
-    order: 2;
-    flex-grow: 5;
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: justify;
-    font-size: 2.4rem;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    padding-right: 70px;
-    padding-left: 20px;
-}
-
-/* --- SECCIÓN DE EXPERIENCIA LABORAL --- */
-#section-experience {
-    padding: 40px 20px;
-    background-color: #1f2645; /* Puedes cambiarlo si usas otro color de fondo en tus secciones */
-}
+/*------------------- SECCIÓN DE EXPERIENCIA LABORAL (LÍNEA DE TIEMPO) --- */
 
 .timeline {
     position: relative;
-    max-width: 1100px;
+    max-width: 1000px;
+    width: 100%;
     margin: 40px auto 0 auto;
     padding: 20px 0;
 }
 
-/* La línea vertical (Diseño Móvil por defecto) */
 .timeline::after {
     content: '';
     position: absolute;
     width: 4px;
-    background-color: #333; /* Color de la línea, cámbialo al de tu paleta */
+    background-color: var(--border-color); 
     top: 0;
     bottom: 0;
     left: 20px; 
@@ -240,267 +235,268 @@ h2{
 .timeline-item {
     position: relative;
     width: 100%;
-    padding-left: 60px; /* Espacio para que el texto no pise la línea */
+    padding-left: 60px; 
     padding-bottom: 40px;
     box-sizing: border-box;
 }
 
-/* El punto indicador en la línea */
 .timeline-dot {
     position: absolute;
     width: 20px;
     height: 20px;
-    background-color: #fff;
-    border: 4px solid #333; /* El borde del punto */
+    background-color: var(--primary-color);
+    border: 4px solid var(--bg-main); 
     border-radius: 50%;
     left: 20px;
     top: 0;
     margin-left: -10px;
     z-index: 1;
-    transition: all 0.3s ease;
+    transition: var(--transition);
 }
 
-/* La tarjeta con la información */
 .timeline-content {
-    background-color: #f9f9f9;
-    padding: 20px 25px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    background-color: var(--bg-surface);
+    padding: 25px;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-color);
     position: relative;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: var(--transition);
 }
 
 .timeline-content:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+    border-color: var(--primary-color);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
 
-.timeline-content h3 {
-    margin: 0 0 5px 0;
-    color: #222;
-    font-size: 1.3rem;
+.timeline-header {
+    display: flex;
+    align-items: center;
+    gap: 15px; 
+    margin-bottom: 12px;
 }
 
-.timeline-content h4 {
-    margin: 0 0 15px 0;
-    color: #555;
+.timeline-logo {
+    width: 45px; 
+    height: 45px;
+    object-fit: contain; 
+    border-radius: 4px; 
+    background-color: #fff; 
+    padding: 3px;
+}
+
+.timeline-titles h3 {
+    margin: 0 0 2px 0;
+    color: var(--text-main);
+    font-size: var(--text-xl);
+}
+
+.timeline-titles h4 {
+    margin: 0;
+    color: var(--primary-color);
     font-weight: 500;
 }
 
 .timeline-date {
     display: inline-block;
-    background-color: #333; /* Fondo de la etiqueta de fecha */
-    color: white;
+    background-color: rgba(56, 189, 248, 0.1); 
+    color: var(--primary-color);
     padding: 5px 12px;
     border-radius: 20px;
-    font-size: 0.85rem;
+    font-size: var(--text-sm);
     margin-bottom: 15px;
-}
-
-.timeline-content p {
-    margin: 0;
-    color: #666;
-    line-height: 1.6;
-}
-
-/* --- LÍNEA DE TIEMPO EN DESKTOP --- */
-.timeline::after {
-    left: 50%; /* Centra la línea */
-}
-
-.timeline-item {
-    width: 50%;
-    padding-bottom: 50px;
-}
-
-/* Los elementos impares (como BAINUB) van a la izquierda */
-.timeline-item:nth-child(odd) {
-    left: 0;
-    padding-left: 0;
-    padding-right: 40px;
-    text-align: right;
-}
-
-/* Los elementos pares (como E-Software) van a la derecha */
-.timeline-item:nth-child(even) {
-    left: 50%;
-    padding-left: 40px;
-}
-
-/* Ajusta los puntos indicadores al centro exacto de la pantalla */
-.timeline-item:nth-child(odd) .timeline-dot {
-    left: 100%;
-    margin-left: -10px;
-}
-
-.timeline-item:nth-child(even) .timeline-dot {
-    left: 0;
-    margin-left: -10px;
-}
-
-/* --- ALINEACIÓN DE LOGO Y TÍTULOS --- */
-.timeline-header {
-    display: flex;
-    align-items: center;
-    gap: 15px; /* Espacio entre el logo y los textos */
-    margin-bottom: 12px;
-}
-
-.timeline-logo {
-    width: 45px; /* Tamaño del logo, similar al de LinkedIn */
-    height: 45px;
-    object-fit: contain; /* Evita que la imagen se deforme */
-    border-radius: 4px; /* Bordes ligeramente redondeados */
-    background-color: #fff; /* Fondo blanco por si el logo es PNG transparente */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    padding: 3px;
-}
-
-/* Ajustes de margen porque ahora están dentro de .timeline-header */
-.timeline-titles h3 {
-    margin: 0 0 2px 0;
-    color: #222;
-    font-size: 1.25rem;
-}
-
-.timeline-titles h4 {
-    margin: 0;
-    color: #555;
     font-weight: 500;
 }
 
-/* --- ESTILO PARA LAS TAREAS (VIÑETAS) --- */
 .timeline-tasks {
     margin: 0;
-    padding-left: 20px; /* Sangría para los puntos */
+    padding-left: 20px; 
     padding-right: 10px;
-    color: #444;
+    color: var(--text-muted);
     line-height: 1.6;
-    text-align: left; /* Asegura que el texto se lea bien de izquierda a derecha */
+    text-align: left; 
 }
 
 .timeline-tasks li {
-    margin-bottom: 8px; /* Espacio entre cada punto de tu experiencia */
+    margin-bottom: 8px; 
 }
 
-/*----------------------------Seccion de proyecto-----------------------*/
-
-/* 1. Ajustamos el padding de las secciones para que no robe tanto espacio en pantallas medianas */
-.secciones{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /* Cambiamos el padding horizontal de 100px a 5% para que sea fluido */
-    padding: 50px 5%; 
-    font-size: 2.8rem;
-    width: 100%; /* Aseguramos que tome todo el ancho disponible */
+/* --- LÍNEA DE TIEMPO EN DESKTOP (Esto es para pantallas grandes, puedes moverlo a desktop.css si prefieres) --- */
+@media screen and (min-width: 800px) {
+    .timeline::after { left: 50%; }
+    .timeline-item { width: 50%; padding-bottom: 50px; }
+    .timeline-item:nth-child(odd) {
+        left: 0;
+        padding-left: 0;
+        padding-right: 40px;
+        text-align: right;
+    }
+    .timeline-item:nth-child(even) { left: 50%; padding-left: 40px; }
+    .timeline-item:nth-child(odd) .timeline-dot { left: 100%; margin-left: -10px; }
+    .timeline-item:nth-child(even) .timeline-dot { left: 0; margin-left: -10px; }
+    
+    .timeline-item:nth-child(odd) .timeline-header {
+        flex-direction: row-reverse; /* Cambia el logo a la derecha en impares */
+    }
+    .timeline-item:nth-child(odd) .timeline-tasks {
+        text-align: right;
+        padding-right: 20px;
+        padding-left: 10px;
+        list-style-position: inside;
+    }
 }
 
-/* 2. El grid de proyectos */
+/*---------------------------- SECCIÓN DE PROYECTOS -----------------------*/
+
 #container-projects{
     display: grid;
-    /* Reducimos un poco el minmax para que puedan caber 2 tarjetas más fácilmente */
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    grid-gap: 40px; /* Reducimos ligeramente el espacio entre tarjetas */
-    margin: 50px auto; /* Centramos el grid */
+    grid-gap: 40px; 
+    margin: 40px auto; 
     width: 100%; 
-    max-width: 1000px; /* Limitamos el ancho máximo para que no se estiren demasiado en pantallas gigantes */
+    max-width: 1100px; 
     justify-items: center;
 }
 
-/* 3. La tarjeta de proyecto: la hacemos flexible */
 .proyecto{
-    background-color: var(--color-gray);
-    border: 2px solid black;
-    overflow: hidden; /* Cambiamos a hidden para que no salga barra de scroll dentro de la tarjeta */
-    width: 100%; /* Que ocupe todo el espacio de su columna grid */
-    max-width: 420px; /* Pero que no crezca más de esto */
-    border-radius: 8px; /* Opcional: un ligero borde redondeado para que se vea más moderno */
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    overflow: hidden; 
+    width: 100%; 
+    max-width: 420px; 
     display: flex;
-    flex-direction: column; /* Asegura que la imagen vaya arriba y el footer abajo */
+    flex-direction: column; 
+    transition: var(--transition);
 }
 
-/* 4. Las imágenes: quitamos el ancho fijo */
+.proyecto:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    border-color: var(--primary-color);
+}
+
 .image1, .image2{
-    width: 100%; /* Ahora la imagen toma el ancho de la tarjeta */
+    width: 100%; 
     height: 250px;
-    padding: 10px;
-    border-bottom: 2px solid var(--secundary-color);
-    background-color: #fff; /* Fondo blanco por si la imagen tiene transparencias */
+    padding: 0; /* Quitamos el padding para que la imagen ocupe todo */
+    border-bottom: 1px solid var(--border-color);
+    background-color: #fff; 
 }
 
 .image1 img, .image2 img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Asegura que la imagen llene el espacio sin deformarse (puedes usar 'contain' si prefieres que se vea completa aunque queden bordes) */
+    object-fit: cover; 
     display: block;
 }
 
-/* 5. El footer del proyecto */
 .container-footer-prject{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding: 15px 10px; /* Le damos espacio interno para que no quede pegado al borde */
-    background-color: var(--color-gray);
+    padding: 20px 15px; 
+    background-color: var(--bg-surface);
+}
+
+.container-footer-prject img{
+    transition: var(--transition);
+}
+
+.container-footer-prject a:hover img {
+    transform: scale(1.2); /* Efecto en los iconos de github/ojo */
 }
 
 .container-footer-prject h3{
-    margin: 0; /* Quitamos márgenes extraños del h3 para alinearlo bien con los iconos */
-    font-size: 2rem;
+    margin: 0; 
+    font-size: var(--text-xl);
+    color: var(--text-main);
 }
 
-
-/*------------------------------Habilidades--------------------------*/
+/*------------------------------ HABILIDADES (Estilo Caja de Código) --------------------------*/
 
 #container-skills{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: repeat(2, 1fr);
-    grid-gap: 10px;
+    /* Ajusta automáticamente las cajas. Si hay espacio, se alinean, si no, bajan */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+    grid-gap: 25px; /* Espacio entre cajas */
+    width: 100%;
+    max-width: 1000px;
+    margin: 40px auto 0 auto;
+    justify-items: center;
 }
 
-.habilidad{
-    margin-top: 70px;
+.habilidad {
+    display: flex;
+    align-items: center;      /* Centra verticalmente logo y texto */
+    justify-content: center;  /* Centra horizontalmente todo dentro de la caja */
+    gap: 15px;                /* Espacio entre el logo y la palabra */
+    
+    width: 100%;
+    max-width: 240px;         /* Ancho máximo de la "píldora" */
+    padding: 12px 20px;       /* Espacio interior (arriba/abajo, izq/der) */
+    
+    background-color: transparent; /* Fondo transparente */
+    border: 2px solid var(--border-color); /* Borde sutil por defecto */
+    border-radius: var(--radius-md);       /* Esquinas redondeadas */
+    
+    transition: var(--transition);
+    cursor: pointer;          /* Muestra la manito al pasar el mouse */
 }
 
-.habilidad img{
-    width: 200px;
-    margin: 2px;    
+/* El logo pequeñito */
+.habilidad img {
+    width: 30px;              /* Tamaño del logotipo */
+    height: auto;
+    object-fit: contain;
+    transition: var(--transition); 
 }
 
-/*------------------------------------Seccion de Certificados (Carrusel)--------------------*/
-
-/* Estilos generales de la sección */
-#section-certificate {
-    text-align: center;
-    padding: 40px 20px;
-    background-color: #072b68; /* Color de fondo opcional */
+/* El texto de la habilidad */
+.habilidad p {
+    margin: 0;
+    color: var(--text-main);
+    font-size: var(--text-lg);
+    font-family: var(--font-body);
+    font-weight: 500;         /* Un poco más gordito para que destaque */
+    letter-spacing: 0.5px;
 }
 
-/* El contenedor principal oculta lo que se desborda */
+/* --- EL EFECTO HOVER --- */
+.habilidad:hover {
+    border-color: var(--primary-color); /* El borde se ilumina azul */
+    background-color: rgba(56, 189, 248, 0.05); /* Un fondo azul muy tenue */
+    transform: translateY(-5px); /* Se levanta un poco */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2); /* Sombra suave debajo */
+}
+
+.habilidad:hover img {
+    transform: scale(1.15); /* El loguito crece un poquito al hacer hover */
+}
+
+/*---------------------- SECCIÓN DE CERTIFICADOS (CARRUSEL) --------------------*/
+
 .carousel-wrapper {
     position: relative;
-    max-width: 900px; /* Espacio exacto para 3 certificados de 300px (ancho + márgenes) */
+    max-width: 900px; 
     margin: 0 auto;
     overflow: hidden;
-    padding: 40px 0; /* Da espacio vertical para que el scale(1.1) no corte la imagen */
+    padding: 40px 0; 
+    width: 100%;
 }
 
-/* La pista que se mueve */
 #container-certificate {
     display: flex;
     align-items: center;
     width: max-content; 
 }
 
-/* Estado normal de los certificados (Laterales: Pequeños y desvanecidos) */
 .certificado {
     width: 260px; 
-    margin: 0 20px; /* 260px + 20px(izq) + 20px(der) = 300px totales por elemento */
+    margin: 0 20px; 
     flex-shrink: 0;
     transition: all 0.5s ease-in-out;
-    opacity: 0.4; 
+    opacity: 0.3; 
     transform: scale(0.85); 
     display: flex;
     justify-content: center;
@@ -508,12 +504,11 @@ h2{
 
 .certificado img {
     width: 100%;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    border-radius: var(--radius-md);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
     object-fit: contain;
 }
 
-/* Estado ACTIVO del certificado (Centro: Tamaño real y 100% opacidad) */
 .certificado.activo {
     opacity: 1;
     transform: scale(1.1); 
@@ -521,17 +516,16 @@ h2{
 }
 
 .certificado.activo img {
-    box-shadow: 0 12px 25px rgba(0,0,0,0.3); /* Sombra más fuerte para resaltar */
+    box-shadow: 0 12px 25px rgba(0,132,199,0.3); /* Sombra azul para resaltar */
 }
 
-/* Botones flotantes */
 .carousel-btn {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.6);
-    color: white;
-    border: none;
+    background-color: rgba(30, 41, 59, 0.8);
+    color: var(--text-main);
+    border: 1px solid var(--border-color);
     width: 45px;
     height: 45px;
     cursor: pointer;
@@ -541,53 +535,94 @@ h2{
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: background-color 0.3s ease;
+    transition: var(--transition);
 }
 
 .carousel-btn:hover {
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: var(--primary-color);
+    color: var(--bg-main);
 }
 
 .prev-btn { left: 10px; }
 .next-btn { right: 10px; }
 
-/*---------------------Pie de pagina----------------------------------*/
+/*--------------------- PIE DE PÁGINA (FOOTER) ----------------------------------*/
 
 #footer{
     display: flex;
-    flex-wrap: wrap;
     flex-direction: column;
-    justify-content: space-around;
-    background-color: var(--secundary-color);
+    align-items: center;
+    padding: 50px 20px 20px 20px;
+    background-color: var(--bg-surface);
+    border-top: 1px solid var(--border-color);
 }
 
 .social{
-    display: block;
     text-align: center;
-    width: 100%;
-    color: var(--color-white);
-    font-size: 38px;
-    
+    color: var(--text-main);
+    font-size: var(--text-2xl);
+    font-family: var(--font-heading);
+    margin-bottom: 30px;
 }
 
+.social hr {
+    width: 50px;
+    height: 3px;
+    background-color: var(--primary-color);
+    border: none;
+    margin: 10px auto 0 auto;
+}
 
 #socialnet{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 100px;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    gap: 40px;
+    margin-bottom: 40px;
 }
 
-.sociales{
-    display: flex;
-    flex-flow: column wrap; 
+.sociales a img {
+    width: 40px;
+    transition: var(--transition);
+    /* Invertimos el color si los iconos son negros, o si ya los tienes en color/blanco lo dejas así */
+    filter: brightness(0.8); 
+}
+
+.sociales a:hover img {
+    transform: translateY(-5px);
+    filter: brightness(1); /* Que brillen al pasar el mouse */
 }
 
 .copy{
     text-align: center;
     width: 100%;
-    color: #b7b7b7;
-    margin-bottom: 10px;
+    color: var(--text-muted);
+    font-size: var(--text-sm);
+    margin-top: 20px;
+}
+
+/* =======================================================================
+   RESPONSIVIDAD BÁSICA (Móviles / Tablets)
+   ======================================================================= */
+@media screen and (max-width: 768px) {
+    #titulo {
+        flex-direction: column-reverse;
+        justify-content: center;
+        text-align: center;
+        padding-top: 10vh;
+    }
+    
+    .hero-texto {
+        align-items: center;
+    }
+    
+    .hero-texto h1 { text-align: center; font-size: 3.6rem; }
+    .hero-texto h2 { text-align: center; font-size: 2rem; }
+    
+    .hero-imagen { margin-bottom: 30px; }
+    
+    .main-nav {
+        /* Aquí podrías implementar un menú hamburguesa más adelante */
+        display: none; 
+    }
 }
