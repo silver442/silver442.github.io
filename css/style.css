@@ -601,6 +601,21 @@ h2.h2 {
     margin-top: 20px;
 }
 
+/* --- Arreglar Iconos Invisibles en Proyectos --- */
+.container-footer-prject img {
+    width: 30px;
+    height: auto;
+    /* El truco de magia: invierte los colores (negro -> blanco/gris) */
+    filter: invert(50%) brightness(1.2); /* Prueba con brightness(1.2) o (1.5) hasta que te guste el tono */
+    transition: var(--transition);
+}
+
+/* Efecto al pasar el mouse sobre el icono */
+.container-footer-prject a:hover img {
+    transform: scale(1.15); /* Que crezcan un poco */
+    filter: invert(70%) brightness(1); /* Que el color azul primario aparezca en hover si lo configuras */
+}
+
 /* =======================================================================
    RESPONSIVIDAD BÁSICA (Móviles / Tablets)
    ======================================================================= */
