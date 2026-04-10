@@ -1,20 +1,17 @@
-/*---------------------- VARIABLES (SISTEMA DE DISEÑO) ------------------------*/
+/* --- VARIABLES --- */
 :root {
-    /* --- COLORES (Paleta Slate / Modern Dark) --- */
-    --bg-main: #0f172a;        /* Fondo principal (Oscuro profundo) */
-    --bg-surface: #1e293b;     /* Fondo secundario para tarjetas, barra de nav, pie de página */
-    --primary-color: #38bdf8;  /* Azul cielo vibrante para botones, enlaces y acentos */
-    --primary-hover: #0284c7;  /* Azul más oscuro para el hover */
+    --bg-main: #0f172a;
+    --bg-surface: #1e293b;
+    --primary-color: #38bdf8;
+    --primary-hover: #0284c7;
     
-    --text-main: #f8fafc;      /* Blanco suave para títulos y texto principal */
-    --text-muted: #94a3b8;     /* Gris azulado para descripciones y subtítulos */
-    --border-color: #334155;   /* Color para líneas sutiles o bordes de tarjetas */
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --border-color: #334155;
 
-    /* --- TIPOGRAFÍAS --- */
-    --font-heading: 'Poppins', sans-serif; /* Títulos (Llamativa y redonda) */
-    --font-body: 'Inter', sans-serif;      /* Párrafos (Limpia y técnica) */
+    --font-heading: 'Poppins', sans-serif;
+    --font-body: 'Inter', sans-serif;
 
-    /* --- TAMAÑOS DE FUENTE --- */
     --text-sm: 1.4rem;  
     --text-md: 1.6rem;  
     --text-lg: 1.8rem;  
@@ -22,13 +19,11 @@
     --text-2xl: 3.2rem; 
     --text-3xl: 4.8rem; 
 
-    /* --- OTROS --- */
-    --radius-md: 8px;   /* Redondeo estándar */
+    --radius-md: 8px;
     --transition: all 0.3s ease;
 }
 
-/*------------------- ESTILOS GENERALES Y RESET --------------------*/
-
+/* --- BASE & RESET --- */
 *{
     box-sizing: border-box;
     margin: 0;
@@ -36,7 +31,7 @@
 }
 
 html{
-    font-size: 62.5%; /* para que 1rem sea 10px */
+    font-size: 62.5%;
     scroll-behavior: smooth;
 }
 
@@ -59,8 +54,7 @@ h2.h2 {
     text-align: center;
 }
 
-/*--------------------------- HEADER -----------------------------------*/
-
+/* --- HEADER / NAVIGATION --- */
 #header-container {
     display: flex;
     flex-direction: column;
@@ -82,7 +76,7 @@ h2.h2 {
 
 @keyframes enhance-header {
     to{
-        background-color: rgba(30, 41, 59, 0.85); /* --bg-surface con transparencia */
+        background-color: rgba(30, 41, 59, 0.85);
         backdrop-filter: blur(10px);
     }
 }
@@ -123,8 +117,7 @@ h2.h2 {
     border-bottom: 2px solid var(--primary-color);
 }
 
-/*--------------- Título Principal (Hero) ------------------------ */
-
+/* --- HERO SECTION --- */
 #titulo{
     min-height: 65vh;
     padding: 0 10%; 
@@ -186,7 +179,7 @@ h2.h2 {
     transform: translateY(-2px);
 }
 
-/*---------------------------------- SECCIONES GENERALES ---------------*/
+/* --- LAYOUT - SECTIONS --- */
 #content-main{
     display: flex;
     flex-direction: column;
@@ -210,8 +203,7 @@ h2.h2 {
     border-radius: 2px;
 }
 
-/*------------------- SECCIÓN DE EXPERIENCIA LABORAL (LÍNEA DE TIEMPO) --- */
-
+/* --- EXPERIENCE (TIMELINE) --- */
 .timeline {
     position: relative;
     max-width: 1000px;
@@ -321,33 +313,8 @@ h2.h2 {
     margin-bottom: 8px; 
 }
 
-/* --- LÍNEA DE TIEMPO EN DESKTOP (Esto es para pantallas grandes, puedes moverlo a desktop.css si prefieres) --- */
-@media screen and (min-width: 800px) {
-    .timeline::after { left: 50%; }
-    .timeline-item { width: 50%; padding-bottom: 50px; }
-    .timeline-item:nth-child(odd) {
-        left: 0;
-        padding-left: 0;
-        padding-right: 40px;
-        text-align: right;
-    }
-    .timeline-item:nth-child(even) { left: 50%; padding-left: 40px; }
-    .timeline-item:nth-child(odd) .timeline-dot { left: 100%; margin-left: -10px; }
-    .timeline-item:nth-child(even) .timeline-dot { left: 0; margin-left: -10px; }
-    
-    .timeline-item:nth-child(odd) .timeline-header {
-        flex-direction: row-reverse; /* Cambia el logo a la derecha en impares */
-    }
-    .timeline-item:nth-child(odd) .timeline-tasks {
-        text-align: right;
-        padding-right: 20px;
-        padding-left: 10px;
-        list-style-position: inside;
-    }
-}
 
-/*---------------------------- SECCIÓN DE PROYECTOS -----------------------*/
-
+/* --- PROJECTS --- */
 #container-projects{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -379,7 +346,7 @@ h2.h2 {
 .image1, .image2{
     width: 100%; 
     height: 250px;
-    padding: 0; /* Quitamos el padding para que la imagen ocupe todo */
+    padding: 0;
     border-bottom: 1px solid var(--border-color);
     background-color: #fff; 
 }
@@ -404,7 +371,7 @@ h2.h2 {
 }
 
 .container-footer-prject a:hover img {
-    transform: scale(1.2); /* Efecto en los iconos de github/ojo */
+    transform: scale(1.2);
 }
 
 .container-footer-prject h3{
@@ -413,13 +380,11 @@ h2.h2 {
     color: var(--text-main);
 }
 
-/*------------------------------ HABILIDADES (Estilo Caja de Código) --------------------------*/
-
+/* --- SKILLS --- */
 #container-skills{
     display: grid;
-    /* Ajusta automáticamente las cajas. Si hay espacio, se alinean, si no, bajan */
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
-    grid-gap: 25px; /* Espacio entre cajas */
+    grid-gap: 25px;
     width: 100%;
     max-width: 1000px;
     margin: 40px auto 0 auto;
@@ -428,54 +393,47 @@ h2.h2 {
 
 .habilidad {
     display: flex;
-    align-items: center;      /* Centra verticalmente logo y texto */
-    justify-content: center;  /* Centra horizontalmente todo dentro de la caja */
-    gap: 15px;                /* Espacio entre el logo y la palabra */
-    
+    align-items: center;
+    justify-content: center;
+    gap: 15px; 
     width: 100%;
-    max-width: 240px;         /* Ancho máximo de la "píldora" */
-    padding: 12px 20px;       /* Espacio interior (arriba/abajo, izq/der) */
-    
-    background-color: transparent; /* Fondo transparente */
-    border: 2px solid var(--border-color); /* Borde sutil por defecto */
-    border-radius: var(--radius-md);       /* Esquinas redondeadas */
-    
+    max-width: 240px; 
+    padding: 12px 20px; 
+    background-color: transparent;
+    border: 2px solid var(--border-color);
+    border-radius: var(--radius-md); 
     transition: var(--transition);
-    cursor: pointer;          /* Muestra la manito al pasar el mouse */
+    cursor: pointer;
 }
 
-/* El logo pequeñito */
 .habilidad img {
-    width: 30px;              /* Tamaño del logotipo */
+    width: 30px;
     height: auto;
     object-fit: contain;
     transition: var(--transition); 
 }
 
-/* El texto de la habilidad */
 .habilidad p {
     margin: 0;
     color: var(--text-main);
     font-size: var(--text-lg);
     font-family: var(--font-body);
-    font-weight: 500;         /* Un poco más gordito para que destaque */
+    font-weight: 500;
     letter-spacing: 0.5px;
 }
 
-/* --- EL EFECTO HOVER --- */
 .habilidad:hover {
-    border-color: var(--primary-color); /* El borde se ilumina azul */
-    background-color: rgba(56, 189, 248, 0.05); /* Un fondo azul muy tenue */
-    transform: translateY(-5px); /* Se levanta un poco */
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2); /* Sombra suave debajo */
+    border-color: var(--primary-color);
+    background-color: rgba(56, 189, 248, 0.05);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
 
 .habilidad:hover img {
-    transform: scale(1.15); /* El loguito crece un poquito al hacer hover */
+    transform: scale(1.15);
 }
 
-/*---------------------- SECCIÓN DE CERTIFICADOS (CARRUSEL) --------------------*/
-
+/* --- CERTIFICATES (CAROUSEL) --- */
 .carousel-wrapper {
     position: relative;
     max-width: 900px; 
@@ -516,7 +474,7 @@ h2.h2 {
 }
 
 .certificado.activo img {
-    box-shadow: 0 12px 25px rgba(0,132,199,0.3); /* Sombra azul para resaltar */
+    box-shadow: 0 12px 25px rgba(0,132,199,0.3);
 }
 
 .carousel-btn {
@@ -546,8 +504,7 @@ h2.h2 {
 .prev-btn { left: 10px; }
 .next-btn { right: 10px; }
 
-/*--------------------- PIE DE PÁGINA (FOOTER) ----------------------------------*/
-
+/* --- FOOTER --- */
 #footer{
     display: flex;
     flex-direction: column;
@@ -584,13 +541,12 @@ h2.h2 {
 .sociales a img {
     width: 40px;
     transition: var(--transition);
-    /* Invertimos el color si los iconos son negros, o si ya los tienes en color/blanco lo dejas así */
     filter: brightness(0.8); 
 }
 
 .sociales a:hover img {
     transform: translateY(-5px);
-    filter: brightness(1); /* Que brillen al pasar el mouse */
+    filter: brightness(1);
 }
 
 .copy{
@@ -601,43 +557,15 @@ h2.h2 {
     margin-top: 20px;
 }
 
-/* --- Arreglar Iconos Invisibles en Proyectos --- */
+/* Utilities */
 .container-footer-prject img {
     width: 30px;
     height: auto;
-    /* El truco de magia: invierte los colores (negro -> blanco/gris) */
-    filter: invert(50%) brightness(1.2); /* Prueba con brightness(1.2) o (1.5) hasta que te guste el tono */
+    filter: invert(50%) brightness(1.2);
     transition: var(--transition);
 }
 
-/* Efecto al pasar el mouse sobre el icono */
 .container-footer-prject a:hover img {
-    transform: scale(1.15); /* Que crezcan un poco */
-    filter: invert(70%) brightness(1); /* Que el color azul primario aparezca en hover si lo configuras */
-}
-
-/* =======================================================================
-   RESPONSIVIDAD BÁSICA (Móviles / Tablets)
-   ======================================================================= */
-@media screen and (max-width: 768px) {
-    #titulo {
-        flex-direction: column-reverse;
-        justify-content: center;
-        text-align: center;
-        padding-top: 10vh;
-    }
-    
-    .hero-texto {
-        align-items: center;
-    }
-    
-    .hero-texto h1 { text-align: center; font-size: 3.6rem; }
-    .hero-texto h2 { text-align: center; font-size: 2rem; }
-    
-    .hero-imagen { margin-bottom: 30px; }
-    
-    .main-nav {
-        /* Aquí podrías implementar un menú hamburguesa más adelante */
-        display: none; 
-    }
+    transform: scale(1.15);
+    filter: invert(70%) brightness(1);
 }

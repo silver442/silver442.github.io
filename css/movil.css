@@ -1,0 +1,112 @@
+/* --- VIEWPORT: MOBILE (<768px) --- */
+.hamburger {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 21px;
+        cursor: pointer;
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 1100;
+    }
+
+    .hamburger .bar {
+        height: 3px;
+        width: 100%;
+        background-color: var(--text-main);
+        border-radius: 3px;
+        transition: var(--transition);
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+
+    .main-nav {
+        position: absolute;
+        top: 7vh; 
+        right: 0;
+        width: 100%;
+        height: auto;
+        background-color: var(--bg-surface);
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        overflow: hidden;
+        max-height: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+        transition: max-height 0.4s ease-in-out, padding 0.4s ease-in-out;
+        border-bottom: 2px solid transparent;
+        display: flex !important;
+    }
+
+    .main-nav.active {
+        max-height: 400px; 
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border-bottom: 2px solid var(--primary-color);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    }
+
+    .main-nav__item {
+        width: 100%;
+        text-align: center;
+        padding-right: 0;
+    }
+
+    .main-nav__item a {
+        display: block;
+        padding: 15px 0;
+        font-size: var(--text-md);
+    }
+    
+    .main-nav__item a:hover {
+        background-color: rgba(56, 189, 248, 0.1);
+        border-bottom: 2px solid transparent;
+    }
+
+    #container-certificate {
+        position: relative;
+        left: 50%;
+        margin-left: -450px;
+    }
+
+    .certificado {
+        transform: scale(0.85); 
+    }
+    
+    .certificado.activo {
+        transform: scale(1.05);
+    }
+
+    #titulo {
+        flex-direction: column-reverse;
+        justify-content: center;
+        text-align: center;
+        padding-top: 10vh;
+    }
+    
+    .hero-texto {
+        align-items: center;
+    }
+    
+    .hero-texto h1 { text-align: center; font-size: 3.6rem; }
+    .hero-texto h2 { text-align: center; font-size: 2rem; }
+    
+    .hero-imagen { margin-bottom: 30px; }
+}
