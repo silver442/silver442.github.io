@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Silver</title>
-    <link rel="stylesheet" href="css/style.css?v=1.1">
-    <link rel="stylesheet" href="css/movil.css?v=1.1">
-    <link rel="stylesheet" href="css/tablet.css?v=1.1" media="screen and (min-width: 600px)">
-    <link rel="stylesheet" href="css/desktop.css?v=1.1" media="screen and (min-width: 800px)">
+    <link rel="stylesheet" href="css/style.css?v=1.2">
+    <link rel="stylesheet" href="css/movil.css?v=1.2">
+    <link rel="stylesheet" href="css/tablet.css?v=1.2" media="screen and (min-width: 600px)">
+    <link rel="stylesheet" href="css/desktop.css?v=1.2" media="screen and (min-width: 800px)">
     <link rel="icon" href="Img/Logo.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,7 +24,6 @@
         <nav id="nav">
             <div id="Logo">
                 <a href="#"><img src="Img/Logo.png" alt="Logo"></a>
-
             </div>
             <div class="hamburger" id="hamburger">
                 <span class="bar"></span>
@@ -32,19 +31,32 @@
                 <span class="bar"></span>
             </div>
             <ul class="main-nav" id="main-nav">
-                <li class="main-nav__item"><a href="#">Inicio</a></li>
-                <li class="main-nav__item"><a href="#section-experience">Experiencia</a></li>
-                <li class="main-nav__item"><a href="#section-projects">Proyectos</a></li>
-                <li class="main-nav__item"><a href="#section-skills">Habilidades</a></li>
-                <li class="main-nav__item"><a href="#section-certificate">Certificados</a></li>
-                <li class="main-nav__item"><a href="#footer">Contacto</a></li>
+                <li class="main-nav__item"><a href="#" data-i18n="nav_home">Inicio</a></li>
+                <li class="main-nav__item"><a href="#section-experience" data-i18n="nav_experience">Experiencia</a></li>
+                <li class="main-nav__item"><a href="#section-projects" data-i18n="nav_projects">Proyectos</a></li>
+                <li class="main-nav__item"><a href="#section-skills" data-i18n="nav_skills">Habilidades</a></li>
+                <li class="main-nav__item"><a href="#section-certificate" data-i18n="nav_certs">Certificados</a></li>
+                <li class="main-nav__item"><a href="#footer" data-i18n="nav_contact">Contacto</a></li>
+                <li class="main-nav__item lang-item">
+                    <div class="lang-switch">
+                        <span class="lang-label" id="label-es">ES</span>
+                        <label class="lang-toggle-track">
+                            <input type="checkbox" id="lang-toggle" aria-label="Switch language">
+                            <span class="lang-toggle-thumb"></span>
+                        </label>
+                        <span class="lang-label" id="label-en">EN</span>
+                    </div>
+                </li>
             </ul>
         </nav>
         <div id="titulo">
             <div class="hero-texto">
-                <h1>Hola, soy Silvestre</h1>
-                <h2>Desarrollador de Software</h2>
-                <a href="#section-projects" class="btn-principal">Ver mis proyectos</a>
+                <h1 data-i18n="hero_greeting">Hola, soy Silvestre</h1>
+                <h2 data-i18n="hero_title">Desarrollador de Software</h2>
+                <div class="hero-btns">
+                    <a href="#section-projects" class="btn-principal" data-i18n="hero_cta">Ver mis proyectos</a>
+                    <a href="docs/CV_DesarrolladorSoftware.pdf" download id="cv-download" class="btn-secundario" data-i18n="hero_cv">Descargar CV</a>
+                </div>
             </div>
             <div class="hero-imagen">
                 <img src="Img/Logo2.png" alt="Logo de Silvestre">
@@ -55,7 +67,7 @@
     <main id="content-main">
 
         <section class="secciones" id="section-experience">
-            <h2 class="h2">Experiencia Laboral
+            <h2 class="h2"><span data-i18n="exp_title">Experiencia Laboral</span>
                 <hr>
             </h2>
 
@@ -66,16 +78,14 @@
                         <div class="timeline-header">
                             <img src="Img/logo_bainub.png" alt="Logo Bainub" class="timeline-logo">
                             <div class="timeline-titles">
-                                <h3>Desarrollador Web</h3>
+                                <h3 data-i18n="exp1_role">Desarrollador Web</h3>
                                 <h4>BAINUB</h4>
                             </div>
                         </div>
-                        <span class="timeline-date">Marzo 2025 - Actualidad</span>
+                        <span class="timeline-date" data-i18n="exp1_date">Marzo 2025 - Actualidad</span>
                         <ul class="timeline-tasks">
-                            <li>Desarrollo de interfaces de usuario (UI) y nuevas funcionalidades utilizando React,
-                                HTML/CSS/JS.</li>
-                            <li>Optimizo la experiencia de usuario y el diseño responsivo para la plataforma web B2B.
-                            </li>
+                            <li data-i18n="exp1_task1">Desarrollo de interfaces de usuario (UI) y nuevas funcionalidades utilizando React, HTML/CSS/JS.</li>
+                            <li data-i18n="exp1_task2">Optimizo la experiencia de usuario y el diseño responsivo para la plataforma web B2B.</li>
                         </ul>
                     </div>
                 </div>
@@ -86,15 +96,14 @@
                         <div class="timeline-header">
                             <img src="Img/logo_esoftware.png" alt="Logo E-Software" class="timeline-logo">
                             <div class="timeline-titles">
-                                <h3>Desarrollador de software</h3>
+                                <h3 data-i18n="exp2_role">Desarrollador de software</h3>
                                 <h4>E-Software</h4>
                             </div>
                         </div>
-                        <span class="timeline-date">Jun 2023 - Dic 2023</span>
+                        <span class="timeline-date" data-i18n="exp2_date">Jun 2023 - Dic 2023</span>
                         <ul class="timeline-tasks">
-                            <li>Implementé mejoras en el diseño y la funcionalidad del frontend de la aplicación.</li>
-                            <li>Realicé y optimicé consultas a bases de datos relacionales mediante SQL para asegurar la
-                                integridad de los datos.</li>
+                            <li data-i18n="exp2_task1">Implementé mejoras en el diseño y la funcionalidad del frontend de la aplicación.</li>
+                            <li data-i18n="exp2_task2">Realicé y optimicé consultas a bases de datos relacionales mediante SQL para asegurar la integridad de los datos.</li>
                         </ul>
                     </div>
                 </div>
@@ -102,7 +111,7 @@
         </section>
 
         <section class="secciones" id="section-projects">
-            <h2 class="h2">Proyectos
+            <h2 class="h2"><span data-i18n="projects_title">Proyectos</span>
                 <hr>
             </h2>
             <div id="container-projects">
@@ -111,102 +120,75 @@
                         <img src="Img/proyectos/HEB_POST.png" alt="Proyecto de HEB" width="400px">
                     </div>
                     <div class="container-footer-prject">
-
                         <a href="https://hebpos.silverdev.net/" target="_blank">
                             <img src="Img/ojo.png" alt="vista al proyecto" width="30px" height="30px">
-
                         </a>
                         <h3>HEB-POS</h3>
                         <a href="https://github.com/silver442/HEB" target="_blank">
                             <img src="Img/githubIcon.png" alt="repositorio en github" width="30px" height="30px">
-
                         </a>
-
                     </div>
                 </div>
-                <!--
+
                 <div class="proyecto">
                     <div class="image2">
-                        <img src="Img/" alt="">
-                    </div>
-                    <h3>Financial project</h3>
-                    
-                </div>
-                -->
-
-                <div class="proyecto">
-                    <div class="image2"> <img src="Img/proyectos/digitutos.png" alt="Página web de DigiTutos"
-                            width="400px">
+                        <img src="Img/proyectos/digitutos.png" alt="Página web de DigiTutos" width="400px">
                     </div>
                     <div class="container-footer-prject">
-
                         <a href="https://digitutos.com" target="_blank">
                             <img src="Img/ojo.png" alt="vista al proyecto" width="30px" height="30px">
                         </a>
-
                         <h3>DigiTutos</h3>
-
                         <a href="https://www.youtube.com/@DigiTutos" target="_blank">
                             <img src="Img/youtube.png" alt="Canal de YouTube" width="30px" height="30px">
                         </a>
-
                     </div>
                 </div>
             </div>
-
         </section>
 
         <section class="secciones" id="section-skills">
-            <h2 class="h2">Habilidades
+            <h2 class="h2"><span data-i18n="skills_title">Habilidades</span>
                 <hr>
             </h2>
             <div id="container-skills">
-
                 <div class="habilidad">
                     <img src="Img/HabilidadesLogo/HTML.svg" alt="HTML 5">
                     <p>HTML 5</p>
                 </div>
-
                 <div class="habilidad">
                     <img src="Img/HabilidadesLogo/Css.svg" alt="CSS 3">
                     <p>CSS 3</p>
                 </div>
-
                 <div class="habilidad">
                     <img src="Img/HabilidadesLogo/Javascript.svg" alt="JavaScript">
                     <p>JavaScript</p>
                 </div>
-
                 <div class="habilidad">
                     <img src="Img/HabilidadesLogo/Git.svg" alt="Git">
                     <p>Git</p>
                 </div>
-
                 <div class="habilidad">
                     <img src="Img/HabilidadesLogo/Figma.svg" alt="Figma">
                     <p>Figma</p>
                 </div>
-
                 <div class="habilidad">
                     <img src="Img/HabilidadesLogo/Python.svg" alt="Python">
                     <p>Python</p>
                 </div>
-
                 <div class="habilidad">
                     <img src="Img/HabilidadesLogo/Java.svg" alt="Java">
                     <p>Java</p>
                 </div>
-
                 <div class="habilidad">
                     <img src="Img/HabilidadesLogo/React.svg" alt="React">
                     <p>React</p>
                 </div>
-
             </div>
         </section>
 
         <section class="secciones" id="section-certificate">
-            <h2 class="h2">Certificados</h2>
+            <h2 class="h2" data-i18n="certs_title">Certificados</h2>
             <div class="carousel-wrapper">
                 <button class="carousel-btn prev-btn">&#10094;</button>
                 <div id="container-certificate">
@@ -237,7 +219,7 @@
 
     <!-- Footer -->
     <footer id="footer">
-        <h3 class="social"> Contacto
+        <h3 class="social"><span data-i18n="contact_title">Contacto</span>
             <hr>
         </h3>
 
@@ -246,19 +228,15 @@
                 <a href="mailto:silvestre.hdz.h@gmail.com">
                     <img src="Img/correo-electronico.png" alt="Correo electronico" width="50px">
                 </a>
-
             </div>
-
             <div class="sociales">
                 <a href="https://www.linkedin.com/in/silvestre-hernandez-822240244/" target="_blank"
                     rel="noopener noreferrer">
-
                     <img src="Img/linkedin.png" alt="Linkedin" width="50px">
                 </a>
             </div>
             <div class="sociales">
                 <a href="https://github.com/silver442" target="_blank" rel="noopener noreferrer">
-
                     <img src="Img/github.png" alt="Github" width="50px">
                 </a>
             </div>
@@ -266,7 +244,8 @@
 
         <p class="copy"> &copy;Silvestre Hernandez Hernandez</p>
     </footer>
-    <script src="js/main.js?v=1.1"></script>
+    <script src="js/translations.js?v=1.0"></script>
+    <script src="js/main.js?v=1.2"></script>
 </body>
 
 </html>

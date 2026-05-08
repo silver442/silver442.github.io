@@ -160,10 +160,17 @@ h2.h2 {
     box-shadow: 0 10px 30px rgba(0,0,0,0.3);
 }
 
+.hero-btns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+    margin-top: 15px;
+}
+
 .btn-principal {
     display: inline-block;
     padding: 12px 28px;
-    background-color: var(--primary-color); 
+    background-color: var(--primary-color);
     color: var(--bg-main);
     text-decoration: none;
     font-size: var(--text-lg);
@@ -171,12 +178,98 @@ h2.h2 {
     font-weight: 600;
     border-radius: var(--radius-md);
     transition: var(--transition);
-    margin-top: 15px;
 }
 
 .btn-principal:hover {
     background-color: var(--primary-hover);
     transform: translateY(-2px);
+}
+
+.btn-secundario {
+    display: inline-block;
+    padding: 12px 28px;
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    text-decoration: none;
+    font-size: var(--text-lg);
+    font-family: var(--font-heading);
+    font-weight: 600;
+    border-radius: var(--radius-md);
+    transition: var(--transition);
+}
+
+.btn-secundario:hover {
+    background-color: var(--primary-color);
+    color: var(--bg-main);
+    transform: translateY(-2px);
+}
+
+/* Language Switch */
+[data-i18n] {
+    transition: opacity 0.2s ease;
+}
+
+.lang-switch {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 0 8px;
+}
+
+.lang-label {
+    font-family: var(--font-heading);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--text-muted);
+    transition: color 0.3s ease;
+    user-select: none;
+}
+
+.lang-label.active {
+    color: var(--primary-color);
+}
+
+.lang-toggle-track {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 22px;
+    cursor: pointer;
+}
+
+.lang-toggle-track input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    position: absolute;
+}
+
+.lang-toggle-thumb {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--primary-color);
+    border-radius: 22px;
+    transition: background-color 0.3s ease;
+}
+
+.lang-toggle-thumb::before {
+    content: '';
+    position: absolute;
+    height: 16px;
+    width: 16px;
+    left: 3px;
+    bottom: 3px;
+    background-color: var(--bg-main);
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+.lang-toggle-track input:checked + .lang-toggle-thumb::before {
+    transform: translateX(18px);
 }
 
 /* --- LAYOUT - SECTIONS --- */

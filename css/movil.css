@@ -109,4 +109,14 @@
     .hero-texto h2 { text-align: center; font-size: 2rem; }
     
     .hero-imagen { margin-bottom: 30px; }
+
+    .hero-btns {
+        justify-content: center;
+    }
+
+    .lang-item {
+        padding: 10px 0;
+        display: flex;
+        justify-content: center;
+    }
 }

@@ -90,4 +90,60 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         });
     }
+
+    // Language toggle
+    function applyTexts(lang) {
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+            const key = el.dataset.i18n;
+            if (translations[lang][key] !== undefined) {
+                el.textContent = translations[lang][key];
+            }
+        });
+
+        const cvLink = document.getElementById('cv-download');
+        if (cvLink) {
+            cvLink.href = lang === 'es'
+                ? 'docs/CV_DesarrolladorSoftware.pdf'
+                : 'docs/CV_SoftwareEngineer.pdf';
+        }
+
+        document.documentElement.lang = lang;
+        localStorage.setItem('lang', lang);
+    }
+
+    function applyLanguage(lang, animate = true) {
+        const elements = document.querySelectorAll('[data-i18n]');
+
+        if (animate) {
+            elements.forEach(el => el.style.opacity = '0');
+            setTimeout(() => {
+                applyTexts(lang);
+                elements.forEach(el => el.style.opacity = '1');
+            }, 180);
+        } else {
+            applyTexts(lang);
+        }
+    }
+
+    function updateSwitch(lang) {
+        const toggle = document.getElementById('lang-toggle');
+        const labelEs = document.getElementById('label-es');
+        const labelEn = document.getElementById('label-en');
+        if (toggle) toggle.checked = lang === 'en';
+        if (labelEs) labelEs.classList.toggle('active', lang === 'es');
+        if (labelEn) labelEn.classList.toggle('active', lang === 'en');
+    }
+
+    const langToggle = document.getElementById('lang-toggle');
+    let currentLang = localStorage.getItem('lang') || 'es';
+    applyLanguage(currentLang, false);
+    updateSwitch(currentLang);
+
+    if (langToggle) {
+        langToggle.addEventListener('change', () => {
+            currentLang = langToggle.checked ? 'en' : 'es';
+            applyLanguage(currentLang);
+            updateSwitch(currentLang);
+        });
+    }
 });
