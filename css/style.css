@@ -547,7 +547,13 @@ h2.h2 {
     width: 30px;
     height: auto;
     object-fit: contain;
-    transition: var(--transition); 
+    transition: var(--transition);
+}
+
+.habilidad i {
+    font-size: 30px;
+    line-height: 1;
+    transition: var(--transition);
 }
 
 .habilidad p {
@@ -566,8 +572,19 @@ h2.h2 {
     box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
 
-.habilidad:hover img {
+.habilidad:hover img,
+.habilidad:hover i {
     transform: scale(1.15);
+}
+
+#container-skills-extra {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    width: 100%;
+    max-width: 1000px;
+    margin: 25px auto 0 auto;
 }
 
 /* --- CERTIFICATES (CAROUSEL) --- */
