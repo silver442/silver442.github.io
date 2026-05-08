@@ -146,4 +146,31 @@ document.addEventListener("DOMContentLoaded", () => {
             updateSwitch(currentLang);
         });
     }
+
+    // Typewriter
+    function startTypewriter() {
+        const el = document.getElementById('typewriter-text');
+        if (!el) return;
+
+        const phrase = '“Si el código no me enseña algo nuevo, algo está mal.”';
+        let i = 0;
+
+        const cursor = document.createElement('span');
+        cursor.classList.add('typewriter-cursor');
+        cursor.textContent = '|';
+        el.appendChild(cursor);
+
+        setTimeout(() => {
+            const interval = setInterval(() => {
+                if (i < phrase.length) {
+                    cursor.insertAdjacentText('beforebegin', phrase[i]);
+                    i++;
+                } else {
+                    clearInterval(interval);
+                }
+            }, 45);
+        }, 600);
+    }
+
+    startTypewriter();
 });

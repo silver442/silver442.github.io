@@ -1,6 +1,7 @@
 const translations = {
   es: {
     nav_home: "Inicio",
+    nav_about: "Sobre mí",
     nav_experience: "Experiencia",
     nav_projects: "Proyectos",
     nav_skills: "Habilidades",
@@ -22,10 +23,13 @@ const translations = {
     projects_title: "Proyectos",
     skills_title: "Habilidades",
     certs_title: "Certificados",
+    about_title: "Sobre mí",
+    about_text: "Empecé a programar porque quería entender cómo funcionaban las cosas — y esa curiosidad nunca se fue. Soy Silvestre, Ingeniero en Tecnología de Software con experiencia en frontend (React, HTML, CSS, JS) y en transición activa hacia el stack completo con Next.js y NestJS. Actualmente construyo interfaces y funcionalidades en una plataforma B2B en BAINUB, y en paralelo desarrollo proyectos propios donde ya manejo todo: del cliente al servidor.",
     contact_title: "Contacto",
   },
   en: {
     nav_home: "Home",
+    nav_about: "About me",
     nav_experience: "Experience",
     nav_projects: "Projects",
     nav_skills: "Skills",
@@ -47,6 +51,8 @@ const translations = {
     projects_title: "Projects",
     skills_title: "Skills",
     certs_title: "Certificates",
+    about_title: "About me",
+    about_text: "I started coding because I wanted to understand how things worked — and that curiosity never left. I'm Silvestre, a Software Technology Engineer with experience in frontend (React, HTML, CSS, JS) and actively transitioning to the full stack with Next.js and NestJS. Currently building interfaces and features on a B2B platform at BAINUB, and in parallel developing my own projects where I handle everything: from client to server.",
     contact_title: "Contact",
   }
 };

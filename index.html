@@ -32,27 +32,27 @@
             </div>
             <ul class="main-nav" id="main-nav">
                 <li class="main-nav__item"><a href="#" data-i18n="nav_home">Inicio</a></li>
+                <li class="main-nav__item"><a href="#section-about" data-i18n="nav_about">Sobre mí</a></li>
                 <li class="main-nav__item"><a href="#section-experience" data-i18n="nav_experience">Experiencia</a></li>
                 <li class="main-nav__item"><a href="#section-projects" data-i18n="nav_projects">Proyectos</a></li>
                 <li class="main-nav__item"><a href="#section-skills" data-i18n="nav_skills">Habilidades</a></li>
                 <li class="main-nav__item"><a href="#section-certificate" data-i18n="nav_certs">Certificados</a></li>
                 <li class="main-nav__item"><a href="#footer" data-i18n="nav_contact">Contacto</a></li>
-                <li class="main-nav__item lang-item">
-                    <div class="lang-switch">
-                        <span class="lang-label" id="label-es">ES</span>
-                        <label class="lang-toggle-track">
-                            <input type="checkbox" id="lang-toggle" aria-label="Switch language">
-                            <span class="lang-toggle-thumb"></span>
-                        </label>
-                        <span class="lang-label" id="label-en">EN</span>
-                    </div>
-                </li>
             </ul>
+            <div class="lang-switch">
+                <span class="lang-label" id="label-es">ES</span>
+                <label class="lang-toggle-track">
+                    <input type="checkbox" id="lang-toggle" aria-label="Switch language">
+                    <span class="lang-toggle-thumb"></span>
+                </label>
+                <span class="lang-label" id="label-en">EN</span>
+            </div>
         </nav>
         <div id="titulo">
             <div class="hero-texto">
                 <h1 data-i18n="hero_greeting">Hola, soy Silvestre</h1>
                 <h2 data-i18n="hero_title">Desarrollador de Software</h2>
+                <p class="hero-quote" id="typewriter-text"></p>
                 <div class="hero-btns">
                     <a href="#section-projects" class="btn-principal" data-i18n="hero_cta">Ver mis proyectos</a>
                     <a href="docs/CV_DesarrolladorSoftware.pdf" download id="cv-download" class="btn-secundario" data-i18n="hero_cv">Descargar CV</a>
@@ -65,6 +65,53 @@
     </header>
     <!-- Main sections -->
     <main id="content-main">
+
+        <section class="secciones" id="section-about">
+            <h2 class="h2"><span data-i18n="about_title">Sobre mí</span>
+                <hr>
+            </h2>
+            <p class="about-text" data-i18n="about_text">Empecé a programar porque quería entender cómo funcionaban las cosas — y esa curiosidad nunca se fue. Soy Silvestre, Ingeniero en Tecnología de Software con experiencia en frontend (React, HTML, CSS, JS) y en transición activa hacia el stack completo con Next.js y NestJS. Actualmente construyo interfaces y funcionalidades en una plataforma B2B en BAINUB, y en paralelo desarrollo proyectos propios donde ya manejo todo: del cliente al servidor.</p>
+        </section>
+
+        <section class="secciones" id="section-skills">
+            <h2 class="h2"><span data-i18n="skills_title">Habilidades</span>
+                <hr>
+            </h2>
+            <div id="container-skills">
+                <div class="habilidad">
+                    <img src="Img/HabilidadesLogo/HTML.svg" alt="HTML 5">
+                    <p>HTML 5</p>
+                </div>
+                <div class="habilidad">
+                    <img src="Img/HabilidadesLogo/Css.svg" alt="CSS 3">
+                    <p>CSS 3</p>
+                </div>
+                <div class="habilidad">
+                    <img src="Img/HabilidadesLogo/Javascript.svg" alt="JavaScript">
+                    <p>JavaScript</p>
+                </div>
+                <div class="habilidad">
+                    <img src="Img/HabilidadesLogo/Git.svg" alt="Git">
+                    <p>Git</p>
+                </div>
+                <div class="habilidad">
+                    <img src="Img/HabilidadesLogo/Figma.svg" alt="Figma">
+                    <p>Figma</p>
+                </div>
+                <div class="habilidad">
+                    <img src="Img/HabilidadesLogo/Python.svg" alt="Python">
+                    <p>Python</p>
+                </div>
+                <div class="habilidad">
+                    <img src="Img/HabilidadesLogo/Java.svg" alt="Java">
+                    <p>Java</p>
+                </div>
+                <div class="habilidad">
+                    <img src="Img/HabilidadesLogo/React.svg" alt="React">
+                    <p>React</p>
+                </div>
+            </div>
+        </section>
 
         <section class="secciones" id="section-experience">
             <h2 class="h2"><span data-i18n="exp_title">Experiencia Laboral</span>
@@ -143,46 +190,6 @@
                             <img src="Img/youtube.png" alt="Canal de YouTube" width="30px" height="30px">
                         </a>
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="secciones" id="section-skills">
-            <h2 class="h2"><span data-i18n="skills_title">Habilidades</span>
-                <hr>
-            </h2>
-            <div id="container-skills">
-                <div class="habilidad">
-                    <img src="Img/HabilidadesLogo/HTML.svg" alt="HTML 5">
-                    <p>HTML 5</p>
-                </div>
-                <div class="habilidad">
-                    <img src="Img/HabilidadesLogo/Css.svg" alt="CSS 3">
-                    <p>CSS 3</p>
-                </div>
-                <div class="habilidad">
-                    <img src="Img/HabilidadesLogo/Javascript.svg" alt="JavaScript">
-                    <p>JavaScript</p>
-                </div>
-                <div class="habilidad">
-                    <img src="Img/HabilidadesLogo/Git.svg" alt="Git">
-                    <p>Git</p>
-                </div>
-                <div class="habilidad">
-                    <img src="Img/HabilidadesLogo/Figma.svg" alt="Figma">
-                    <p>Figma</p>
-                </div>
-                <div class="habilidad">
-                    <img src="Img/HabilidadesLogo/Python.svg" alt="Python">
-                    <p>Python</p>
-                </div>
-                <div class="habilidad">
-                    <img src="Img/HabilidadesLogo/Java.svg" alt="Java">
-                    <p>Java</p>
-                </div>
-                <div class="habilidad">
-                    <img src="Img/HabilidadesLogo/React.svg" alt="React">
-                    <p>React</p>
                 </div>
             </div>
         </section>

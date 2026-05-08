@@ -68,6 +68,9 @@ h2.h2 {
     position: fixed;
     z-index: 1000;
     border-bottom: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     animation: enhance-header linear both;
     animation-timeline: scroll(root);
@@ -92,12 +95,11 @@ h2.h2 {
 
 .main-nav{
     list-style-type: none;
-    height: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
-    padding-right: 20px;
+    padding: 0 160px;
 }
 
 .main-nav__item a{
@@ -205,6 +207,40 @@ h2.h2 {
     transform: translateY(-2px);
 }
 
+/* --- ABOUT --- */
+.about-text {
+    max-width: 780px;
+    color: var(--text-muted);
+    font-size: var(--text-lg);
+    line-height: 1.9;
+    text-align: left;
+    margin-top: 20px;
+    background: var(--bg-surface);
+    padding: 30px 35px;
+    border-radius: var(--radius-md);
+    border-left: 3px solid var(--primary-color);
+}
+
+/* --- TYPEWRITER --- */
+.hero-quote {
+    font-style: italic;
+    color: var(--text-muted);
+    font-size: var(--text-md);
+    min-height: 2.4rem;
+}
+
+.typewriter-cursor {
+    color: var(--primary-color);
+    font-style: normal;
+    font-weight: 300;
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0; }
+}
+
 /* Language Switch */
 [data-i18n] {
     transition: opacity 0.2s ease;
@@ -270,6 +306,14 @@ h2.h2 {
 
 .lang-toggle-track input:checked + .lang-toggle-thumb::before {
     transform: translateX(18px);
+}
+
+#nav > .lang-switch {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 0;
 }
 
 /* --- LAYOUT - SECTIONS --- */

@@ -48,8 +48,7 @@
         justify-content: flex-start;
         overflow: hidden;
         max-height: 0;
-        padding-top: 0;
-        padding-bottom: 0;
+        padding: 0;
         transition: max-height 0.4s ease-in-out, padding 0.4s ease-in-out;
         border-bottom: 2px solid transparent;
         display: flex !important;
@@ -114,9 +113,7 @@
         justify-content: center;
     }
 
-    .lang-item {
-        padding: 10px 0;
-        display: flex;
-        justify-content: center;
+    #nav > .lang-switch {
+        right: 62px;
     }
 }
