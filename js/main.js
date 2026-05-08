@@ -100,6 +100,13 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
 
+        document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+            const key = el.dataset.i18nPlaceholder;
+            if (translations[lang][key] !== undefined) {
+                el.placeholder = translations[lang][key];
+            }
+        });
+
         const cvLink = document.getElementById('cv-download');
         if (cvLink) {
             cvLink.href = lang === 'es'
@@ -144,6 +151,54 @@ document.addEventListener("DOMContentLoaded", () => {
             currentLang = langToggle.checked ? 'en' : 'es';
             applyLanguage(currentLang);
             updateSwitch(currentLang);
+        });
+    }
+
+    // Contact form
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+        const submitBtn = document.getElementById('form-submit');
+        const statusEl = document.getElementById('form-status');
+
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            submitBtn.disabled = true;
+            submitBtn.textContent = translations[currentLang].form_sending;
+            statusEl.textContent = '';
+            statusEl.className = 'form-status';
+
+            const data = {
+                name: contactForm.name.value,
+                email: contactForm.email.value,
+                message: contactForm.message.value,
+            };
+
+            try {
+                const response = await fetch('https://formspree.io/f/xwvynajn', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json',
+                    },
+                    body: JSON.stringify(data),
+                });
+
+                if (response.ok) {
+                    statusEl.textContent = translations[currentLang].form_success;
+                    statusEl.classList.add('success');
+                    contactForm.reset();
+                } else {
+                    statusEl.textContent = translations[currentLang].form_error;
+                    statusEl.classList.add('error');
+                }
+            } catch {
+                statusEl.textContent = translations[currentLang].form_error;
+                statusEl.classList.add('error');
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = translations[currentLang].form_submit;
+            }
         });
     }
 

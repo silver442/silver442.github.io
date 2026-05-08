@@ -229,6 +229,26 @@
         <h3 class="social"><span data-i18n="contact_title">Contacto</span>
             <hr>
         </h3>
+        
+        <form id="contact-form" class="contact-form" novalidate>
+            <div class="form-group">
+                <label for="name" data-i18n="form_name">Nombre</label>
+                <input type="text" id="name" name="name" required
+                data-i18n-placeholder="form_name_ph" placeholder="Tu nombre">
+            </div>
+            <div class="form-group">
+                <label for="email" data-i18n="form_email">Email</label>
+                <input type="email" id="email" name="email" required
+                data-i18n-placeholder="form_email_ph" placeholder="tu@email.com">
+            </div>
+            <div class="form-group">
+                <label for="message" data-i18n="form_message">Mensaje</label>
+                <textarea id="message" name="message" rows="5" required
+                data-i18n-placeholder="form_msg_ph" placeholder="Escribe tu mensaje aquí..."></textarea>
+            </div>
+            <button type="submit" id="form-submit" class="btn-principal" data-i18n="form_submit">Enviar mensaje</button>
+            <p id="form-status" class="form-status"></p>
+        </form>
 
         <div id="socialnet">
             <div class="sociales">
@@ -248,7 +268,7 @@
                 </a>
             </div>
         </div>
-
+        
         <p class="copy"> &copy;Silvestre Hernandez Hernandez</p>
     </footer>
     <script src="js/translations.js?v=1.0"></script>
