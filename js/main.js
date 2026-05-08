@@ -151,6 +151,7 @@ document.addEventListener("DOMContentLoaded", () => {
             currentLang = langToggle.checked ? 'en' : 'es';
             applyLanguage(currentLang);
             updateSwitch(currentLang);
+            startTypewriter(currentLang);
         });
     }
 
@@ -203,11 +204,18 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Typewriter
-    function startTypewriter() {
+    let twTimeout = null;
+    let twInterval = null;
+
+    function startTypewriter(lang) {
         const el = document.getElementById('typewriter-text');
         if (!el) return;
 
-        const phrase = '“Si el código no me enseña algo nuevo, algo está mal.”';
+        if (twTimeout) clearTimeout(twTimeout);
+        if (twInterval) clearInterval(twInterval);
+        el.textContent = '';
+
+        const phrase = translations[lang].hero_quote;
         let i = 0;
 
         const cursor = document.createElement('span');
@@ -215,17 +223,19 @@ document.addEventListener("DOMContentLoaded", () => {
         cursor.textContent = '|';
         el.appendChild(cursor);
 
-        setTimeout(() => {
-            const interval = setInterval(() => {
+        twTimeout = setTimeout(() => {
+            twTimeout = null;
+            twInterval = setInterval(() => {
                 if (i < phrase.length) {
                     cursor.insertAdjacentText('beforebegin', phrase[i]);
                     i++;
                 } else {
-                    clearInterval(interval);
+                    clearInterval(twInterval);
+                    twInterval = null;
                 }
             }, 45);
         }, 600);
     }
 
-    startTypewriter();
+    startTypewriter(currentLang);
 });

@@ -36,6 +36,7 @@ const translations = {
     form_sending: "Enviando...",
     form_success: "¡Mensaje enviado! Te responderé pronto.",
     form_error: "Hubo un error, por favor intenta de nuevo.",
+    hero_quote: '"Si el código no me enseña algo nuevo, algo está mal."',
   },
   en: {
     nav_home: "Home",
@@ -74,5 +75,6 @@ const translations = {
     form_sending: "Sending...",
     form_success: "Message sent! I'll get back to you soon.",
     form_error: "Something went wrong, please try again.",
+    hero_quote: '"If the code doesn\'t teach me something new, something\'s wrong."',
   }
 };
