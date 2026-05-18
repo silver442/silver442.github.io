@@ -110,8 +110,8 @@ document.addEventListener("DOMContentLoaded", () => {
         const cvLink = document.getElementById('cv-download');
         if (cvLink) {
             cvLink.href = lang === 'es'
-                ? 'docs/CV_DesarrolladorSoftware.pdf'
-                : 'docs/CV_SoftwareEngineer.pdf';
+                ? 'docs/CV_Silvestre_DesarrolladorSoftware.pdf'
+                : 'docs/CV_Silvestre_SoftwareEngineer.pdf';
         }
 
         document.documentElement.lang = lang;
