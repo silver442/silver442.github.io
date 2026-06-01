@@ -37,6 +37,10 @@ const translations = {
     form_success: "¡Mensaje enviado! Te responderé pronto.",
     form_error: "Hubo un error, por favor intenta de nuevo.",
     hero_quote: '"Si el código no me enseña algo nuevo, algo está mal."',
+    proj_finanzas_desc: "Plataforma fintech para gestión de finanzas personales, administración de préstamos con amortización dinámica y control de carteras.",
+    proj_heb_desc: "Sistema de punto de venta (POS) simulando flujos de caja y operaciones en tiempo real.",
+    proj_digitutos_desc: "Landing page para canal de YouTube de tutoriales (En construcción. Próxima migración a SSR).",
+    proj_altralum_coming: "Próximamente",
   },
   en: {
     nav_home: "Home",
@@ -76,5 +80,9 @@ const translations = {
     form_success: "Message sent! I'll get back to you soon.",
     form_error: "Something went wrong, please try again.",
     hero_quote: '"If the code doesn\'t teach me something new, something\'s wrong."',
+    proj_finanzas_desc: "Fintech platform for personal finance management, dynamic amortization loan administration, and portfolio control.",
+    proj_heb_desc: "Point of Sale (POS) system simulating cash flows and real-time operations.",
+    proj_digitutos_desc: "Landing page for a YouTube tutorial channel (Under construction. Upcoming migration to SSR).",
+    proj_altralum_coming: "Coming soon",
   }
 };

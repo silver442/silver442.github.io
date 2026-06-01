@@ -56,7 +56,8 @@
                 <p class="hero-quote" id="typewriter-text"></p>
                 <div class="hero-btns">
                     <a href="#section-projects" class="btn-principal" data-i18n="hero_cta">Ver mis proyectos</a>
-                    <a href="docs/CV_DesarrolladorSoftware.pdf" download id="cv-download" class="btn-secundario" data-i18n="hero_cv">Descargar CV</a>
+                    <a href="docs/CV_DesarrolladorSoftware.pdf" download id="cv-download" class="btn-secundario"
+                        data-i18n="hero_cv">Descargar CV</a>
                 </div>
             </div>
             <div class="hero-imagen">
@@ -71,7 +72,11 @@
             <h2 class="h2"><span data-i18n="about_title">Sobre mí</span>
                 <hr>
             </h2>
-            <p class="about-text" data-i18n="about_text">Empecé a programar porque quería entender cómo funcionaban las cosas — y esa curiosidad nunca se fue. Soy Silvestre, Ingeniero en Tecnología de Software con experiencia en frontend (React, HTML, CSS, JS) y en transición activa hacia el stack completo con Next.js y NestJS. Actualmente construyo interfaces y funcionalidades en una plataforma B2B en BAINUB, y en paralelo desarrollo proyectos propios donde ya manejo todo: del cliente al servidor.</p>
+            <p class="about-text" data-i18n="about_text">Empecé a programar porque quería entender cómo funcionaban las
+                cosas — y esa curiosidad nunca se fue. Soy Silvestre, Ingeniero en Tecnología de Software con
+                experiencia en frontend (React, HTML, CSS, JS) y en transición activa hacia el stack completo con
+                Next.js y NestJS. Actualmente construyo interfaces y funcionalidades en una plataforma B2B en BAINUB, y
+                en paralelo desarrollo proyectos propios donde ya manejo todo: del cliente al servidor.</p>
         </section>
 
         <section class="secciones" id="section-skills">
@@ -106,7 +111,7 @@
                 <div class="habilidad">
                     <i class="devicon-java-plain colored"></i>
                     <p>Java</p>
-                </div>                
+                </div>
                 <div class="habilidad">
                     <img src="Img/HabilidadesLogo/Python.svg" alt="Python">
                     <p>Python</p>
@@ -124,6 +129,26 @@
                 <div class="habilidad">
                     <i class="devicon-azuresqldatabase-plain colored"></i>
                     <p>SQL</p>
+                </div>
+                <div class="habilidad">
+                    <i class="devicon-docker-plain colored"></i>
+                    <p>Docker</p>
+                </div>
+                <div class="habilidad">
+                    <i class="devicon-tailwindcss-original colored"></i>
+                    <p>Tailwind CSS</p>
+                </div>
+                <div class="habilidad">
+                    <i class="devicon-nestjs-plain colored"></i>
+                    <p>Nest.js</p>
+                </div>
+                <div class="habilidad">
+                    <i class="devicon-postgresql-plain colored"></i>
+                    <p>PostgreSQL</p>
+                </div>
+                <div class="habilidad">
+                    <i class="devicon-prisma-original" style="color: var(--text-main);"></i>
+                    <p>Prisma</p>
                 </div>
             </div>
         </section>
@@ -146,8 +171,10 @@
                         </div>
                         <span class="timeline-date" data-i18n="exp1_date">Marzo 2025 - Actualidad</span>
                         <ul class="timeline-tasks">
-                            <li data-i18n="exp1_task1">Desarrollo de interfaces de usuario (UI) y nuevas funcionalidades utilizando React, HTML/CSS/JS.</li>
-                            <li data-i18n="exp1_task2">Optimizo la experiencia de usuario y el diseño responsivo para la plataforma web B2B.</li>
+                            <li data-i18n="exp1_task1">Desarrollo de interfaces de usuario (UI) y nuevas funcionalidades
+                                utilizando React, HTML/CSS/JS.</li>
+                            <li data-i18n="exp1_task2">Optimizo la experiencia de usuario y el diseño responsivo para la
+                                plataforma web B2B.</li>
                         </ul>
                     </div>
                 </div>
@@ -164,8 +191,10 @@
                         </div>
                         <span class="timeline-date" data-i18n="exp2_date">Jun 2023 - Dic 2023</span>
                         <ul class="timeline-tasks">
-                            <li data-i18n="exp2_task1">Implementé mejoras en el diseño y la funcionalidad del frontend de la aplicación.</li>
-                            <li data-i18n="exp2_task2">Realicé y optimicé consultas a bases de datos relacionales mediante SQL para asegurar la integridad de los datos.</li>
+                            <li data-i18n="exp2_task1">Implementé mejoras en el diseño y la funcionalidad del frontend
+                                de la aplicación.</li>
+                            <li data-i18n="exp2_task2">Realicé y optimicé consultas a bases de datos relacionales
+                                mediante SQL para asegurar la integridad de los datos.</li>
                         </ul>
                     </div>
                 </div>
@@ -178,8 +207,51 @@
             </h2>
             <div id="container-projects">
                 <div class="proyecto">
-                    <div class="image1">
-                        <img src="Img/proyectos/HEB_POST.png" alt="Proyecto de HEB" width="400px">
+                    <div class="proyecto-imagen-contenedor">
+                        <div class="proyecto-imagen-flip">
+                            <div class="proyecto-imagen-front image1">
+                                <img src="Img/proyectos/Finanzasdms.png" alt="Proyecto FinanzasDMS" width="400px">
+                            </div>
+                            <div class="proyecto-imagen-back">
+                                <p class="proyecto-desc" data-i18n="proj_finanzas_desc">Plataforma fintech para gestión de finanzas personales, administración de préstamos con amortización dinámica y control de carteras.</p>
+                                <div class="tech-badges">
+                                    <span>React</span>
+                                    <span>Tailwind</span>
+                                    <span>Nest.js</span>
+                                    <span>PostgreSQL</span>
+                                    <span>Prisma</span>
+                                    <span>Docker</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container-footer-prject">
+                        <a href="https://finanzasdms.com/" target="_blank">
+                            <img src="Img/ojo.png" alt="vista al proyecto" width="30px" height="30px">
+                        </a>
+                        <h3>FinanzasDMS</h3>
+                        <a href="https://github.com/silver442/finanzasdms-web" target="_blank">
+                            <img src="Img/githubIcon.png" alt="repositorio en github" width="30px" height="30px">
+                        </a>
+                    </div>
+                </div>
+
+                <div class="proyecto">
+                    <div class="proyecto-imagen-contenedor">
+                        <div class="proyecto-imagen-flip">
+                            <div class="proyecto-imagen-front image1">
+                                <img src="Img/proyectos/HEB_POST.png" alt="Proyecto de HEB" width="400px">
+                            </div>
+                            <div class="proyecto-imagen-back">
+                                <p class="proyecto-desc" data-i18n="proj_heb_desc">Sistema de punto de venta (POS) simulando flujos de caja y operaciones en tiempo real.</p>
+                                <div class="tech-badges">
+                                    <span>HTML</span>
+                                    <span>CSS</span>
+                                    <span>JavaScript</span>
+                                    <span>jQuery</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="container-footer-prject">
                         <a href="https://hebpos.silverdev.net/" target="_blank">
@@ -193,8 +265,20 @@
                 </div>
 
                 <div class="proyecto">
-                    <div class="image2">
-                        <img src="Img/proyectos/digitutos.png" alt="Página web de DigiTutos" width="400px">
+                    <div class="proyecto-imagen-contenedor">
+                        <div class="proyecto-imagen-flip">
+                            <div class="proyecto-imagen-front image2">
+                                <img src="Img/proyectos/digitutos.png" alt="Página web de DigiTutos" width="400px">
+                            </div>
+                            <div class="proyecto-imagen-back">
+                                <p class="proyecto-desc" data-i18n="proj_digitutos_desc">Landing page para canal de YouTube de tutoriales (En construcción. Próxima migración a SSR).</p>
+                                <div class="tech-badges">
+                                    <span>HTML</span>
+                                    <span>CSS</span>
+                                    <span>Next.js</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="container-footer-prject">
                         <a href="https://digitutos.com" target="_blank">
@@ -203,6 +287,24 @@
                         <h3>DigiTutos</h3>
                         <a href="https://www.youtube.com/@DigiTutos" target="_blank">
                             <img src="Img/youtube.png" alt="Canal de YouTube" width="30px" height="30px">
+                        </a>
+                    </div>
+                </div>
+
+                <div class="proyecto">
+                    <div class="image1 altralum-overlay-container">
+                        <img src="Img/proyectos/Altralum.png" alt="Proyecto de Altralum" width="400px">
+                        <div class="overlay-proximamente">
+                            <span data-i18n="proj_altralum_coming">Próximamente</span>
+                        </div>
+                    </div>
+                    <div class="container-footer-prject">
+                        <a href="#" class="btn-disabled">
+                            <img src="Img/ojo.png" alt="vista al proyecto" width="30px" height="30px">
+                        </a>
+                        <h3>E-commer</h3>
+                        <a href="#" class="btn-disabled">
+                            <img src="Img/githubIcon.png" alt="repositorio en github" width="30px" height="30px">
                         </a>
                     </div>
                 </div>
@@ -244,22 +346,22 @@
         <h3 class="social"><span data-i18n="contact_title">Contacto</span>
             <hr>
         </h3>
-        
+
         <form id="contact-form" class="contact-form" novalidate>
             <div class="form-group">
                 <label for="name" data-i18n="form_name">Nombre</label>
-                <input type="text" id="name" name="name" required
-                data-i18n-placeholder="form_name_ph" placeholder="Tu nombre">
+                <input type="text" id="name" name="name" required data-i18n-placeholder="form_name_ph"
+                    placeholder="Tu nombre">
             </div>
             <div class="form-group">
                 <label for="email" data-i18n="form_email">Email</label>
-                <input type="email" id="email" name="email" required
-                data-i18n-placeholder="form_email_ph" placeholder="tu@email.com">
+                <input type="email" id="email" name="email" required data-i18n-placeholder="form_email_ph"
+                    placeholder="tu@email.com">
             </div>
             <div class="form-group">
                 <label for="message" data-i18n="form_message">Mensaje</label>
-                <textarea id="message" name="message" rows="5" required
-                data-i18n-placeholder="form_msg_ph" placeholder="Escribe tu mensaje aquí..."></textarea>
+                <textarea id="message" name="message" rows="5" required data-i18n-placeholder="form_msg_ph"
+                    placeholder="Escribe tu mensaje aquí..."></textarea>
             </div>
             <button type="submit" id="form-submit" class="btn-principal" data-i18n="form_submit">Enviar mensaje</button>
             <p id="form-status" class="form-status"></p>
@@ -283,7 +385,7 @@
                 </a>
             </div>
         </div>
-        
+
         <p class="copy"> &copy;Silvestre Hernandez Hernandez</p>
     </footer>
     <script src="js/translations.js?v=1.1"></script>
