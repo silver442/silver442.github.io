@@ -213,7 +213,9 @@
                                 <img src="Img/proyectos/Finanzasdms.png" alt="Proyecto FinanzasDMS" width="400px">
                             </div>
                             <div class="proyecto-imagen-back">
-                                <p class="proyecto-desc" data-i18n="proj_finanzas_desc">Plataforma fintech para gestión de finanzas personales, administración de préstamos con amortización dinámica y control de carteras.</p>
+                                <p class="proyecto-desc" data-i18n="proj_finanzas_desc">Plataforma fintech para gestión
+                                    de finanzas personales, administración de préstamos con amortización dinámica y
+                                    control de carteras.</p>
                                 <div class="tech-badges">
                                     <span>React</span>
                                     <span>Tailwind</span>
@@ -243,7 +245,8 @@
                                 <img src="Img/proyectos/HEB_POST.png" alt="Proyecto de HEB" width="400px">
                             </div>
                             <div class="proyecto-imagen-back">
-                                <p class="proyecto-desc" data-i18n="proj_heb_desc">Sistema de punto de venta (POS) simulando flujos de caja y operaciones en tiempo real.</p>
+                                <p class="proyecto-desc" data-i18n="proj_heb_desc">Sistema de punto de venta (POS)
+                                    simulando flujos de caja y operaciones en tiempo real.</p>
                                 <div class="tech-badges">
                                     <span>HTML</span>
                                     <span>CSS</span>
@@ -271,7 +274,8 @@
                                 <img src="Img/proyectos/digitutos.png" alt="Página web de DigiTutos" width="400px">
                             </div>
                             <div class="proyecto-imagen-back">
-                                <p class="proyecto-desc" data-i18n="proj_digitutos_desc">Landing page para canal de YouTube de tutoriales (En construcción. Próxima migración a SSR).</p>
+                                <p class="proyecto-desc" data-i18n="proj_digitutos_desc">Landing page para canal de
+                                    YouTube de tutoriales (En construcción. Próxima migración a SSR).</p>
                                 <div class="tech-badges">
                                     <span>HTML</span>
                                     <span>CSS</span>
@@ -292,17 +296,65 @@
                 </div>
 
                 <div class="proyecto">
-                    <div class="image1 altralum-overlay-container">
-                        <img src="Img/proyectos/Altralum.png" alt="Proyecto de Altralum" width="400px">
+                    <div class="proyecto-imagen-contenedor">
+                        <div class="proyecto-imagen-flip">
+                            <div class="proyecto-imagen-front image2">
+                                <img src="Img/proyectos/Altralum.png" alt="Proyecto de Altralum" width="400px" style="object-position: left;">
+                            </div>
+                            <div class="proyecto-imagen-back">
+                                <p class="proyecto-desc" data-i18n="proj_altralum_desc">E-commerce para un cliente de
+                                    iluminación con
+                                    catálogo de productos, carrito de compras y sistema de pedidos.</p>
+                                <div class="tech-badges">
+                                    <span>React</span>
+                                    <span>Tailwind</span>
+                                    <span>Next.js</span>
+                                    <span>PostgreSQL</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container-footer-prject">
+                        <a href="https://altralum.com/" target="_blank">
+                            <img src="Img/ojo.png" alt="vista al proyecto" width="30px" height="30px">
+                        </a>
+                        <h3>E-commer</h3>
+                        <a href="#" onclick="openModal(); return false;">
+                            <img src="Img/githubIcon.png" alt="repositorio en github" width="30px" height="30px">
+                        </a>
+                    </div>
+                </div>
+
+                <div class="proyecto">
+                    <div class="image1 proximamente-overlay-container">
+                        <img src="Img/proyectos/kingquinela.png" alt="Proyecto de KingQuinela" width="400px">
                         <div class="overlay-proximamente">
-                            <span data-i18n="proj_altralum_coming">Próximamente</span>
+                            <span data-i18n="proj_kingquinela_coming">Próximamente</span>
                         </div>
                     </div>
                     <div class="container-footer-prject">
                         <a href="#" class="btn-disabled">
                             <img src="Img/ojo.png" alt="vista al proyecto" width="30px" height="30px">
                         </a>
-                        <h3>E-commer</h3>
+                        <h3>KingQuinela</h3>
+                        <a href="#" class="btn-disabled">
+                            <img src="Img/githubIcon.png" alt="repositorio en github" width="30px" height="30px">
+                        </a>
+                    </div>
+                </div>
+
+                <div class="proyecto">
+                    <div class="image1 proximamente-overlay-container">
+                        <img src="Img/proyectos/silgames.png" alt="Proyecto de Silgames" width="400px">
+                        <div class="overlay-proximamente">
+                            <span data-i18n="proj_silgames_coming">Próximamente</span>
+                        </div>
+                    </div>
+                    <div class="container-footer-prject">
+                        <a href="#" class="btn-disabled">
+                            <img src="Img/ojo.png" alt="vista al proyecto" width="30px" height="30px">
+                        </a>
+                        <h3>Silgames</h3>
                         <a href="#" class="btn-disabled">
                             <img src="Img/githubIcon.png" alt="repositorio en github" width="30px" height="30px">
                         </a>
@@ -388,6 +440,19 @@
 
         <p class="copy"> &copy;Silvestre Hernandez Hernandez</p>
     </footer>
+
+    <!-- Custom Modal -->
+    <div id="custom-modal" class="modal-overlay">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal()">&times;</span>
+            <div class="modal-icon">
+                <img src="Img/githubIcon.png" alt="Github" width="50px">
+            </div>
+            <p id="modal-text" data-i18n="proj_private_repo">Repositorio privado, ya que es un proyecto para un cliente.</p>
+            <button class="btn-principal" onclick="closeModal()" data-i18n="btn_understood">Entendido</button>
+        </div>
+    </div>
+
     <script src="js/translations.js?v=1.1"></script>
     <script src="js/main.js?v=1.4"></script>
 </body>

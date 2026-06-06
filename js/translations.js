@@ -41,6 +41,11 @@ const translations = {
     proj_heb_desc: "Sistema de punto de venta (POS) simulando flujos de caja y operaciones en tiempo real.",
     proj_digitutos_desc: "Landing page para canal de YouTube de tutoriales (En construcción. Próxima migración a SSR).",
     proj_altralum_coming: "Próximamente",
+    proj_kingquinela_coming: "Próximamente",
+    proj_silgames_coming: "Próximamente",
+    proj_altralum_desc: "E-commerce para un cliente de iluminación con catálogo de productos, carrito de compras y sistema de pedidos.",
+    proj_private_repo: "Repositorio privado, ya que es un proyecto para un cliente.",
+    btn_understood: "Entendido",
   },
   en: {
     nav_home: "Home",
@@ -84,5 +89,10 @@ const translations = {
     proj_heb_desc: "Point of Sale (POS) system simulating cash flows and real-time operations.",
     proj_digitutos_desc: "Landing page for a YouTube tutorial channel (Under construction. Upcoming migration to SSR).",
     proj_altralum_coming: "Coming soon",
+    proj_kingquinela_coming: "Coming soon",
+    proj_silgames_coming: "Coming soon",
+    proj_altralum_desc: "E-commerce for a lighting client with a product catalog, shopping cart, and order system.",
+    proj_private_repo: "Private repository, as it is a project for a client.",
+    btn_understood: "Got it",
   }
 };

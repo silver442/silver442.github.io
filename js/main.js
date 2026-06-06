@@ -239,3 +239,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     startTypewriter(currentLang);
 });
+
+// Global functions for custom modal
+window.openModal = function() {
+    document.getElementById('custom-modal').classList.add('active');
+};
+window.closeModal = function() {
+    document.getElementById('custom-modal').classList.remove('active');
+};
