@@ -44,6 +44,7 @@ const translations = {
     proj_kingquinela_coming: "Próximamente",
     proj_silgames_coming: "Próximamente",
     proj_altralum_desc: "E-commerce para un cliente de iluminación con catálogo de productos, carrito de compras y sistema de pedidos.",
+    proj_kingquinela_desc: "App de quinielas con marcadores en tiempo real, chat por sockets, sistema de login y paneles de administración.",
     proj_private_repo: "Repositorio privado, ya que es un proyecto para un cliente.",
     btn_understood: "Entendido",
   },
@@ -92,6 +93,7 @@ const translations = {
     proj_kingquinela_coming: "Coming soon",
     proj_silgames_coming: "Coming soon",
     proj_altralum_desc: "E-commerce for a lighting client with a product catalog, shopping cart, and order system.",
+    proj_kingquinela_desc: "Quinielas app with real-time scoreboards, socket chat, login system, and administration panels.",
     proj_private_repo: "Private repository, as it is a project for a client.",
     btn_understood: "Got it",
   }

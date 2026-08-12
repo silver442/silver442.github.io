@@ -326,18 +326,28 @@
                 </div>
 
                 <div class="proyecto">
-                    <div class="image1 proximamente-overlay-container">
-                        <img src="Img/proyectos/kingquinela.png" alt="Proyecto de KingQuinela" width="400px">
-                        <div class="overlay-proximamente">
-                            <span data-i18n="proj_kingquinela_coming">Próximamente</span>
+                    <div class="proyecto-imagen-contenedor">
+                        <div class="proyecto-imagen-flip">
+                            <div class="proyecto-imagen-front image1">
+                                <img src="Img/proyectos/kingquinela.png" alt="Proyecto de KingQuinela" width="400px">
+                            </div>
+                            <div class="proyecto-imagen-back">
+                                <p class="proyecto-desc" data-i18n="proj_kingquinela_desc">App de quinielas con marcadores en tiempo real, chat por sockets, sistema de login y paneles de administración.</p>
+                                <div class="tech-badges">
+                                    <span>Next.js</span>
+                                    <span>Supabase</span>
+                                    <span>PostgreSQL</span>
+                                    <span>Sockets</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="container-footer-prject">
-                        <a href="#" class="btn-disabled">
+                        <a href="https://kingquinelas.online" target="_blank">
                             <img src="Img/ojo.png" alt="vista al proyecto" width="30px" height="30px">
                         </a>
                         <h3>KingQuinela</h3>
-                        <a href="#" class="btn-disabled">
+                        <a href="#" onclick="openModal(); return false;">
                             <img src="Img/githubIcon.png" alt="repositorio en github" width="30px" height="30px">
                         </a>
                     </div>
