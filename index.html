@@ -5,7 +5,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Silver</title>
+    <meta name="description" content="Portafolio de Silvestre Hernández, Desarrollador Fullstack. Experiencia en React, Next.js, NestJS y PostgreSQL.">
+    <meta property="og:title" content="Silvestre Hernández | Fullstack Developer">
+    <meta property="og:description" content="Portafolio de Silvestre Hernández, Desarrollador Fullstack.">
+    <meta property="og:image" content="https://silver442.github.io/Img/Logo2.png">
+    <meta property="og:url" content="https://silver442.github.io/">
+    <title>Silvestre Hernández | Fullstack Developer</title>
     <link rel="stylesheet" href="css/style.css?v=1.3">
     <link rel="stylesheet" href="css/movil.css?v=1.3">
     <link rel="stylesheet" href="css/tablet.css?v=1.3" media="screen and (min-width: 600px)">
@@ -83,72 +88,37 @@
             <h2 class="h2"><span data-i18n="skills_title">Habilidades</span>
                 <hr>
             </h2>
-            <div id="container-skills">
-                <div class="habilidad">
-                    <i class="devicon-html5-plain colored"></i>
-                    <p>HTML 5</p>
+            <div class="skills-category-container">
+                <div class="skills-category">
+                    <h3>Frontend</h3>
+                    <div class="skills-grid">
+                        <div class="habilidad"><i class="devicon-react-original colored"></i><p>React</p></div>
+                        <div class="habilidad"><i class="devicon-nextjs-plain" style="color:#f8fafc"></i><p>Next.js</p></div>
+                        <div class="habilidad"><i class="devicon-javascript-plain colored"></i><p>JavaScript</p></div>
+                        <div class="habilidad"><i class="devicon-typescript-plain colored"></i><p>TypeScript</p></div>
+                        <div class="habilidad"><i class="devicon-html5-plain colored"></i><p>HTML 5</p></div>
+                        <div class="habilidad"><i class="devicon-css3-plain colored"></i><p>CSS 3</p></div>
+                        <div class="habilidad"><i class="devicon-tailwindcss-original colored"></i><p>Tailwind</p></div>
+                    </div>
                 </div>
-                <div class="habilidad">
-                    <i class="devicon-css3-plain colored"></i>
-                    <p>CSS 3</p>
+                <div class="skills-category">
+                    <h3>Backend & BD</h3>
+                    <div class="skills-grid">
+                        <div class="habilidad"><i class="devicon-nestjs-plain colored"></i><p>Nest.js</p></div>
+                        <div class="habilidad"><i class="devicon-postgresql-plain colored"></i><p>PostgreSQL</p></div>
+                        <div class="habilidad"><i class="devicon-prisma-original" style="color: var(--text-main);"></i><p>Prisma</p></div>
+                        <div class="habilidad"><i class="devicon-azuresqldatabase-plain colored"></i><p>SQL</p></div>
+                        <div class="habilidad"><i class="devicon-java-plain colored"></i><p>Java</p></div>
+                        <div class="habilidad"><img src="Img/HabilidadesLogo/Python.svg" alt="Python"><p>Python</p></div>
+                    </div>
                 </div>
-                <div class="habilidad">
-                    <i class="devicon-javascript-plain colored"></i>
-                    <p>JavaScript</p>
-                </div>
-                <div class="habilidad">
-                    <i class="devicon-react-original colored"></i>
-                    <p>React</p>
-                </div>
-                <div class="habilidad">
-                    <i class="devicon-typescript-plain colored"></i>
-                    <p>TypeScript</p>
-                </div>
-                <div class="habilidad">
-                    <i class="devicon-nextjs-plain" style="color:#f8fafc"></i>
-                    <p>Next.js</p>
-                </div>
-                <div class="habilidad">
-                    <i class="devicon-java-plain colored"></i>
-                    <p>Java</p>
-                </div>
-                <div class="habilidad">
-                    <img src="Img/HabilidadesLogo/Python.svg" alt="Python">
-                    <p>Python</p>
-                </div>
-            </div>
-            <div id="container-skills-extra">
-                <div class="habilidad">
-                    <i class="devicon-git-plain colored"></i>
-                    <p>Git</p>
-                </div>
-                <div class="habilidad">
-                    <img src="Img/HabilidadesLogo/Figma.svg" alt="Figma">
-                    <p>Figma</p>
-                </div>
-                <div class="habilidad">
-                    <i class="devicon-azuresqldatabase-plain colored"></i>
-                    <p>SQL</p>
-                </div>
-                <div class="habilidad">
-                    <i class="devicon-docker-plain colored"></i>
-                    <p>Docker</p>
-                </div>
-                <div class="habilidad">
-                    <i class="devicon-tailwindcss-original colored"></i>
-                    <p>Tailwind CSS</p>
-                </div>
-                <div class="habilidad">
-                    <i class="devicon-nestjs-plain colored"></i>
-                    <p>Nest.js</p>
-                </div>
-                <div class="habilidad">
-                    <i class="devicon-postgresql-plain colored"></i>
-                    <p>PostgreSQL</p>
-                </div>
-                <div class="habilidad">
-                    <i class="devicon-prisma-original" style="color: var(--text-main);"></i>
-                    <p>Prisma</p>
+                <div class="skills-category">
+                    <h3>Herramientas</h3>
+                    <div class="skills-grid">
+                        <div class="habilidad"><i class="devicon-git-plain colored"></i><p>Git</p></div>
+                        <div class="habilidad"><i class="devicon-docker-plain colored"></i><p>Docker</p></div>
+                        <div class="habilidad"><img src="Img/HabilidadesLogo/Figma.svg" alt="Figma"><p>Figma</p></div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -431,18 +401,18 @@
 
         <div id="socialnet">
             <div class="sociales">
-                <a href="mailto:silvestre.hdz.h@gmail.com">
+                <a href="mailto:silvestre.hdz.h@gmail.com" aria-label="Enviar correo a Silvestre">
                     <img src="Img/correo-electronico.png" alt="Correo electronico" width="50px">
                 </a>
             </div>
             <div class="sociales">
                 <a href="https://www.linkedin.com/in/silvestre-hernandez-822240244/" target="_blank"
-                    rel="noopener noreferrer">
+                    rel="noopener noreferrer" aria-label="Perfil de LinkedIn de Silvestre">
                     <img src="Img/linkedin.png" alt="Linkedin" width="50px">
                 </a>
             </div>
             <div class="sociales">
-                <a href="https://github.com/silver442" target="_blank" rel="noopener noreferrer">
+                <a href="https://github.com/silver442" target="_blank" rel="noopener noreferrer" aria-label="Perfil de GitHub de Silvestre">
                     <img src="Img/github.png" alt="Github" width="50px">
                 </a>
             </div>

@@ -38,9 +38,26 @@ html {
 body {
     font-size: var(--text-md);
     background-color: var(--bg-main);
+    background: radial-gradient(circle at top left, #1e293b, var(--bg-main) 70%);
+    background-attachment: fixed;
     color: var(--text-main);
     font-family: var(--font-body);
     line-height: 1.6;
+}
+
+/* --- SCROLLBAR --- */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: var(--bg-main);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-color);
 }
 
 h1,
@@ -190,6 +207,7 @@ h2.h2 {
 .btn-principal:hover {
     background-color: var(--primary-hover);
     transform: translateY(-2px);
+    box-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
 }
 
 .btn-secundario {
@@ -523,7 +541,13 @@ h2.h2 {
     transform-style: preserve-3d;
 }
 
-.proyecto-imagen-contenedor:hover .proyecto-imagen-flip {
+@media (hover: hover) {
+    .proyecto-imagen-contenedor:hover .proyecto-imagen-flip {
+        transform: rotateY(180deg);
+    }
+}
+
+.proyecto-imagen-contenedor.is-flipped .proyecto-imagen-flip {
     transform: rotateY(180deg);
 }
 
@@ -627,13 +651,28 @@ h2.h2 {
 }
 
 /* --- SKILLS --- */
-#container-skills {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    grid-gap: 25px;
+.skills-category-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
     width: 100%;
     max-width: 1000px;
     margin: 40px auto 0 auto;
+}
+
+.skills-category h3 {
+    font-size: var(--text-xl);
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    text-align: center;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 10px;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    grid-gap: 20px;
     justify-items: center;
 }
 
@@ -684,16 +723,6 @@ h2.h2 {
 .habilidad:hover img,
 .habilidad:hover i {
     transform: scale(1.15);
-}
-
-#container-skills-extra {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 25px;
-    width: 100%;
-    max-width: 1000px;
-    margin: 25px auto 0 auto;
 }
 
 /* --- CERTIFICATES (CAROUSEL) --- */

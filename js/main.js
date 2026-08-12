@@ -238,7 +238,16 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     startTypewriter(currentLang);
+
+    // Fix for mobile flip cards
+    const flipContainers = document.querySelectorAll('.proyecto-imagen-contenedor');
+    flipContainers.forEach(container => {
+        container.addEventListener('click', function() {
+            this.classList.toggle('is-flipped');
+        });
+    });
 });
+
 
 // Global functions for custom modal
 window.openModal = function() {
