@@ -1,10 +1,15 @@
 document.addEventListener("DOMContentLoaded", () => {
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let currentLang = localStorage.getItem('lang') || 'es';
+
+    // Certificates carousel
     const track = document.getElementById('container-certificate');
     const btnNext = document.querySelector('.next-btn');
     const btnPrev = document.querySelector('.prev-btn');
     const wrapper = document.querySelector('.carousel-wrapper');
-    
-    let isMoving = false; 
+
+    let isMoving = false;
+    let autoPlay = null;
 
     function getCertWidth() {
         const cert = document.querySelector('.certificado');
@@ -12,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
         return cert.offsetWidth + parseFloat(style.marginLeft) + parseFloat(style.marginRight);
     }
 
-    function init() {
+    function initCarousel() {
         const currentCerts = track.querySelectorAll('.certificado');
         currentCerts.forEach(c => c.classList.remove('activo'));
         currentCerts[1].classList.add('activo');
@@ -48,46 +53,68 @@ document.addEventListener("DOMContentLoaded", () => {
         track.style.transition = 'none';
         track.insertBefore(track.lastElementChild, track.firstElementChild);
         track.style.transform = `translateX(-${distance}px)`;
-        
-        track.offsetHeight; 
+
+        track.offsetHeight;
 
         track.style.transition = 'transform 0.5s ease-in-out';
         track.style.transform = 'translateX(0)';
 
         const currentCerts = track.querySelectorAll('.certificado');
-        currentCerts[2].classList.remove('activo'); 
-        currentCerts[1].classList.add('activo');    
+        currentCerts[2].classList.remove('activo');
+        currentCerts[1].classList.add('activo');
 
         setTimeout(() => {
             isMoving = false;
         }, 500);
     }
 
-    btnNext.addEventListener('click', moveNext);
-    btnPrev.addEventListener('click', movePrev);
+    function startAutoPlay() {
+        if (prefersReducedMotion || autoPlay) return;
+        autoPlay = setInterval(moveNext, 3500);
+    }
 
-    let autoPlay = setInterval(moveNext, 3500);
+    function stopAutoPlay() {
+        clearInterval(autoPlay);
+        autoPlay = null;
+    }
 
-    wrapper.addEventListener('mouseenter', () => clearInterval(autoPlay));
-    wrapper.addEventListener('mouseleave', () => autoPlay = setInterval(moveNext, 3500));
+    if (track && wrapper) {
+        btnNext.addEventListener('click', moveNext);
+        btnPrev.addEventListener('click', movePrev);
 
-    init();
+        wrapper.addEventListener('mouseenter', stopAutoPlay);
+        wrapper.addEventListener('mouseleave', startAutoPlay);
+        wrapper.addEventListener('focusin', stopAutoPlay);
+        wrapper.addEventListener('focusout', startAutoPlay);
 
+        initCarousel();
+        startAutoPlay();
+    }
+
+    // Mobile menu
     const hamburger = document.getElementById('hamburger');
     const mainNav = document.getElementById('main-nav');
 
+    function setMenu(open) {
+        hamburger.classList.toggle('active', open);
+        mainNav.classList.toggle('active', open);
+        hamburger.setAttribute('aria-expanded', String(open));
+    }
+
     if (hamburger && mainNav) {
         hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            mainNav.classList.toggle('active');
+            setMenu(!mainNav.classList.contains('active'));
         });
 
-        const navLinks = mainNav.querySelectorAll('a');
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                hamburger.classList.remove('active');
-                mainNav.classList.remove('active');
-            });
+        mainNav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => setMenu(false));
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && mainNav.classList.contains('active')) {
+                setMenu(false);
+                hamburger.focus();
+            }
         });
     }
 
@@ -107,6 +134,13 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
 
+        document.querySelectorAll('[data-i18n-aria]').forEach(el => {
+            const key = el.dataset.i18nAria;
+            if (translations[lang][key] !== undefined) {
+                el.setAttribute('aria-label', translations[lang][key]);
+            }
+        });
+
         const cvLink = document.getElementById('cv-download');
         if (cvLink) {
             cvLink.href = lang === 'es'
@@ -118,15 +152,10 @@ document.addEventListener("DOMContentLoaded", () => {
         localStorage.setItem('lang', lang);
     }
 
+    // Cross-fade of the whole page with the View Transitions API; instant swap where unsupported
     function applyLanguage(lang, animate = true) {
-        const elements = document.querySelectorAll('[data-i18n]');
-
-        if (animate) {
-            elements.forEach(el => el.style.opacity = '0');
-            setTimeout(() => {
-                applyTexts(lang);
-                elements.forEach(el => el.style.opacity = '1');
-            }, 180);
+        if (animate && document.startViewTransition && !prefersReducedMotion) {
+            document.startViewTransition(() => applyTexts(lang));
         } else {
             applyTexts(lang);
         }
@@ -142,7 +171,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     const langToggle = document.getElementById('lang-toggle');
-    let currentLang = localStorage.getItem('lang') || 'es';
     applyLanguage(currentLang, false);
     updateSwitch(currentLang);
 
@@ -173,6 +201,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 name: contactForm.name.value,
                 email: contactForm.email.value,
                 message: contactForm.message.value,
+                _gotcha: contactForm._gotcha.value,
             };
 
             try {
@@ -203,6 +232,11 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+    // Mail links: the address is assembled here so it never appears in plain text in the HTML
+    document.querySelectorAll('.js-mail').forEach(link => {
+        link.href = `mailto:${link.dataset.user}@${link.dataset.domain}`;
+    });
+
     // Typewriter
     let twTimeout = null;
     let twInterval = null;
@@ -216,10 +250,17 @@ document.addEventListener("DOMContentLoaded", () => {
         el.textContent = '';
 
         const phrase = translations[lang].hero_quote;
+
+        if (prefersReducedMotion) {
+            el.textContent = phrase;
+            return;
+        }
+
         let i = 0;
 
         const cursor = document.createElement('span');
         cursor.classList.add('typewriter-cursor');
+        cursor.setAttribute('aria-hidden', 'true');
         cursor.textContent = '|';
         el.appendChild(cursor);
 
@@ -239,20 +280,103 @@ document.addEventListener("DOMContentLoaded", () => {
 
     startTypewriter(currentLang);
 
-    // Fix for mobile flip cards
-    const flipContainers = document.querySelectorAll('.proyecto-imagen-contenedor');
-    flipContainers.forEach(container => {
-        container.addEventListener('click', function() {
-            this.classList.toggle('is-flipped');
+    // Scroll reveal (items in the same group appear one after another)
+    const revealItems = document.querySelectorAll('.reveal');
+    document.querySelectorAll('#container-projects, .timeline, .skills-category-container').forEach(group => {
+        group.querySelectorAll(':scope > .reveal').forEach((item, i) => {
+            item.style.setProperty('--reveal-delay', `${Math.min(i, 4) * 90}ms`);
         });
     });
+    if ('IntersectionObserver' in window) {
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+        revealItems.forEach(item => revealObserver.observe(item));
+    } else {
+        revealItems.forEach(item => item.classList.add('is-visible'));
+    }
+
+    // Active section in the navbar
+    const navLinks = document.querySelectorAll('.main-nav__item a');
+    const sections = [...navLinks]
+        .map(link => document.querySelector(link.getAttribute('href')))
+        .filter(Boolean);
+
+    if ('IntersectionObserver' in window && sections.length) {
+        const spyObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                navLinks.forEach(link => {
+                    const isActive = link.getAttribute('href') === `#${entry.target.id}`;
+                    link.classList.toggle('active', isActive);
+                    if (isActive) link.setAttribute('aria-current', 'true');
+                    else link.removeAttribute('aria-current');
+                });
+            });
+        }, { rootMargin: '-45% 0px -50% 0px' });
+        sections.forEach(section => spyObserver.observe(section));
+    }
+
+    // Footer year
+    const yearEl = document.getElementById('year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+    // Private repo modal
+    const modal = document.getElementById('custom-modal');
+    let lastFocused = null;
+
+    function getModalFocusables() {
+        return modal.querySelectorAll('button, [href], input, [tabindex]:not([tabindex="-1"])');
+    }
+
+    function openModal() {
+        lastFocused = document.activeElement;
+        modal.classList.add('active');
+        const focusables = getModalFocusables();
+        focusables[focusables.length - 1].focus();
+    }
+
+    function closeModal() {
+        modal.classList.remove('active');
+        if (lastFocused) lastFocused.focus();
+    }
+
+    if (modal) {
+        document.querySelectorAll('[data-modal-open]').forEach(btn => {
+            btn.addEventListener('click', openModal);
+        });
+        modal.querySelectorAll('[data-modal-close]').forEach(btn => {
+            btn.addEventListener('click', closeModal);
+        });
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeModal();
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (!modal.classList.contains('active')) return;
+
+            if (e.key === 'Escape') {
+                closeModal();
+                return;
+            }
+
+            if (e.key === 'Tab') {
+                const focusables = getModalFocusables();
+                const first = focusables[0];
+                const last = focusables[focusables.length - 1];
+                if (e.shiftKey && document.activeElement === first) {
+                    e.preventDefault();
+                    last.focus();
+                } else if (!e.shiftKey && document.activeElement === last) {
+                    e.preventDefault();
+                    first.focus();
+                }
+            }
+        });
+    }
 });
-
-
-// Global functions for custom modal
-window.openModal = function() {
-    document.getElementById('custom-modal').classList.add('active');
-};
-window.closeModal = function() {
-    document.getElementById('custom-modal').classList.remove('active');
-};

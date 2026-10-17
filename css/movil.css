@@ -40,7 +40,7 @@
 
     .main-nav {
         position: absolute;
-        top: 7vh; 
+        top: max(7vh, 60px);
         right: 0;
         width: 100%;
         height: auto;
@@ -50,14 +50,16 @@
         justify-content: flex-start;
         overflow: hidden;
         max-height: 0;
+        visibility: hidden;
         padding: 0;
-        transition: max-height 0.4s ease-in-out, padding 0.4s ease-in-out;
+        transition: max-height 0.4s ease-in-out, padding 0.4s ease-in-out, visibility 0.4s;
         border-bottom: 2px solid transparent;
         display: flex !important;
     }
 
     .main-nav.active {
-        max-height: 400px; 
+        max-height: 450px;
+        visibility: visible;
         padding-top: 10px;
         padding-bottom: 10px;
         border-bottom: 2px solid var(--primary-color);
@@ -75,8 +77,9 @@
         padding: 15px 0;
         font-size: var(--text-md);
     }
-    
-    .main-nav__item a:hover {
+
+    .main-nav__item a:hover,
+    .main-nav__item a.active {
         background-color: rgba(10, 54, 180, 0.2);
         border-bottom: 2px solid transparent;
     }
@@ -88,9 +91,9 @@
     }
 
     .certificado {
-        transform: scale(0.85); 
+        transform: scale(0.85);
     }
-    
+
     .certificado.activo {
         transform: scale(1.05);
     }
@@ -99,20 +102,35 @@
         flex-direction: column-reverse;
         justify-content: center;
         text-align: center;
-        padding-top: 10vh;
+        padding-top: calc(max(7vh, 60px) + 30px);
         gap: 0;
     }
-    
+
     .hero-texto {
         align-items: center;
     }
-    
+
     .hero-texto h1 { text-align: center; font-size: 3.6rem; }
-    .hero-texto h2 { text-align: center; font-size: 2rem; }
-    
+    .hero-role { font-size: 2rem; }
+    .hero-stack { font-size: var(--text-sm); }
+
     .hero-imagen { margin-bottom: 30px; }
+    .hero-imagen img { max-width: 220px; }
 
     .hero-btns {
         justify-content: center;
+    }
+
+    .hero-social {
+        width: 100%;
+        justify-content: center;
+    }
+
+    #container-projects {
+        grid-template-columns: 1fr;
+    }
+
+    .about-text {
+        padding: 24px;
     }
 }
