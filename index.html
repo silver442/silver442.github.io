@@ -3,157 +3,282 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portafolio de Silvestre Hernández, Desarrollador Fullstack. Experiencia en React, Next.js, NestJS y PostgreSQL.">
-    <meta property="og:title" content="Silvestre Hernández | Fullstack Developer">
-    <meta property="og:description" content="Portafolio de Silvestre Hernández, Desarrollador Fullstack.">
-    <meta property="og:image" content="https://silver442.github.io/Img/Logo2.png">
-    <meta property="og:url" content="https://silver442.github.io/">
     <title>Silvestre Hernández | Fullstack Developer</title>
-    <link rel="stylesheet" href="css/style.css?v=1.3">
-    <link rel="stylesheet" href="css/movil.css?v=1.3">
-    <link rel="stylesheet" href="css/tablet.css?v=1.3" media="screen and (min-width: 600px)">
-    <link rel="stylesheet" href="css/desktop.css?v=1.3" media="screen and (min-width: 800px)">
+    <meta name="description" content="Silvestre Hernández, desarrollador fullstack en Monterrey. Construyo aplicaciones web con React, Next.js, TypeScript, NestJS y PostgreSQL.">
+    <link rel="canonical" href="https://silver442.github.io/">
+    <meta name="theme-color" content="#060D1F">
+
+    <!-- Open Graph / redes sociales -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Silvestre Hernández">
+    <meta property="og:locale" content="es_MX">
+    <meta property="og:title" content="Silvestre Hernández | Fullstack Developer">
+    <meta property="og:description" content="Desarrollador fullstack en Monterrey. React, Next.js, TypeScript, NestJS y PostgreSQL.">
+    <meta property="og:image" content="https://silver442.github.io/Img/og-image.jpg">
+    <meta property="og:image:width" content="600">
+    <meta property="og:image:height" content="600">
+    <meta property="og:url" content="https://silver442.github.io/">
+    <meta name="twitter:card" content="summary">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Silvestre Hernández Hernández",
+        "jobTitle": "Fullstack Developer",
+        "url": "https://silver442.github.io/",
+        "image": "https://silver442.github.io/Img/og-image.jpg",
+        "address": { "@type": "PostalAddress", "addressLocality": "Monterrey", "addressCountry": "MX" },
+        "alumniOf": "Universidad Autónoma de Nuevo León",
+        "knowsAbout": ["React", "Next.js", "TypeScript", "NestJS", "PostgreSQL"],
+        "sameAs": [
+            "https://github.com/silver442",
+            "https://www.linkedin.com/in/silvestre-hernandez-822240244/"
+        ]
+    }
+    </script>
+
+    <!-- Marca que JS está activo para habilitar las animaciones de entrada -->
+    <script>document.documentElement.classList.add('js');</script>
+
     <link rel="icon" href="Img/Logo.ico">
+    <link rel="apple-touch-icon" href="Img/apple-touch-icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Poppins:wght@500;600;700&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/devicon.min.css">
+    <link rel="stylesheet" href="css/style.css?v=2.2">
+    <link rel="stylesheet" href="css/movil.css?v=2.0">
+    <link rel="stylesheet" href="css/desktop.css?v=2.0" media="screen and (min-width: 800px)">
 </head>
 
 <body>
+    <!-- Íconos SVG reutilizables -->
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+        <symbol id="icon-eye" viewBox="0 0 24 24">
+            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            <circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"></circle>
+        </symbol>
+        <symbol id="icon-github" viewBox="0 0 16 16">
+            <path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+        </symbol>
+        <symbol id="icon-linkedin" viewBox="0 0 24 24">
+            <path fill="currentColor" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.125 2.062 2.062 0 0 1 0 4.125zM7.119 20.452H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path>
+        </symbol>
+        <symbol id="icon-youtube" viewBox="0 0 24 24">
+            <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M9.75 15.02l5.75-3.27-5.75-3.27v6.54z" fill="currentColor"></path>
+        </symbol>
+        <symbol id="icon-mail" viewBox="0 0 24 24">
+            <rect x="2" y="4" width="20" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="2"></rect>
+            <path d="m22 6-10 7L2 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </symbol>
+        <symbol id="icon-pin" viewBox="0 0 24 24">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            <circle cx="12" cy="10" r="3" fill="none" stroke="currentColor" stroke-width="2"></circle>
+        </symbol>
+        <symbol id="icon-lock" viewBox="0 0 24 24">
+            <rect x="3" y="11" width="18" height="11" rx="2" fill="none" stroke="currentColor" stroke-width="2"></rect>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+        </symbol>
+    </svg>
+
+    <a class="skip-link" href="#content-main" data-i18n="skip_link">Saltar al contenido</a>
+
     <!-- Header -->
     <header id="header-container">
-        <nav id="nav">
-            <div id="Logo">
-                <a href="#"><img src="Img/Logo.png" alt="Logo"></a>
-            </div>
-            <div class="hamburger" id="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-            <ul class="main-nav" id="main-nav">
-                <li class="main-nav__item"><a href="#" data-i18n="nav_home">Inicio</a></li>
-                <li class="main-nav__item"><a href="#section-about" data-i18n="nav_about">Sobre mí</a></li>
-                <li class="main-nav__item"><a href="#section-experience" data-i18n="nav_experience">Experiencia</a></li>
-                <li class="main-nav__item"><a href="#section-projects" data-i18n="nav_projects">Proyectos</a></li>
-                <li class="main-nav__item"><a href="#section-skills" data-i18n="nav_skills">Habilidades</a></li>
-                <li class="main-nav__item"><a href="#section-certificate" data-i18n="nav_certs">Certificados</a></li>
-                <li class="main-nav__item"><a href="#footer" data-i18n="nav_contact">Contacto</a></li>
-            </ul>
-            <div class="lang-switch">
-                <span class="lang-label" id="label-es">ES</span>
-                <label class="lang-toggle-track">
-                    <input type="checkbox" id="lang-toggle" aria-label="Switch language">
-                    <span class="lang-toggle-thumb"></span>
-                </label>
-                <span class="lang-label" id="label-en">EN</span>
+        <nav id="nav" aria-label="Principal">
+            <div class="nav-container">
+                <div id="Logo">
+                    <a href="#"><img src="Img/Logo.webp" alt="Inicio" width="120" height="120"></a>
+                </div>
+                <button class="hamburger" id="hamburger" type="button" aria-expanded="false" aria-controls="main-nav"
+                    aria-label="Abrir menú" data-i18n-aria="nav_menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+                <ul class="main-nav" id="main-nav">
+                    <li class="main-nav__item"><a href="#section-about" data-i18n="nav_about">Sobre mí</a></li>
+                    <li class="main-nav__item"><a href="#section-skills" data-i18n="nav_skills">Habilidades</a></li>
+                    <li class="main-nav__item"><a href="#section-experience" data-i18n="nav_experience">Experiencia</a></li>
+                    <li class="main-nav__item"><a href="#section-projects" data-i18n="nav_projects">Proyectos</a></li>
+                    <li class="main-nav__item"><a href="#section-certificate" data-i18n="nav_certs">Certificados</a></li>
+                    <li class="main-nav__item"><a href="#footer" data-i18n="nav_contact">Contacto</a></li>
+                </ul>
+                <div class="lang-switch">
+                    <span class="lang-label" id="label-es">ES</span>
+                    <label class="lang-toggle-track">
+                        <input type="checkbox" id="lang-toggle" aria-label="Switch language / Cambiar idioma">
+                        <span class="lang-toggle-thumb"></span>
+                    </label>
+                    <span class="lang-label" id="label-en">EN</span>
+                </div>
             </div>
         </nav>
+
+        <!-- Hero -->
         <div id="titulo">
             <div class="hero-texto">
+                <span class="hero-badge">
+                    <span class="hero-badge__dot" aria-hidden="true"></span>
+                    <span data-i18n="hero_badge">Disponible para nuevas oportunidades</span>
+                </span>
                 <h1 data-i18n="hero_greeting">Hola, soy Silvestre</h1>
-                <h2 data-i18n="hero_title">Desarrollador de Software</h2>
+                <p class="hero-role" data-i18n="hero_title">Desarrollador Fullstack</p>
+                <p class="hero-stack">React · Next.js · TypeScript · NestJS · PostgreSQL</p>
                 <p class="hero-quote" id="typewriter-text"></p>
+                <p class="hero-location">
+                    <svg class="icon" aria-hidden="true"><use href="#icon-pin"></use></svg>
+                    <span data-i18n="hero_location">Monterrey, MX · Remoto</span>
+                </p>
                 <div class="hero-btns">
                     <a href="#section-projects" class="btn-principal" data-i18n="hero_cta">Ver mis proyectos</a>
-                    <a href="docs/CV_DesarrolladorSoftware.pdf" download id="cv-download" class="btn-secundario"
+                    <a href="docs/CV_Silvestre_DesarrolladorSoftware.pdf" download id="cv-download" class="btn-secundario"
                         data-i18n="hero_cv">Descargar CV</a>
+                    <div class="hero-social">
+                        <a href="https://github.com/silver442" target="_blank" rel="noopener noreferrer"
+                            aria-label="GitHub de Silvestre">
+                            <svg class="icon" aria-hidden="true"><use href="#icon-github"></use></svg>
+                        </a>
+                        <a href="https://www.linkedin.com/in/silvestre-hernandez-822240244/" target="_blank"
+                            rel="noopener noreferrer" aria-label="LinkedIn de Silvestre">
+                            <svg class="icon" aria-hidden="true"><use href="#icon-linkedin"></use></svg>
+                        </a>
+                    </div>
                 </div>
             </div>
             <div class="hero-imagen">
-                <img src="Img/Logo2.png" alt="Logo de Silvestre">
+                <img src="Img/Logo2.webp" alt="Avatar de Silvestre" width="700" height="700" fetchpriority="high">
             </div>
         </div>
     </header>
+
     <!-- Main sections -->
     <main id="content-main">
 
+        <!-- Sobre mí -->
         <section class="secciones" id="section-about">
             <h2 class="h2"><span data-i18n="about_title">Sobre mí</span>
                 <hr>
             </h2>
-            <p class="about-text" data-i18n="about_text">Empecé a programar porque quería entender cómo funcionaban las
-                cosas — y esa curiosidad nunca se fue. Soy Silvestre, Ingeniero en Tecnología de Software con
-                experiencia en frontend (React, HTML, CSS, JS) y en transición activa hacia el stack completo con
-                Next.js y NestJS. Actualmente construyo interfaces y funcionalidades en una plataforma B2B en BAINUB, y
-                en paralelo desarrollo proyectos propios donde ya manejo todo: del cliente al servidor.</p>
+            <p class="about-text reveal" data-i18n="about_text">Soy Silvestre, Ingeniero en Tecnología de Software (UANL) y
+                desarrollador fullstack en Monterrey. Empecé a programar porque quería entender cómo funcionan las cosas, y
+                esa curiosidad me llevó a construir productos completos: interfaces con React y Next.js, APIs con NestJS y
+                bases de datos PostgreSQL desplegadas con Docker. En BAINUB desarrollé interfaces y funcionalidades para una
+                plataforma B2B, y hoy, con Silverwebs, diseño y entrego sitios a la medida para negocios que quieren dejar de
+                depender de suscripciones. Me importan el código claro, las interfaces rápidas y aprender algo nuevo en cada
+                proyecto.</p>
         </section>
 
+        <!-- Habilidades -->
         <section class="secciones" id="section-skills">
             <h2 class="h2"><span data-i18n="skills_title">Habilidades</span>
                 <hr>
             </h2>
             <div class="skills-category-container">
-                <div class="skills-category">
+                <div class="skills-category reveal">
                     <h3>Frontend</h3>
                     <div class="skills-grid">
-                        <div class="habilidad"><i class="devicon-react-original colored"></i><p>React</p></div>
-                        <div class="habilidad"><i class="devicon-nextjs-plain" style="color:#f8fafc"></i><p>Next.js</p></div>
-                        <div class="habilidad"><i class="devicon-javascript-plain colored"></i><p>JavaScript</p></div>
-                        <div class="habilidad"><i class="devicon-typescript-plain colored"></i><p>TypeScript</p></div>
-                        <div class="habilidad"><i class="devicon-html5-plain colored"></i><p>HTML 5</p></div>
-                        <div class="habilidad"><i class="devicon-css3-plain colored"></i><p>CSS 3</p></div>
-                        <div class="habilidad"><i class="devicon-tailwindcss-original colored"></i><p>Tailwind</p></div>
+                        <div class="habilidad"><i class="devicon-react-original colored" aria-hidden="true"></i><p>React</p></div>
+                        <div class="habilidad"><i class="devicon-nextjs-plain" style="color: var(--text-main);" aria-hidden="true"></i><p>Next.js</p></div>
+                        <div class="habilidad"><i class="devicon-javascript-plain colored" aria-hidden="true"></i><p>JavaScript</p></div>
+                        <div class="habilidad"><i class="devicon-typescript-plain colored" aria-hidden="true"></i><p>TypeScript</p></div>
+                        <div class="habilidad"><i class="devicon-html5-plain colored" aria-hidden="true"></i><p>HTML 5</p></div>
+                        <div class="habilidad"><i class="devicon-css3-plain colored" aria-hidden="true"></i><p>CSS 3</p></div>
+                        <div class="habilidad"><i class="devicon-tailwindcss-original colored" aria-hidden="true"></i><p>Tailwind</p></div>
                     </div>
                 </div>
-                <div class="skills-category">
-                    <h3>Backend & BD</h3>
+                <div class="skills-category reveal">
+                    <h3 data-i18n="skills_backend">Backend y bases de datos</h3>
                     <div class="skills-grid">
-                        <div class="habilidad"><i class="devicon-nestjs-plain colored"></i><p>Nest.js</p></div>
-                        <div class="habilidad"><i class="devicon-postgresql-plain colored"></i><p>PostgreSQL</p></div>
-                        <div class="habilidad"><i class="devicon-prisma-original" style="color: var(--text-main);"></i><p>Prisma</p></div>
-                        <div class="habilidad"><i class="devicon-azuresqldatabase-plain colored"></i><p>SQL</p></div>
-                        <div class="habilidad"><i class="devicon-java-plain colored"></i><p>Java</p></div>
-                        <div class="habilidad"><img src="Img/HabilidadesLogo/Python.svg" alt="Python"><p>Python</p></div>
+                        <div class="habilidad"><i class="devicon-nestjs-plain colored" aria-hidden="true"></i><p>NestJS</p></div>
+                        <div class="habilidad"><i class="devicon-postgresql-plain colored" aria-hidden="true"></i><p>PostgreSQL</p></div>
+                        <div class="habilidad"><i class="devicon-prisma-original" style="color: var(--text-main);" aria-hidden="true"></i><p>Prisma</p></div>
+                        <div class="habilidad"><i class="devicon-azuresqldatabase-plain colored" aria-hidden="true"></i><p>SQL</p></div>
+                        <div class="habilidad"><i class="devicon-java-plain colored" aria-hidden="true"></i><p>Java</p></div>
+                        <div class="habilidad"><img src="Img/HabilidadesLogo/Python.svg" alt="" width="30" height="30"><p>Python</p></div>
                     </div>
                 </div>
-                <div class="skills-category">
-                    <h3>Herramientas</h3>
+                <div class="skills-category reveal">
+                    <h3 data-i18n="skills_tools">Herramientas</h3>
                     <div class="skills-grid">
-                        <div class="habilidad"><i class="devicon-git-plain colored"></i><p>Git</p></div>
-                        <div class="habilidad"><i class="devicon-docker-plain colored"></i><p>Docker</p></div>
-                        <div class="habilidad"><img src="Img/HabilidadesLogo/Figma.svg" alt="Figma"><p>Figma</p></div>
+                        <div class="habilidad"><i class="devicon-git-plain colored" aria-hidden="true"></i><p>Git</p></div>
+                        <div class="habilidad"><i class="devicon-docker-plain colored" aria-hidden="true"></i><p>Docker</p></div>
+                        <div class="habilidad"><img src="Img/HabilidadesLogo/Figma.svg" alt="" width="30" height="30"><p>Figma</p></div>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- Experiencia -->
         <section class="secciones" id="section-experience">
             <h2 class="h2"><span data-i18n="exp_title">Experiencia Laboral</span>
                 <hr>
             </h2>
 
             <div class="timeline">
-                <div class="timeline-item">
+                <div class="timeline-item reveal">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <div class="timeline-header">
-                            <img src="Img/logo_bainub.png" alt="Logo Bainub" class="timeline-logo">
+                            <img src="Img/logo_silverwebs.webp" width="45" height="45" loading="lazy" alt="Logo de Silverwebs"
+                                class="timeline-logo timeline-logo--dark">
+                            <div class="timeline-titles">
+                                <h3 data-i18n="exp0_role">Desarrollador Web Freelance</h3>
+                                <h4>Silverwebs</h4>
+                            </div>
+                        </div>
+                        <span class="timeline-date" data-i18n="exp0_date">Ago 2026 - Actualidad</span>
+                        <ul class="timeline-tasks">
+                            <li data-i18n="exp0_task1">Diseño y desarrollo sitios web a la medida para negocios, desde el
+                                levantamiento de requerimientos hasta el despliegue en Vercel.</li>
+                            <li data-i18n="exp0_task2">Construyo con Next.js y TypeScript e integro bases de datos según la
+                                complejidad de cada proyecto; el cliente es dueño de su código y evita pagar suscripciones.</li>
+                        </ul>
+                        <div class="tech-badges timeline-tech">
+                            <span>Next.js</span>
+                            <span>TypeScript</span>
+                            <span>Vercel</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <img src="Img/logo_bainub.webp" width="96" height="96" loading="lazy" alt="Logo de BAINUB"
+                                class="timeline-logo">
                             <div class="timeline-titles">
                                 <h3 data-i18n="exp1_role">Desarrollador Web</h3>
                                 <h4>BAINUB</h4>
                             </div>
                         </div>
-                        <span class="timeline-date" data-i18n="exp1_date">Marzo 2025 - Actualidad</span>
+                        <span class="timeline-date" data-i18n="exp1_date">Mar 2025 - Sep 2026</span>
                         <ul class="timeline-tasks">
-                            <li data-i18n="exp1_task1">Desarrollo de interfaces de usuario (UI) y nuevas funcionalidades
-                                utilizando React, HTML/CSS/JS.</li>
-                            <li data-i18n="exp1_task2">Optimizo la experiencia de usuario y el diseño responsivo para la
-                                plataforma web B2B.</li>
+                            <li data-i18n="exp1_task1">Lideré el desarrollo de interfaces UI responsivas en React, mejorando
+                                la retención de usuarios.</li>
+                            <li data-i18n="exp1_task2">Implementé nuevas funcionalidades core para la plataforma B2B,
+                                optimizando el rendimiento del cliente.</li>
                         </ul>
+                        <div class="tech-badges timeline-tech">
+                            <span>React</span>
+                            <span>JavaScript</span>
+                            <span>HTML/CSS</span>
+                        </div>
                     </div>
                 </div>
 
-                <div class="timeline-item">
+                <div class="timeline-item reveal">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <div class="timeline-header">
-                            <img src="Img/logo_esoftware.png" alt="Logo E-Software" class="timeline-logo">
+                            <img src="Img/logo_esoftware.webp" width="96" height="96" loading="lazy" alt="Logo de E-Software"
+                                class="timeline-logo">
                             <div class="timeline-titles">
                                 <h3 data-i18n="exp2_role">Desarrollador de software</h3>
                                 <h4>E-Software</h4>
@@ -161,280 +286,285 @@
                         </div>
                         <span class="timeline-date" data-i18n="exp2_date">Jun 2023 - Dic 2023</span>
                         <ul class="timeline-tasks">
-                            <li data-i18n="exp2_task1">Implementé mejoras en el diseño y la funcionalidad del frontend
-                                de la aplicación.</li>
-                            <li data-i18n="exp2_task2">Realicé y optimicé consultas a bases de datos relacionales
-                                mediante SQL para asegurar la integridad de los datos.</li>
+                            <li data-i18n="exp2_task1">Mejoré la UX/UI refactorizando componentes del frontend,
+                                incrementando la velocidad de carga.</li>
+                            <li data-i18n="exp2_task2">Optimicé consultas complejas en SQL, garantizando la integridad de
+                                datos y reduciendo tiempos de respuesta.</li>
                         </ul>
+                        <div class="tech-badges timeline-tech">
+                            <span>JavaScript</span>
+                            <span>SQL</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- Proyectos -->
         <section class="secciones" id="section-projects">
             <h2 class="h2"><span data-i18n="projects_title">Proyectos</span>
                 <hr>
             </h2>
             <div id="container-projects">
-                <div class="proyecto">
-                    <div class="proyecto-imagen-contenedor">
-                        <div class="proyecto-imagen-flip">
-                            <div class="proyecto-imagen-front image1">
-                                <img src="Img/proyectos/Finanzasdms.png" alt="Proyecto FinanzasDMS" width="400px">
-                            </div>
-                            <div class="proyecto-imagen-back">
-                                <p class="proyecto-desc" data-i18n="proj_finanzas_desc">Plataforma fintech para gestión
-                                    de finanzas personales, administración de préstamos con amortización dinámica y
-                                    control de carteras.</p>
-                                <div class="tech-badges">
-                                    <span>React</span>
-                                    <span>Tailwind</span>
-                                    <span>Nest.js</span>
-                                    <span>PostgreSQL</span>
-                                    <span>Prisma</span>
-                                    <span>Docker</span>
-                                </div>
-                            </div>
+                <article class="proyecto proyecto--destacado reveal">
+                    <div class="proyecto-imagen">
+                        <img src="Img/proyectos/Finanzasdms.webp" alt="Vista previa de FinanzasDMS" width="840" height="404"
+                            loading="lazy" decoding="async">
+                    </div>
+                    <div class="proyecto-body">
+                        <span class="proyecto-tag" data-i18n="proj_featured">Proyecto destacado</span>
+                        <h3 class="proyecto-titulo">FinanzasDMS</h3>
+                        <p class="proyecto-desc" data-i18n="proj_finanzas_desc">Plataforma fintech para gestión de finanzas
+                            personales, administración de préstamos con amortización dinámica y control de carteras.</p>
+                        <div class="tech-badges">
+                            <span>React</span>
+                            <span>Tailwind</span>
+                            <span>NestJS</span>
+                            <span>PostgreSQL</span>
+                            <span>Prisma</span>
+                            <span>Docker</span>
+                        </div>
+                        <div class="proyecto-links">
+                            <a class="proyecto-link" href="https://finanzasdms.com/" target="_blank" rel="noopener noreferrer">
+                                <svg class="icon" aria-hidden="true"><use href="#icon-eye"></use></svg>
+                                <span data-i18n="proj_demo">Ver demo</span>
+                            </a>
+                            <a class="proyecto-link" href="https://github.com/silver442/finanzasdms-web" target="_blank"
+                                rel="noopener noreferrer">
+                                <svg class="icon" aria-hidden="true"><use href="#icon-github"></use></svg>
+                                <span data-i18n="proj_code">Código</span>
+                            </a>
                         </div>
                     </div>
-                    <div class="container-footer-prject">
-                        <a href="https://finanzasdms.com/" target="_blank">
-                            <img src="Img/ojo.png" alt="vista al proyecto" width="30px" height="30px">
-                        </a>
-                        <h3>FinanzasDMS</h3>
-                        <a href="https://github.com/silver442/finanzasdms-web" target="_blank">
-                            <img src="Img/githubIcon.png" alt="repositorio en github" width="30px" height="30px">
-                        </a>
-                    </div>
-                </div>
+                </article>
 
-                <div class="proyecto">
-                    <div class="proyecto-imagen-contenedor">
-                        <div class="proyecto-imagen-flip">
-                            <div class="proyecto-imagen-front image1">
-                                <img src="Img/proyectos/HEB_POST.png" alt="Proyecto de HEB" width="400px">
-                            </div>
-                            <div class="proyecto-imagen-back">
-                                <p class="proyecto-desc" data-i18n="proj_heb_desc">Sistema de punto de venta (POS)
-                                    simulando flujos de caja y operaciones en tiempo real.</p>
-                                <div class="tech-badges">
-                                    <span>HTML</span>
-                                    <span>CSS</span>
-                                    <span>JavaScript</span>
-                                    <span>jQuery</span>
-                                </div>
-                            </div>
+                <article class="proyecto reveal">
+                    <div class="proyecto-imagen proyecto-imagen--center">
+                        <img src="Img/proyectos/kingquinela.webp" alt="Logo de KingQuinela" width="840" height="672"
+                            loading="lazy" decoding="async">
+                    </div>
+                    <div class="proyecto-body">
+                        <h3 class="proyecto-titulo">KingQuinela</h3>
+                        <p class="proyecto-desc" data-i18n="proj_kingquinela_desc">App de quinielas con marcadores en tiempo
+                            real, chat por sockets, sistema de login y paneles de administración.</p>
+                        <div class="tech-badges">
+                            <span>Next.js</span>
+                            <span>Supabase</span>
+                            <span>PostgreSQL</span>
+                            <span>Sockets</span>
+                        </div>
+                        <div class="proyecto-links">
+                            <a class="proyecto-link" href="https://kingquinelas.online" target="_blank" rel="noopener noreferrer">
+                                <svg class="icon" aria-hidden="true"><use href="#icon-eye"></use></svg>
+                                <span data-i18n="proj_demo">Ver demo</span>
+                            </a>
+                            <button class="proyecto-link" type="button" data-modal-open>
+                                <svg class="icon" aria-hidden="true"><use href="#icon-lock"></use></svg>
+                                <span data-i18n="proj_private">Repo privado</span>
+                            </button>
                         </div>
                     </div>
-                    <div class="container-footer-prject">
-                        <a href="https://hebpos.silverdev.net/" target="_blank">
-                            <img src="Img/ojo.png" alt="vista al proyecto" width="30px" height="30px">
-                        </a>
-                        <h3>HEB-POS</h3>
-                        <a href="https://github.com/silver442/HEB" target="_blank">
-                            <img src="Img/githubIcon.png" alt="repositorio en github" width="30px" height="30px">
-                        </a>
-                    </div>
-                </div>
+                </article>
 
-                <div class="proyecto">
-                    <div class="proyecto-imagen-contenedor">
-                        <div class="proyecto-imagen-flip">
-                            <div class="proyecto-imagen-front image2">
-                                <img src="Img/proyectos/digitutos.png" alt="Página web de DigiTutos" width="400px">
-                            </div>
-                            <div class="proyecto-imagen-back">
-                                <p class="proyecto-desc" data-i18n="proj_digitutos_desc">Landing page para canal de
-                                    YouTube de tutoriales (En construcción. Próxima migración a SSR).</p>
-                                <div class="tech-badges">
-                                    <span>HTML</span>
-                                    <span>CSS</span>
-                                    <span>Next.js</span>
-                                </div>
-                            </div>
+                <article class="proyecto reveal">
+                    <div class="proyecto-imagen proyecto-imagen--left">
+                        <img src="Img/proyectos/silverwebs.webp" alt="Vista previa del proyecto Silverwebs" width="840"
+                            height="436" loading="lazy" decoding="async">
+                    </div>
+                    <div class="proyecto-body">
+                        <h3 class="proyecto-titulo">Silverwebs</h3>
+                        <p class="proyecto-desc" data-i18n="proj_silverwebs_desc">Mi servicio freelance: sitios web básicos,
+                            medianos y avanzados a la medida, a menor costo y sin pagar suscripciones como Wix.</p>
+                        <div class="tech-badges">
+                            <span>Next.js</span>
+                            <span>TypeScript</span>
+                            <span>React</span>
+                            <span>Vercel</span>
+                        </div>
+                        <div class="proyecto-links">
+                            <a class="proyecto-link" href="https://silverwebs.vercel.app/" target="_blank" rel="noopener noreferrer">
+                                <svg class="icon" aria-hidden="true"><use href="#icon-eye"></use></svg>
+                                <span data-i18n="proj_demo">Ver demo</span>
+                            </a>
+                            <a class="proyecto-link" href="https://github.com/silver442/silverwebs" target="_blank"
+                                rel="noopener noreferrer">
+                                <svg class="icon" aria-hidden="true"><use href="#icon-github"></use></svg>
+                                <span data-i18n="proj_code">Código</span>
+                            </a>
                         </div>
                     </div>
-                    <div class="container-footer-prject">
-                        <a href="https://digitutos.com" target="_blank">
-                            <img src="Img/ojo.png" alt="vista al proyecto" width="30px" height="30px">
-                        </a>
-                        <h3>DigiTutos</h3>
-                        <a href="https://www.youtube.com/@DigiTutos" target="_blank">
-                            <img src="Img/youtube.png" alt="Canal de YouTube" width="30px" height="30px">
-                        </a>
-                    </div>
-                </div>
+                </article>
 
-                <div class="proyecto">
-                    <div class="proyecto-imagen-contenedor">
-                        <div class="proyecto-imagen-flip">
-                            <div class="proyecto-imagen-front image2">
-                                <img src="Img/proyectos/Altralum.png" alt="Proyecto de Altralum" width="400px" style="object-position: left;">
-                            </div>
-                            <div class="proyecto-imagen-back">
-                                <p class="proyecto-desc" data-i18n="proj_altralum_desc">E-commerce para un cliente de
-                                    iluminación con
-                                    catálogo de productos, carrito de compras y sistema de pedidos.</p>
-                                <div class="tech-badges">
-                                    <span>React</span>
-                                    <span>Tailwind</span>
-                                    <span>Next.js</span>
-                                    <span>PostgreSQL</span>
-                                </div>
-                            </div>
+                <article class="proyecto reveal">
+                    <div class="proyecto-imagen proyecto-imagen--left">
+                        <img src="Img/proyectos/Altralum.webp" alt="Vista previa del e-commerce de Altralum" width="840"
+                            height="380" loading="lazy" decoding="async">
+                    </div>
+                    <div class="proyecto-body">
+                        <h3 class="proyecto-titulo">Altralum E-commerce</h3>
+                        <p class="proyecto-desc" data-i18n="proj_altralum_desc">E-commerce para un cliente de iluminación con
+                            catálogo de productos, carrito de compras y sistema de pedidos.</p>
+                        <div class="tech-badges">
+                            <span>React</span>
+                            <span>Tailwind</span>
+                            <span>Next.js</span>
+                            <span>PostgreSQL</span>
+                        </div>
+                        <div class="proyecto-links">
+                            <a class="proyecto-link" href="https://altralum.com/" target="_blank" rel="noopener noreferrer">
+                                <svg class="icon" aria-hidden="true"><use href="#icon-eye"></use></svg>
+                                <span data-i18n="proj_demo">Ver demo</span>
+                            </a>
+                            <button class="proyecto-link" type="button" data-modal-open>
+                                <svg class="icon" aria-hidden="true"><use href="#icon-lock"></use></svg>
+                                <span data-i18n="proj_private">Repo privado</span>
+                            </button>
                         </div>
                     </div>
-                    <div class="container-footer-prject">
-                        <a href="https://altralum.com/" target="_blank">
-                            <img src="Img/ojo.png" alt="vista al proyecto" width="30px" height="30px">
-                        </a>
-                        <h3>E-commer</h3>
-                        <a href="#" onclick="openModal(); return false;">
-                            <img src="Img/githubIcon.png" alt="repositorio en github" width="30px" height="30px">
-                        </a>
-                    </div>
-                </div>
+                </article>
 
-                <div class="proyecto">
-                    <div class="proyecto-imagen-contenedor">
-                        <div class="proyecto-imagen-flip">
-                            <div class="proyecto-imagen-front image1">
-                                <img src="Img/proyectos/kingquinela.png" alt="Proyecto de KingQuinela" width="400px">
-                            </div>
-                            <div class="proyecto-imagen-back">
-                                <p class="proyecto-desc" data-i18n="proj_kingquinela_desc">App de quinielas con marcadores en tiempo real, chat por sockets, sistema de login y paneles de administración.</p>
-                                <div class="tech-badges">
-                                    <span>Next.js</span>
-                                    <span>Supabase</span>
-                                    <span>PostgreSQL</span>
-                                    <span>Sockets</span>
-                                </div>
-                            </div>
+                <article class="proyecto reveal">
+                    <div class="proyecto-imagen">
+                        <img src="Img/proyectos/digitutos.webp" alt="Vista previa de la página de DigiTutos" width="840"
+                            height="473" loading="lazy" decoding="async">
+                    </div>
+                    <div class="proyecto-body">
+                        <h3 class="proyecto-titulo">DigiTutos</h3>
+                        <p class="proyecto-desc" data-i18n="proj_digitutos_desc">Landing page de mi canal de YouTube de
+                            tutoriales de tecnología, diseñada para presentar el canal y atraer suscriptores.</p>
+                        <div class="tech-badges">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                        </div>
+                        <div class="proyecto-links">
+                            <a class="proyecto-link" href="https://digitutos.com" target="_blank" rel="noopener noreferrer">
+                                <svg class="icon" aria-hidden="true"><use href="#icon-eye"></use></svg>
+                                <span data-i18n="proj_demo">Ver demo</span>
+                            </a>
+                            <a class="proyecto-link" href="https://www.youtube.com/@DigiTutos" target="_blank"
+                                rel="noopener noreferrer">
+                                <svg class="icon" aria-hidden="true"><use href="#icon-youtube"></use></svg>
+                                <span data-i18n="proj_channel">Canal</span>
+                            </a>
                         </div>
                     </div>
-                    <div class="container-footer-prject">
-                        <a href="https://kingquinelas.online" target="_blank">
-                            <img src="Img/ojo.png" alt="vista al proyecto" width="30px" height="30px">
-                        </a>
-                        <h3>KingQuinela</h3>
-                        <a href="#" onclick="openModal(); return false;">
-                            <img src="Img/githubIcon.png" alt="repositorio en github" width="30px" height="30px">
-                        </a>
-                    </div>
-                </div>
-
-                <div class="proyecto">
-                    <div class="image1 proximamente-overlay-container">
-                        <img src="Img/proyectos/silgames.png" alt="Proyecto de Silgames" width="400px">
-                        <div class="overlay-proximamente">
-                            <span data-i18n="proj_silgames_coming">Próximamente</span>
-                        </div>
-                    </div>
-                    <div class="container-footer-prject">
-                        <a href="#" class="btn-disabled">
-                            <img src="Img/ojo.png" alt="vista al proyecto" width="30px" height="30px">
-                        </a>
-                        <h3>Silgames</h3>
-                        <a href="#" class="btn-disabled">
-                            <img src="Img/githubIcon.png" alt="repositorio en github" width="30px" height="30px">
-                        </a>
-                    </div>
-                </div>
+                </article>
             </div>
         </section>
 
+        <!-- Certificados -->
         <section class="secciones" id="section-certificate">
-            <h2 class="h2" data-i18n="certs_title">Certificados</h2>
-            <div class="carousel-wrapper">
-                <button class="carousel-btn prev-btn">&#10094;</button>
+            <h2 class="h2"><span data-i18n="certs_title">Certificados</span>
+                <hr>
+            </h2>
+            <div class="carousel-wrapper reveal">
+                <button class="carousel-btn prev-btn" type="button" aria-label="Certificado anterior"
+                    data-i18n-aria="cert_prev">&#10094;</button>
                 <div id="container-certificate">
                     <div class="certificado">
-                        <img src="Img/Certificados/Certificado_platzi_git.png" alt="Certificado git">
+                        <img src="Img/Certificados/Certificado_platzi_git.webp" alt="Certificado de Git (Platzi)"
+                            width="640" height="493" decoding="async">
                     </div>
                     <div class="certificado">
-                        <img src="Img/Certificados/Certificado_platzi_frontend.png" alt="Certificado Frontend">
+                        <img src="Img/Certificados/Certificado_platzi_frontend.webp" alt="Certificado de Frontend (Platzi)"
+                            width="640" height="493" decoding="async">
                     </div>
                     <div class="certificado">
-                        <img src="Img/Certificados/Certificado_google_web.png" alt="Certificado google web">
+                        <img src="Img/Certificados/Certificado_google_web.webp" alt="Certificado de desarrollo web (Google)"
+                            width="640" height="450" decoding="async">
                     </div>
                     <div class="certificado">
-                        <img src="Img/Certificados/HackathonArka.png" alt="Certificado Hackathon">
+                        <img src="Img/Certificados/HackathonArka.webp" alt="Certificado del Hackathon Arka" width="640"
+                            height="452" decoding="async">
                     </div>
                     <div class="certificado">
-                        <img src="Img/Certificados/DataRebels.png" alt="Certificado DataRebels">
+                        <img src="Img/Certificados/DataRebels.webp" alt="Certificado de DataRebels" width="640" height="361" decoding="async">
                     </div>
                     <div class="certificado">
-                        <img src="Img/Certificados/Scrum.png" alt="Certificado Scrum">
+                        <img src="Img/Certificados/Scrum.webp" alt="Certificado de Scrum" width="640" height="493" decoding="async">
                     </div>
                 </div>
-                <button class="carousel-btn next-btn">&#10095;</button>
+                <button class="carousel-btn next-btn" type="button" aria-label="Certificado siguiente"
+                    data-i18n-aria="cert_next">&#10095;</button>
             </div>
         </section>
 
     </main>
 
-    <!-- Footer -->
+    <!-- Footer / Contacto -->
     <footer id="footer">
-        <h3 class="social"><span data-i18n="contact_title">Contacto</span>
+        <h2 class="social"><span data-i18n="contact_title">Contacto</span>
             <hr>
-        </h3>
+        </h2>
 
-        <form id="contact-form" class="contact-form" novalidate>
+        <p class="contact-intro" data-i18n="contact_intro">¿Tienes una oportunidad o un proyecto en mente? Déjame un
+            mensaje y te respondo pronto.</p>
+
+        <form id="contact-form" class="contact-form reveal" novalidate>
             <div class="form-group">
                 <label for="name" data-i18n="form_name">Nombre</label>
-                <input type="text" id="name" name="name" required data-i18n-placeholder="form_name_ph"
-                    placeholder="Tu nombre">
+                <input type="text" id="name" name="name" required autocomplete="name"
+                    data-i18n-placeholder="form_name_ph" placeholder="Tu nombre">
             </div>
             <div class="form-group">
                 <label for="email" data-i18n="form_email">Email</label>
-                <input type="email" id="email" name="email" required data-i18n-placeholder="form_email_ph"
-                    placeholder="tu@email.com">
+                <input type="email" id="email" name="email" required autocomplete="email"
+                    data-i18n-placeholder="form_email_ph" placeholder="tu@email.com">
             </div>
             <div class="form-group">
                 <label for="message" data-i18n="form_message">Mensaje</label>
                 <textarea id="message" name="message" rows="5" required data-i18n-placeholder="form_msg_ph"
                     placeholder="Escribe tu mensaje aquí..."></textarea>
             </div>
+            <!-- Campo trampa contra spam (Formspree lo descarta si viene lleno) -->
+            <input type="text" name="_gotcha" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
             <button type="submit" id="form-submit" class="btn-principal" data-i18n="form_submit">Enviar mensaje</button>
-            <p id="form-status" class="form-status"></p>
+            <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
         </form>
 
         <div id="socialnet">
             <div class="sociales">
-                <a href="mailto:silvestre.hdz.h@gmail.com" aria-label="Enviar correo a Silvestre">
-                    <img src="Img/correo-electronico.png" alt="Correo electronico" width="50px">
+                <a href="#footer" class="js-mail" data-user="silvestre.hdz.h" data-domain="gmail.com" aria-label="Enviar correo a Silvestre">
+                    <svg class="icon" aria-hidden="true"><use href="#icon-mail"></use></svg>
                 </a>
             </div>
             <div class="sociales">
                 <a href="https://www.linkedin.com/in/silvestre-hernandez-822240244/" target="_blank"
                     rel="noopener noreferrer" aria-label="Perfil de LinkedIn de Silvestre">
-                    <img src="Img/linkedin.png" alt="Linkedin" width="50px">
+                    <svg class="icon" aria-hidden="true"><use href="#icon-linkedin"></use></svg>
                 </a>
             </div>
             <div class="sociales">
-                <a href="https://github.com/silver442" target="_blank" rel="noopener noreferrer" aria-label="Perfil de GitHub de Silvestre">
-                    <img src="Img/github.png" alt="Github" width="50px">
+                <a href="https://github.com/silver442" target="_blank" rel="noopener noreferrer"
+                    aria-label="Perfil de GitHub de Silvestre">
+                    <svg class="icon" aria-hidden="true"><use href="#icon-github"></use></svg>
                 </a>
             </div>
         </div>
 
-        <p class="copy"> &copy;Silvestre Hernandez Hernandez</p>
+        <p class="copy">
+            &copy; <span id="year">2026</span> Silvestre Hernández Hernández ·
+            <span data-i18n="footer_built">Diseñado y desarrollado por mí con HTML, CSS y JavaScript vanilla.</span>
+            <a href="https://github.com/silver442/silver442.github.io" target="_blank" rel="noopener noreferrer"
+                data-i18n="footer_code">Ver código fuente</a>
+        </p>
     </footer>
 
-    <!-- Custom Modal -->
+    <!-- Modal de repositorio privado -->
     <div id="custom-modal" class="modal-overlay">
-        <div class="modal-content">
-            <span class="modal-close" onclick="closeModal()">&times;</span>
+        <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modal-text">
+            <button type="button" class="modal-close" data-modal-close aria-label="Cerrar"
+                data-i18n-aria="modal_close">&times;</button>
             <div class="modal-icon">
-                <img src="Img/githubIcon.png" alt="Github" width="50px">
+                <svg class="icon" aria-hidden="true"><use href="#icon-lock"></use></svg>
             </div>
             <p id="modal-text" data-i18n="proj_private_repo">Repositorio privado, ya que es un proyecto para un cliente.</p>
-            <button class="btn-principal" onclick="closeModal()" data-i18n="btn_understood">Entendido</button>
+            <button type="button" class="btn-principal" data-modal-close data-i18n="btn_understood">Entendido</button>
         </div>
     </div>
 
-    <script src="js/translations.js?v=1.1"></script>
-    <script src="js/main.js?v=1.4"></script>
+    <script src="js/translations.js?v=2.1"></script>
+    <script src="js/main.js?v=2.1"></script>
 </body>
 
 </html>
