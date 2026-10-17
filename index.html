@@ -11,10 +11,10 @@
     <meta property="og:image" content="https://silver442.github.io/Img/Logo2.png">
     <meta property="og:url" content="https://silver442.github.io/">
     <title>Silvestre Hernández | Fullstack Developer</title>
-    <link rel="stylesheet" href="css/style.css?v=1.3">
-    <link rel="stylesheet" href="css/movil.css?v=1.3">
-    <link rel="stylesheet" href="css/tablet.css?v=1.3" media="screen and (min-width: 600px)">
-    <link rel="stylesheet" href="css/desktop.css?v=1.3" media="screen and (min-width: 800px)">
+    <link rel="stylesheet" href="css/style.css?v=1.5">
+    <link rel="stylesheet" href="css/movil.css?v=1.5">
+    <link rel="stylesheet" href="css/tablet.css?v=1.4" media="screen and (min-width: 600px)">
+    <link rel="stylesheet" href="css/desktop.css?v=1.4" media="screen and (min-width: 800px)">
     <link rel="icon" href="Img/Logo.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,30 +28,31 @@
     <!-- Header -->
     <header id="header-container">
         <nav id="nav">
-            <div id="Logo">
-                <a href="#"><img src="Img/Logo.png" alt="Logo"></a>
-            </div>
-            <div class="hamburger" id="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-            <ul class="main-nav" id="main-nav">
-                <li class="main-nav__item"><a href="#" data-i18n="nav_home">Inicio</a></li>
-                <li class="main-nav__item"><a href="#section-about" data-i18n="nav_about">Sobre mí</a></li>
-                <li class="main-nav__item"><a href="#section-experience" data-i18n="nav_experience">Experiencia</a></li>
-                <li class="main-nav__item"><a href="#section-projects" data-i18n="nav_projects">Proyectos</a></li>
-                <li class="main-nav__item"><a href="#section-skills" data-i18n="nav_skills">Habilidades</a></li>
-                <li class="main-nav__item"><a href="#section-certificate" data-i18n="nav_certs">Certificados</a></li>
-                <li class="main-nav__item"><a href="#footer" data-i18n="nav_contact">Contacto</a></li>
-            </ul>
-            <div class="lang-switch">
-                <span class="lang-label" id="label-es">ES</span>
-                <label class="lang-toggle-track">
-                    <input type="checkbox" id="lang-toggle" aria-label="Switch language">
-                    <span class="lang-toggle-thumb"></span>
-                </label>
-                <span class="lang-label" id="label-en">EN</span>
+            <div class="nav-container">
+                <div id="Logo">
+                    <a href="#"><img src="Img/Logo.png" alt="Logo"></a>
+                </div>
+                <div class="hamburger" id="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                <ul class="main-nav" id="main-nav">
+                    <li class="main-nav__item"><a href="#section-about" data-i18n="nav_about">Sobre mí</a></li>
+                    <li class="main-nav__item"><a href="#section-experience" data-i18n="nav_experience">Experiencia</a></li>
+                    <li class="main-nav__item"><a href="#section-projects" data-i18n="nav_projects">Proyectos</a></li>
+                    <li class="main-nav__item"><a href="#section-skills" data-i18n="nav_skills">Habilidades</a></li>
+                    <li class="main-nav__item"><a href="#section-certificate" data-i18n="nav_certs">Certificados</a></li>
+                    <li class="main-nav__item"><a href="#footer" data-i18n="nav_contact">Contacto</a></li>
+                </ul>
+                <div class="lang-switch">
+                    <span class="lang-label" id="label-es">ES</span>
+                    <label class="lang-toggle-track">
+                        <input type="checkbox" id="lang-toggle" aria-label="Switch language">
+                        <span class="lang-toggle-thumb"></span>
+                    </label>
+                    <span class="lang-label" id="label-en">EN</span>
+                </div>
             </div>
         </nav>
         <div id="titulo">
@@ -212,26 +213,25 @@
                     <div class="proyecto-imagen-contenedor">
                         <div class="proyecto-imagen-flip">
                             <div class="proyecto-imagen-front image1">
-                                <img src="Img/proyectos/HEB_POST.png" alt="Proyecto de HEB" width="400px">
+                                <img src="./Img/proyectos/silverwebs.png" alt="Vista previa del proyecto Silverwebs" width="400px">
                             </div>
                             <div class="proyecto-imagen-back">
-                                <p class="proyecto-desc" data-i18n="proj_heb_desc">Sistema de punto de venta (POS)
-                                    simulando flujos de caja y operaciones en tiempo real.</p>
+                                <p class="proyecto-desc" data-i18n="proj_silverwebs_desc">Sitio web para servicios de
+                                    desarrollo web, con diseño moderno, responsivo y orientado a conversión.</p>
                                 <div class="tech-badges">
-                                    <span>HTML</span>
-                                    <span>CSS</span>
-                                    <span>JavaScript</span>
-                                    <span>jQuery</span>
+                                    <span>Next.js</span>
+                                    <span>React</span>
+                                    <span>Tailwind</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="container-footer-prject">
-                        <a href="https://hebpos.silverdev.net/" target="_blank">
+                        <a href="https://silverwebs.vercel.app/" target="_blank" rel="noopener noreferrer">
                             <img src="Img/ojo.png" alt="vista al proyecto" width="30px" height="30px">
                         </a>
-                        <h3>HEB-POS</h3>
-                        <a href="https://github.com/silver442/HEB" target="_blank">
+                        <h3>Silverwebs</h3>
+                        <a href="https://github.com/silver442/silverwebs" target="_blank" rel="noopener noreferrer">
                             <img src="Img/githubIcon.png" alt="repositorio en github" width="30px" height="30px">
                         </a>
                     </div>
@@ -402,18 +402,22 @@
         <div id="socialnet">
             <div class="sociales">
                 <a href="mailto:silvestre.hdz.h@gmail.com" aria-label="Enviar correo a Silvestre">
-                    <img src="Img/correo-electronico.png" alt="Correo electronico" width="50px">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                        <path d="m22 6-10 7L2 6"></path>
+                    </svg>
                 </a>
             </div>
             <div class="sociales">
                 <a href="https://www.linkedin.com/in/silvestre-hernandez-822240244/" target="_blank"
                     rel="noopener noreferrer" aria-label="Perfil de LinkedIn de Silvestre">
-                    <img src="Img/linkedin.png" alt="Linkedin" width="50px">
+                    <i class="devicon-linkedin-plain" aria-hidden="true"></i>
                 </a>
             </div>
             <div class="sociales">
                 <a href="https://github.com/silver442" target="_blank" rel="noopener noreferrer" aria-label="Perfil de GitHub de Silvestre">
-                    <img src="Img/github.png" alt="Github" width="50px">
+                    <i class="devicon-github-original" aria-hidden="true"></i>
                 </a>
             </div>
         </div>
@@ -433,7 +437,7 @@
         </div>
     </div>
 
-    <script src="js/translations.js?v=1.1"></script>
+    <script src="js/translations.js?v=1.3"></script>
     <script src="js/main.js?v=1.4"></script>
 </body>
 

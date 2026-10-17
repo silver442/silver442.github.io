@@ -1,6 +1,5 @@
 const translations = {
   es: {
-    nav_home: "Inicio",
     nav_about: "Sobre mí",
     nav_experience: "Experiencia",
     nav_projects: "Proyectos",
@@ -36,9 +35,9 @@ const translations = {
     form_sending: "Enviando...",
     form_success: "¡Mensaje enviado! Te responderé pronto.",
     form_error: "Hubo un error, por favor intenta de nuevo.",
-    hero_quote: '"Si el código no me enseña algo nuevo, algo está mal."',
+    hero_quote: '"Transformando ideas complejas en experiencias digitales que conectan e inspiran."',
     proj_finanzas_desc: "Plataforma fintech para gestión de finanzas personales, administración de préstamos con amortización dinámica y control de carteras.",
-    proj_heb_desc: "Sistema de punto de venta (POS) simulando flujos de caja y operaciones en tiempo real.",
+    proj_silverwebs_desc: "Sitio web para servicios de desarrollo web, con diseño moderno, responsivo y orientado a conversión.",
     proj_digitutos_desc: "Landing page para canal de YouTube de tutoriales (En construcción. Próxima migración a SSR).",
     proj_altralum_coming: "Próximamente",
     proj_kingquinela_coming: "Próximamente",
@@ -49,7 +48,6 @@ const translations = {
     btn_understood: "Entendido",
   },
   en: {
-    nav_home: "Home",
     nav_about: "About me",
     nav_experience: "Experience",
     nav_projects: "Projects",
@@ -85,9 +83,9 @@ const translations = {
     form_sending: "Sending...",
     form_success: "Message sent! I'll get back to you soon.",
     form_error: "Something went wrong, please try again.",
-    hero_quote: '"If the code doesn\'t teach me something new, something\'s wrong."',
+    hero_quote: '"Turning complex ideas into digital experiences that connect and inspire."',
     proj_finanzas_desc: "Fintech platform for personal finance management, dynamic amortization loan administration, and portfolio control.",
-    proj_heb_desc: "Point of Sale (POS) system simulating cash flows and real-time operations.",
+    proj_silverwebs_desc: "Website for web development services, with a modern, responsive, conversion-focused design.",
     proj_digitutos_desc: "Landing page for a YouTube tutorial channel (Under construction. Upcoming migration to SSR).",
     proj_altralum_coming: "Coming soon",
     proj_kingquinela_coming: "Coming soon",
